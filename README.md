@@ -1,4 +1,4 @@
-jpain.github.io
+jpain.io
 ===============
 
 Github site for me!
