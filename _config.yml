@@ -1,0 +1,39 @@
+# Site settings
+title: James Pain
+description: 'Software Developer'
+url: 'http://joshgerdes.com/jekyll-uno'
+baseurl: '/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'James Pain'
+  email: james@jpain.io
+  twitter_username: jpainio
+  facebook_username: jpainio
+  github_username:  jpainio
+  linkedin_username:  jpainio
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']

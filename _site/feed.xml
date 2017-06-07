@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>James Pain</title>
+    <description>Software Developer</description>
+    <link>http://joshgerdes.com/jekyll-uno//</link>
+    <atom:link href="http://joshgerdes.com/jekyll-uno//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 07 Jun 2017 17:06:43 +0100</pubDate>
+    <lastBuildDate>Wed, 07 Jun 2017 17:06:43 +0100</lastBuildDate>
+    <generator>Jekyll v3.0.2</generator>
+    
+      <item>
+        <title>Hello!</title>
+        <description>&lt;p&gt;There’s nothing here yet. Follow my social media links for more info about me. Check back later for more content&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Jun 2017 09:04:00 +0100</pubDate>
+        <link>http://joshgerdes.com/jekyll-uno//2017/welcome/</link>
+        <guid isPermaLink="true">http://joshgerdes.com/jekyll-uno//2017/welcome/</guid>
+        
+        <category>welcome</category>
+        
+        
+        <category>social</category>
+        
+      </item>
+    
+  </channel>
+</rss>
