@@ -20,24 +20,6 @@
 		<meta name="twitter:title" content="{{ title or metadata.title }}">
 		<meta name="twitter:description" content="{{ description or metadata.description }}">
 		
-		{#- Structured Data #}
-		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "{% if tags %}BlogPosting{% else %}WebSite{% endif %}",
-			"name": "{{ title or metadata.title }}",
-			"description": "{{ description or metadata.description }}",
-			"url": "{{ metadata.url }}{{ page.url }}",
-			"author": {
-				"@type": "Person",
-				"name": "{{ metadata.author.name }}",
-				"url": "{{ metadata.author.url }}"
-			}{% if tags %},
-			"datePublished": "{{ date | htmlDateString }}",
-			"dateModified": "{{ modified or date | htmlDateString }}"{% endif %}
-		}
-		</script>
-		
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
 
@@ -58,9 +40,6 @@
 			* Retrieve via `{% getBundle "js" %}` or `{% getBundleFileUrl "js" %}`
 		3. Learn more: https://github.com/11ty/eleventy-plugin-bundle
 		#}
-
-		{#- Add an arbitrary string to the bundle #}
-		<style>/* This is an arbitrary CSS string added to the bundle */</style>
 		{#- Add the contents of a file to the bundle #}
 		<style>{% include "css/index.css" %}</style>
 		{#- Or you can add from node_modules #}
@@ -71,9 +50,8 @@
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
-		{#- Add the heading-anchors web component to the JavaScript bundle 
+		{#- Add the heading-anchors web component to the JavaScript bundle #}
 		<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
-		#}
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
@@ -96,7 +74,7 @@
 		</main>
 
 		<footer>
-			<p><em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
+			<em><a href="/readme">README.md</a></em>
 		</footer>
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
