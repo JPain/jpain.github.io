@@ -1,14 +1,19 @@
 ---js
-const eleventyNavigation = {
-	key: "Home",
-	order: 1
-};
-
-const numberOfLatestPostsToShow = 3;
+const numberOfLatestPostsToShow = 5;
 ---
+<section class="hero">
+  <h1 class="name">{{ metadata.author.name }}</h1>
+  <ul class="tags">
+    <li class="tag">#developer</li>
+    <li class="tag">#writer</li>
+    <li class="tag">#creator</li>
+  </ul>
+  <p class="bio">{{ metadata.description }} Welcome to my corner of the internet where I share thoughts on technology, development, and life.</p>
+</section>
+
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+<h2>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h2>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
@@ -16,7 +21,7 @@ const numberOfLatestPostsToShow = 3;
 
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
 {% endif %}
 
 {# List every content page in the project #}

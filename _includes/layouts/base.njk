@@ -5,10 +5,48 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
+		
+		{#- Performance optimizations #}
+		<meta name="color-scheme" content="light dark">
+		<meta name="theme-color" content="#04143a">
+		
+		{#- SEO and Social Media #}
+		<meta property="og:title" content="{{ title or metadata.title }}">
+		<meta property="og:description" content="{{ description or metadata.description }}">
+		<meta property="og:type" content="{% if tags %}article{% else %}website{% endif %}">
+		<meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+		<meta property="og:site_name" content="{{ metadata.title }}">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="{{ title or metadata.title }}">
+		<meta name="twitter:description" content="{{ description or metadata.description }}">
+		
+		{#- Structured Data #}
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "{% if tags %}BlogPosting{% else %}WebSite{% endif %}",
+			"name": "{{ title or metadata.title }}",
+			"description": "{{ description or metadata.description }}",
+			"url": "{{ metadata.url }}{{ page.url }}",
+			"author": {
+				"@type": "Person",
+				"name": "{{ metadata.author.name }}",
+				"url": "{{ metadata.author.url }}"
+			}{% if tags %},
+			"datePublished": "{{ date | htmlDateString }}",
+			"dateModified": "{{ modified or date | htmlDateString }}"{% endif %}
+		}
+		</script>
+		
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+		<link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
 
-		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
+		{#- Favicon and web manifest links #}
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="manifest" href="/site.webmanifest">
 
 		{#-
 		Plain-text bundles are provided via the `eleventy-plugin-bundle` plugin:
@@ -33,8 +71,9 @@
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
-		{#- Add the heading-anchors web component to the JavaScript bundle #}
+		{#- Add the heading-anchors web component to the JavaScript bundle 
 		<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
+		#}
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
@@ -42,14 +81,11 @@
 		<header>
 			<a href="/" class="home-link">{{ metadata.title }}</a>
 
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
 				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+					<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>/{{ entry.title }}</a>
 				{%- endfor %}
-				</ul>
 			</nav>
 		</header>
 
