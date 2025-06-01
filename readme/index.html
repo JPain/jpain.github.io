@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>README.md</title>
+		<meta name="description" content="Learn about the technology, philosophy, and principles behind this website">
+		<meta name="color-scheme" content="light dark">
+		<meta name="theme-color" content="#04143a">
+		<meta property="og:title" content="README.md">
+		<meta property="og:description" content="Learn about the technology, philosophy, and principles behind this website">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://jpain.io/readme/">
+		<meta property="og:site_name" content="James Blog">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="README.md">
+		<meta name="twitter:description" content="Learn about the technology, philosophy, and principles behind this website">
+		
+		<link rel="alternate" href="/eleventy-base-blog/feed/feed.xml" type="application/atom+xml" title="James Blog">
+		<link rel="canonical" href="https://jpain.io/readme/">
+		<link rel="icon" type="image/x-icon" href="/eleventy-base-blog/favicon.ico">
+		<link rel="icon" type="image/png" sizes="16x16" href="/eleventy-base-blog/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/eleventy-base-blog/favicon-32x32.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/eleventy-base-blog/apple-touch-icon.png">
+		<link rel="manifest" href="/eleventy-base-blog/site.webmanifest">
+		
+		
+		<style>:root {
+  --width: 800px;
+  --font-scale: 1em;
+  --background-color: #fff;
+  --tangaroa: #04143a; /* Heading color */
+  --light-slate-gray: #2f3743; /* Text color - darkened for better readability */
+  --havelock-blue: #468ee5; /* Link color */
+  --visited-color: #8b6fcb;
+  --code-background-color: #f2f2f2;
+  --code-color: #04143a; /* Matching heading color */
+  --blockquote-color: #04143a;
+  --link-water: #dbe9fa; /* Light background color */
+  --light-gray: #eee;
+}
+
+/* Reset and base styles */
+html,
+body {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: monospace;
+  font-size: var(--font-scale);
+  margin: auto;
+  padding: 0;
+  max-width: var(--width);
+  text-align: left;
+  background-color: var(--background-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: var(--light-slate-gray);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: monospace;
+  color: var(--tangaroa);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+p {
+  margin-block-start: 1.5em;
+  margin-block-end: 1.5em;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: var(--havelock-blue);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--visited-color);
+}
+
+/* Strong/bold text */
+strong,
+b {
+  color: var(--tangaroa);
+}
+
+/* Time elements */
+time {
+  font-family: monospace;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--light-slate-gray);
+}
+
+/* Main content area */
+main {
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+table td,
+table th {
+  padding: 0.5em;
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* Horizontal rules */
+hr {
+  border: 0;
+  border-top: 1px dashed var(--light-gray);
+  margin: 2em 0;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Code styling */
+code {
+  font-family: monospace;
+  padding: 2px 4px;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: 1em;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  border-radius: 3px;
+  margin: 1em 0;
+  overflow-x: auto;
+  line-height: 1.4;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 3px solid var(--light-gray);
+  color: var(--code-color);
+  padding-left: 20px;
+  margin-left: 0;
+  font-style: italic;
+}
+
+/* Header & navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-color: var(--light-gray);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-bottom: 4rem;
+  padding: 1rem;
+}
+
+header a.home-link {
+  text-decoration: none;
+  font-size: 17px;
+  margin: 0;
+  font-family: monospace;
+  color: var(--tangaroa);
+  font-weight: bold;
+}
+
+header a.home-link:hover {
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+
+header nav a {
+  color: var(--light-slate-gray);
+  text-decoration: none;
+  font-family: monospace;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+header nav a[aria-current="page"] {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  font-size: 12px;
+  padding: 1rem 1rem;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin-top: 4rem;
+  color: var(--light-slate-gray);
+}
+
+footer a {
+  color: var(--light-slate-gray);
+}
+
+/* Blog post lists */
+.postlist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.postlist-item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1em;
+  gap: 1rem;
+}
+
+.postlist-date {
+  flex: 0 0 130px;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--light-slate-gray);
+}
+
+.postlist-link {
+  flex: 1;
+  font-family: monospace;
+  color: var(--havelock-blue);
+  text-decoration: underline;
+}
+
+.postlist-link:visited {
+  color: var(--visited-color);
+}
+
+/* Post metadata */
+.post-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Tags */
+.post-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 6px;
+  color: var(--havelock-blue);
+  background-color: var(--link-water);
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: monospace;
+}
+
+.post-tag:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* Skip link accessibility */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+#skip-link {
+  text-decoration: none;
+  background: var(--background-color);
+  color: var(--tangaroa);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--tangaroa);
+  border-radius: 3px;
+}
+
+#skip-link.visually-hidden:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 999;
+}
+
+/* Navigation between posts */
+.links-nextprev {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  border-top: 1px dashed var(--light-gray);
+  padding: 2rem 0 1rem;
+  margin: 2rem 0 0;
+}
+
+.links-nextprev > * {
+  flex-grow: 1;
+}
+
+.links-nextprev-next {
+  text-align: right;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 0 0.5rem;
+  }
+  
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  header nav {
+    justify-content: center;
+  }
+  
+  .postlist-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .postlist-date {
+    flex: none;
+  }
+}
+
+/* Syntax highlighting adjustments */
+.highlight,
+.code {
+  padding: 1em;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  border-radius: 3px;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+/* Hero section */
+section.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+section.hero h1.name {
+  font-size: 2.25em;
+  margin-bottom: 0.5rem;
+  color: var(--tangaroa);
+}
+
+section.hero ul.tags {
+  padding: 0;
+  list-style: none;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+section.hero ul.tags li.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  color: var(--havelock-blue);
+  background-color: var(--link-water);
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+section.hero p.bio {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+section.hero p.bio a {
+  color: var(--light-slate-gray);
+}
+
+/* Ensure proper spacing for first/last elements */
+main :first-child {
+  margin-top: 0;
+}
+
+main :last-child {
+  margin-bottom: 0;
+}</style>
+		
+	</head>
+	<body>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/eleventy-base-blog/" class="home-link">James Blog</a>
+
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+					<a href="/eleventy-base-blog/blog/">/blog</a>
+					<a href="/eleventy-base-blog/feed/feed.xml">/rss</a>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+<h1 id="readme-md">README.md</h1>
+<p><em>Documentation for this website's architecture, philosophy, and implementation.</em></p>
+<h2 id="technical-details">Technical Details</h2>
+<p>This website is built with <a href="https://www.11ty.dev/">Eleventy</a>, a simple static site generator that transforms templates into fast, static HTML. The source code is available on <a href="https://github.com/jpain/james-blog">GitHub</a>.</p>
+<h3 id="technology-stack">Technology Stack</h3>
+<ul>
+<li><strong>Static Site Generator:</strong> <a href="https://www.11ty.dev/">Eleventy v3.1.0</a></li>
+<li><strong>Templating:</strong> <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a></li>
+<li><strong>Styling:</strong> Vanilla CSS with modern features</li>
+<li><strong>Hosting:</strong> GitHub Pages (Probably. Haven't decided as I write this)</li>
+<li><strong>Performance:</strong> No JavaScript frameworks, minimal dependencies</li>
+</ul>
+<h3 id="design-principles">Design Principles</h3>
+<ul>
+<li><strong>Fast:</strong> Static HTML loads instantly</li>
+<li><strong>Accessible:</strong> Semantic HTML and ARIA labels</li>
+<li><strong>Responsive:</strong> Works on all screen sizes</li>
+<li><strong>Sustainable:</strong> Minimal energy consumption</li>
+<li><strong>Privacy-focused:</strong> No tracking scripts or analytics</li>
+<li><strong>Distraction-free:</strong> No overlays, animations, or prompts</li>
+</ul>
+<h2 id="embracing-the-small-web">Embracing the Small Web</h2>
+<p>This website is a proud member of the <strong>small web</strong> — a movement that champions simplicity, sustainability, and human-scale technology over the bloated, surveillance-heavy platforms that dominate today's internet.</p>
+<h3 id="what-is-the-small-web">What is the Small Web?</h3>
+<p>The small web represents a return to the original vision of the World Wide Web: a decentralized network of independent websites, each with its own character and purpose. It's about:</p>
+<ul>
+<li><strong>Personal ownership:</strong> Your content, your domain, your rules</li>
+<li><strong>Simplicity over complexity:</strong> Fast-loading pages that work everywhere</li>
+<li><strong>Privacy by design:</strong> No tracking, no data harvesting, no surveillance capitalism</li>
+<li><strong>Environmental responsibility:</strong> Lightweight sites that consume less energy</li>
+<li><strong>Accessibility first:</strong> Content that everyone can access and enjoy</li>
+<li><strong>Human scale:</strong> Technology that serves people, not corporations</li>
+</ul>
+<h3 id="why-this-matters">Why This Matters</h3>
+<p>In an era where a handful of tech giants control most of our online interactions, the small web offers an alternative. It's a space where:</p>
+<blockquote>
+<p>Creativity flourishes without algorithmic interference. Where you can discover genuine human voices instead of engagement-optimized content. Where your attention isn't the product being sold.</p>
+</blockquote>
+<p>Every small website is an act of digital resistance — a declaration that the web can be better, more humane, and more sustainable.</p>
+<h3 id="join-the-movement">Join the Movement</h3>
+<p>You don't need to be a developer to participate in the small web. Here's how you can contribute:</p>
+<ul>
+<li><strong>Create your own website:</strong> Use simple tools like <a href="https://www.11ty.dev/">Eleventy</a>, <a href="https://jekyllrb.com/">Jekyll</a>, or even hand-coded HTML</li>
+<li><strong>Support independent creators:</strong> Visit personal blogs, subscribe to RSS feeds, share interesting content</li>
+<li><strong>Choose sustainable hosting:</strong> Use green hosting providers or static site hosts</li>
+<li><strong>Keep it simple:</strong> Resist the urge to add unnecessary complexity</li>
+<li><strong>Link generously:</strong> Connect to other small websites and help the web stay interconnected</li>
+<li><strong>Own your content:</strong> Post on your own site first, then syndicate elsewhere</li>
+</ul>
+<h3 id="resources-for-the-small-web">Resources for the Small Web</h3>
+<ul>
+<li><a href="https://indieweb.org/">IndieWeb</a> — A community working to make the web more independent</li>
+<li><a href="https://512kb.club/">512KB Club</a> — Websites that prioritize performance</li>
+<li><a href="https://1mb.club/">1MB Club</a> — The web is for everyone</li>
+<li><a href="https://250kb.club/">250KB Club</a> — Ultra-lightweight websites</li>
+<li><a href="https://theoldnet.com/">The Old Net</a> — Browse the web as it was</li>
+<li><a href="https://sadgrl.online/cyberspace/internet-manifesto">Internet Manifesto</a> — A call for a better web</li>
+</ul>
+<h2 id="this-websites-impact">This Website's Impact</h2>
+<p>As of the last build, this website:</p>
+<ul>
+<li><strong>Page weight:</strong> Typically under 50KB per page</li>
+<li><strong>Load time:</strong> Sub-second on most connections</li>
+<li><strong>Carbon footprint:</strong> Minimal due to static hosting and efficient code</li>
+<li><strong>Accessibility score:</strong> Designed to meet WCAG 2.1 AA standards</li>
+<li><strong>JavaScript dependency:</strong> Zero for core functionality</li>
+<li><strong>Third-party requests:</strong> None (no tracking, no ads, no external dependencies)</li>
+</ul>
+<p><em>The web doesn't have to be slow, bloated, or invasive. This site proves that you can create something beautiful, functional, and fast while respecting your visitors' time, privacy, and bandwidth.</em></p>
+<h1 id="acknowledgements">Acknowledgements</h1>
+<p>In the great tapestry of computing, each thread represents the work of a visionary thinker or innovator woven across time. This personal site – and indeed every modern digital creation – stands on the foundation of their labor and genius. I am profoundly grateful to the mathematicians who laid the groundwork, the engineers who sparked an electronic revolution, the programming pioneers who taught machines to obey our commands. I also thank the network visionaries who connected the world, the open-source communities that democratized knowledge, and the modern web architects who turned the Internet into a vibrant global commons. This page pays homage to those giants of computing history, whose ideas and inventions made our present possible.</p>
+<h2 id="mathematical-foundations">Mathematical Foundations</h2>
+<p>In the early days, computing existed only as an idea rooted in mathematics and logic. We honor the scholars whose abstract thinking laid the groundwork for later technological breakthroughs:</p>
+<ul>
+<li><strong>Muhammad al-Khwarizmi (c.780–850)</strong> – 9th-century Persian mathematician whose work on algebra and arithmetic gave us the word algorithm, reflecting how foundational mathematical ideas underlie all of computing (<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi">al-Khwarizmi</a>).</li>
+<li><strong>Gottfried Wilhelm Leibniz (1646–1716)</strong> – Envisioned a universal calculus of reasoning and introduced the binary number system (in 1703), planting early seeds for computation by showing that logic could be represented in machine-friendly form (<a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz">Gottfried Wilhelm Leibniz</a>).</li>
+<li><strong>Charles Babbage (1791–1871)</strong> – Designed the first general-purpose computing machines – the Difference Engine and the Analytical Engine – in the 19th century, earning the title “father of the computer” for pioneering the concept of programmable hardware (<a href="https://en.wikipedia.org/wiki/Charles_Babbage">Charles Babbage</a>).</li>
+<li><strong>Ada Lovelace (1815–1852)</strong> – Often celebrated as the world’s first programmer for writing an algorithm in 1843 to be executed on Babbage’s Analytical Engine. Her visionary notes demonstrated that machines could follow complex instructions and even create art or music given the right data (<a href="https://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace</a>).</li>
+<li><strong>George Boole (1815–1864)</strong> – Developed Boolean algebra (published in 1854), a system of mathematical logic using true/false values. Boole’s algebra became the backbone of digital circuit design and binary computation, linking logical reasoning with electrical engineering (<a href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean algebra</a>).</li>
+<li><strong>Alan Turing (1912–1954)</strong> – Defined the theoretical model of a universal computing machine (the Turing machine, in 1936) which formalized the concept of algorithmic computation. Turing also helped build early real computers (like the WWII codebreaking Bombe) and proposed the Turing Test for machine intelligence, laying both theoretical and practical foundations of computer science (<a href="https://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a>).</li>
+<li><strong>Claude Shannon (1916–2001)</strong> – Showed in 1937 that electrical circuits could perform Boolean logic, thus designing the foundation of digital circuit theory. In 1948 he introduced information theory, quantifying how data can be encoded and transmitted – a critical underpinning for computers and communication networks (<a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a>).</li>
+<li><strong>John von Neumann (1903–1957)</strong> – Formulated the stored-program computer architecture in 1945 (the von Neumann architecture), in which a computer’s program and data reside in memory together. This elegant design – described in his EDVAC report – underpins virtually all modern computers, allowing programs to modify themselves and be easily re-used (<a href="https://en.wikipedia.org/wiki/John_von_Neumann">John von Neumann</a>).</li>
+</ul>
+<h2 id="electronic-revolution">Electronic Revolution</h2>
+<p>By the mid-20th century, theoretical ideas gave rise to physical machines. We acknowledge the engineers and inventors who transformed computing from gears and paper into electronic speeds, shrinking machines from room-sized to microchip-sized:</p>
+<ul>
+<li><strong>Konrad Zuse (1910–1995)</strong> – Built the Z3 computer in 1941, regarded as the world’s first fully functioning programmable, automatic digital computer. Zuse’s electromechanical design in wartime Germany pioneered binary arithmetic and program control in computing (<a href="https://en.wikipedia.org/wiki/Konrad_Zuse">Konrad Zuse</a>).</li>
+<li><strong>John Atanasoff (1903–1995)</strong> – Created the Atanasoff–Berry Computer (ABC) between 1939–1942, the first electronic digital computing device. Though not programmable, it introduced concepts like binary logic and electronic calculation that influenced future computer designs (<a href="https://en.wikipedia.org/wiki/John_Vincent_Atanasoff">John Vincent Atanasoff</a>).</li>
+<li><strong>Tommy Flowers (1905–1998)</strong> – Developed Colossus in 1943–1944, the world’s first electronic programmable computer, to help British codebreakers decipher encrypted messages in World War II. Colossus, though kept secret for decades, showed that high-speed electronic logic could solve complex problems (<a href="https://en.wikipedia.org/wiki/Tommy_Flowers">Tommy Flowers</a>).</li>
+<li><strong>J. Presper Eckert (1919–1995) and John Mauchly (1907–1980)</strong> – Led the design of ENIAC (completed 1945, unveiled 1946), the first large-scale general-purpose electronic computer. Weighing 30 tons and packed with vacuum tubes, ENIAC could be reprogrammed to perform different tasks and marked the dawn of the computer age in the U.S. (<a href="https://en.wikipedia.org/wiki/ENIAC">ENIAC</a>).</li>
+<li><strong>William Shockley (1910–1989), John Bardeen (1908–1991), Walter Brattain (1902–1987)</strong> – Invented the transistor at Bell Labs in 1947, replacing bulky vacuum tubes with a tiny solid-state device. The transistor revolutionized electronics by making computers smaller, faster, and more reliable, and it remains the fundamental building block of all modern chips (<a href="https://en.wikipedia.org/wiki/Transistor">transistor</a>).</li>
+<li><strong>Jack Kilby (1923–2005) and Robert Noyce (1927–1990)</strong> – Independently invented the integrated circuit in 1958–1959, embedding multiple electronic components on a single semiconductor chip. This innovation paved the way for microchips and the exponential growth of computing power described by Moore’s Law (<a href="https://en.wikipedia.org/wiki/Integrated_circuit">integrated circuit</a>).</li>
+<li><strong>Federico Faggin (1941–) and the Intel team</strong> – Designed the Intel 4004 in 1971, the world’s first single-chip microprocessor. By putting a central processing unit on one chip, they opened the era of microcomputers and personal electronics (<a href="https://en.wikipedia.org/wiki/Intel_4004">Intel 4004</a>).</li>
+<li><strong>Steve Jobs (1955–2011) and Steve Wozniak (1950–)</strong> – Co-founders of Apple who in 1977 introduced the Apple II, one of the first highly successful personal computers. The Apple II’s user-friendly design helped bring computing out of labs and into homes and schools, igniting the personal computer revolution (<a href="https://en.wikipedia.org/wiki/Apple_II">Apple II</a>).</li>
+<li><strong>Bill Gates (1955–) and Paul Allen (1953–2018)</strong> – Co-founded Microsoft in 1975 and created software like Altair BASIC for the MITS Altair 8800 (1975), an early microcomputer kit. Their work catalyzed the personal computer software industry, making microcomputers useful for hobbyists and, eventually, billions of users (<a href="https://en.wikipedia.org/wiki/Altair_8800">Altair 8800</a>).</li>
+</ul>
+<h2 id="programming-pioneers">Programming Pioneers</h2>
+<p>Once computers existed, a new challenge arose: instructing these machines. We recognize the programming pioneers who developed the languages, compilers, and operating systems that unlocked computers’ potential:</p>
+<ul>
+<li><strong>Grace Hopper (1906–1992)</strong> – Developed the first compiler (1940s) and co-authored the COBOL language (1959), which allowed computers to be programmed with English-like commands. Admiral Hopper’s innovations in automatic programming greatly expanded accessibility, earning her the nickname “Grandma of COBOL” and a place as a software pioneer (<a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a>).</li>
+<li><strong>John Backus (1924–2007)</strong> – Led the IBM team that created FORTRAN (1957), the first widely used high-level programming language. Backus’s work proved that efficient machine code could be generated from human-readable formulas, laying the groundwork for modern compilers and software development (<a href="https://en.wikipedia.org/wiki/John_Backus">John Backus</a>).</li>
+<li><strong>John McCarthy (1927–2011)</strong> – Invented the Lisp programming language in 1958 and was a founding figure in artificial intelligence. McCarthy’s Lisp introduced functional programming and automatic memory management (garbage collection), concepts that influence many modern languages (<a href="https://en.wikipedia.org/wiki/John_McCarthy">John McCarthy</a>).</li>
+<li><strong>Donald Knuth (1938–)</strong> – Authored the seminal multi-volume work <em>The Art of Computer Programming</em> (first volume 1968) and pioneered the analysis of algorithms as a rigorous science. Knuth also created the TeX typesetting system and the concept of literate programming, profoundly shaping computer science education and practice (<a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a>).</li>
+<li><strong>Edsger Dijkstra (1930–2002)</strong> – Advanced the art of programming with fundamental algorithms (shortest-path, mutual exclusion) and a fierce advocacy for software correctness. Dijkstra’s 1968 letter “Go To Statement Considered Harmful” and his work on structured programming helped developers write more reliable, readable code (<a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">Edsger W. Dijkstra</a>).</li>
+<li><strong>Dennis Ritchie (1941–2011) and Ken Thompson (1943–)</strong> – Co-creators of the Unix operating system at Bell Labs (starting 1969) and the C programming language (1972). Thompson’s Unix design, with Ritchie’s C enabling portability, led to an entire family of operating systems and influenced virtually every modern OS. C, in turn, became one of the most widely used programming languages in history (<a href="https://en.wikipedia.org/wiki/Unix">Unix</a>).</li>
+<li><strong>Margaret Hamilton (1936–)</strong> – Led the team that developed on-board flight software for NASA’s Apollo missions in the 1960s. She coined the term “software engineering” to emphasize the discipline needed in programming. Hamilton’s rigor and error-checking in the Apollo Guidance Computer code averted mission disasters and proved the importance of software quality (<a href="https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)">Margaret Hamilton</a>).</li>
+<li><strong>Alan Kay (1940–)</strong> – A pioneer of graphical user interfaces and object-oriented programming. At Xerox PARC in the 1970s, Kay helped create the Smalltalk language and the concept of overlapping windows on screen. His vision of “personal dynamic media” presaged the modern personal computer and many of the user interface ideas we now take for granted (<a href="https://en.wikipedia.org/wiki/Alan_Kay">Alan Kay</a>).</li>
+</ul>
+<h2 id="network-visionaries">Network Visionaries</h2>
+<p>No computer is an island – connecting computers multiplied their power. We salute the visionaries who imagined and built the networks that evolved into today’s Internet:</p>
+<ul>
+<li><strong>J. C. R. Licklider (1915–1990)</strong> – Psychologist and computer scientist who in 1960 envisioned a “Galactic Network” of globally interconnected computers. As the first director of ARPA’s computer programs, Licklider championed the research that led to the ARPANET, planting the seeds of the Internet decades before it became a reality (<a href="https://en.wikipedia.org/wiki/J._C._R._Licklider">J. C. R. Licklider</a>).</li>
+<li><strong>Paul Baran (1926–2011) and Donald Davies (1924–2000)</strong> – Independently developed the concept of packet switching in the early-to-mid 1960s. Their idea – to break messages into small packets routed dynamically across a network – enabled efficient and resilient data communications, forming the technical foundation for ARPANET and the Internet (<a href="https://en.wikipedia.org/wiki/Packet_switching">packet switching</a>).</li>
+<li><strong>Larry Roberts (1937–2018)</strong> – The program manager for ARPA who led the development of ARPANET (est. 1969), the first long-distance computer network. Roberts oversaw the connection of university mainframes via IMPs (routers), making it possible for computers to share data over phone lines and creating the direct predecessor to today’s Internet (<a href="https://en.wikipedia.org/wiki/ARPANET">ARPANET</a>).</li>
+<li><strong>Ray Tomlinson (1941–2016)</strong> – Implemented the first network email system on ARPANET in 1971 and introduced the @ email addressing convention (user@host) still in use today. Tomlinson’s simple act of sending a message between computers demonstrated the human utility of networks and gave us email as we know it (<a href="https://en.wikipedia.org/wiki/Email#History">Email</a>).</li>
+<li><strong>Vint Cerf (1943–) and Bob Kahn (1938–)</strong> – Co-inventors of the TCP/IP protocols (published 1974, adopted by ARPANET in 1983) that allow diverse computer networks to interconnect and route traffic as a single internet. Often called the “fathers of the Internet,” Cerf and Kahn designed the communication standards that underlie the global Internet, enabling everything from web browsing to livestreaming (<a href="https://en.wikipedia.org/wiki/Internet_protocol_suite">Internet Protocol Suite</a>).</li>
+<li><strong>Robert Metcalfe (1946–)</strong> – Invented Ethernet at Xerox PARC in 1973, creating a simple networking system for local area networks (LANs) using coaxial cable. Ethernet (and Metcalfe’s Law highlighting the value of networks) became the dominant technology for connecting PCs in offices and homes, and it remains fundamental in modern wired networking (<a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a>).</li>
+</ul>
+<h2 id="open-source-revolution">Open Source Revolution</h2>
+<p>Beyond hardware and networks, a movement arose to share software freely. We acknowledge the hackers and organizations that championed open source principles, making computing a collaborative effort:</p>
+<ul>
+<li><strong>Richard Stallman (1953–)</strong> – Launched the GNU Project in 1983 and the Free Software Foundation in 1985, spearheading the free software movement. Frustrated by proprietary systems, Stallman developed free replacements (like GNU Compiler Collection and GNU Emacs) and the GNU General Public License (GPL) to guarantee users the freedom to run, study, modify, and share software (<a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>).</li>
+<li><strong>Linus Torvalds (1969–)</strong> – Created the Linux kernel in 1991 as a personal project and then opened it to the world. The resulting GNU/Linux operating system (the Linux kernel combined with GNU tools) became a cornerstone of modern computing, powering servers, smartphones (Android), and much of the Internet. Torvalds also created Git, the distributed version control system, further accelerating collaborative software development (<a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>).</li>
+<li><strong>Apache Software Foundation (est. 1999)</strong> – Evolved from the group of volunteers who developed the Apache HTTP Server (first released 1995), which became the world’s most popular web server. Apache’s success demonstrated the power of open-source collaboration in critical infrastructure, and the foundation now hosts dozens of community-driven projects that run on millions of machines (<a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache HTTP Server</a>).</li>
+<li><strong>Open-Source Communities</strong> – Millions of volunteer programmers around the world have contributed to free and open-source software. From scripting languages like Perl and Python, to web browsers like Mozilla Firefox, to entire operating systems and databases, these communities have proven that transparent, collaborative development can out-innovate traditional models. This very website, like much of the web, runs on open-source components – a testament to the collective effort of countless unnamed contributors who share their code for the benefit of all.</li>
+</ul>
+<h2 id="modern-web-era">Modern Web Era</h2>
+<p>Finally, we arrive at the modern era, where computing became ubiquitous. Building on all previous innovations, the Internet and the Web transformed how we communicate, work, and live. We pay tribute to key figures and milestones of the Web age:</p>
+<ul>
+<li><strong>Tim Berners-Lee (1955–)</strong> – Invented the World Wide Web in 1989 while at CERN, defining the HTTP protocol and HTML language that allowed internet-linked documents to be shared and viewed in a browser. By 1991 he had the first web server and web page online, and instead of patenting his invention, Berners-Lee released the Web protocols freely – unleashing a global information revolution (<a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a>).</li>
+<li><strong>Marc Andreessen (1971–)</strong> – Co-authored Mosaic in 1993 at the University of Illinois, the first widely used graphical web browser. He later co-founded Netscape Communications, whose Navigator browser helped popularize the Web in the 1990s. Andreessen’s work made the Web accessible to ordinary users, catalyzing the dot-com boom and the modern online culture (<a href="https://en.wikipedia.org/wiki/Mosaic_(web_browser)">Mosaic (web browser)</a>).</li>
+<li><strong>Larry Page (1973–) and Sergey Brin (1973–)</strong> – Co-founders of Google, who in 1998 introduced a revolutionary search engine using the PageRank algorithm to rank pages by relevance. Google transformed how we find information, essentially becoming the navigational backbone of the web, and pioneered online advertising models that helped information (like this site) remain freely accessible (<a href="https://en.wikipedia.org/wiki/Google">Google</a>).</li>
+<li><strong>Jimmy Wales (1966–) and Larry Sanger (1968–)</strong> – Founders of Wikipedia (launched 2001), the free online encyclopedia that anyone can edit. While not software pioneers in the traditional sense, their work epitomizes the Web’s collaborative potential. Wikipedia leveraged wiki software and the openness ethos to assemble millions of articles – an astonishing feat of collective knowledge-sharing that exemplifies the spirit of the web era (<a href="https://en.wikipedia.org/wiki/Wikipedia">Wikipedia</a>).</li>
+<li><strong>Steve Jobs (1955–2011)</strong> – As Apple’s co-founder and CEO, he led the creation of the iPhone (introduced 2007) and its App Store, which redefined personal computing and telecommunications. The iPhone put the power of a desktop computer into a mobile device for the first time, ushering in the age of smartphones and ubiquitous computing. Jobs’s relentless focus on user-centered design and innovation has left an indelible mark on the way we interact with technology (<a href="https://en.wikipedia.org/wiki/Steve_Jobs">Steve Jobs</a>).</li>
+</ul>
+<p><em>(Many other worthy names and milestones exist – from advances in cybersecurity and artificial intelligence, to the rise of cloud computing and social media – but sadly not all can be listed here. Every new chapter of tech builds on the last, and the story continues.)</em></p>
+<h2 id="infrastructure-and-development-tools">Infrastructure and Development Tools</h2>
+<p>I am also grateful for the infrastructure and tools that make a website like this possible. This site, like so many others, runs on open-source foundations: the Linux operating system powering the server, web servers such as Apache and Nginx delivering content via open protocols, and the open standards (HTML, CSS, JavaScript) that ensure any browser can display these pages. Readily available programming languages (like Python and JavaScript) and countless libraries and frameworks empower developers to turn ideas into reality with relative ease (<a href="https://www.python.org/">Python</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>).</p>
+<p>Equally important are the developer tools and communities that support modern creation. Tools like Git for version control (and platforms built on it, such as GitHub) enable global collaboration on code (<a href="https://git-scm.com/">Git</a>, <a href="https://github.com/">GitHub</a>). Package managers, build tools, and testing frameworks (largely open-source themselves) make complex development manageable. And the vast ecosystem of knowledge-sharing – from official documentation to Q&amp;A communities like Stack Overflow – means that solutions to problems are often just a web search away (<a href="https://stackoverflow.com/">Stack Overflow</a>). Without this rich, shared infrastructure of software and information, a personal project like this would be immeasurably more difficult. I owe thanks to the maintainers, documenters, and fellow developers who contribute to these tools and communities every day.</p>
+<h2 id="reflection-on-interdependence">Reflection on Interdependence</h2>
+<p>As I reflect on this history, I’m humbled by how interconnected and cumulative technological progress is. Each generation of technologists builds upon the last, often in ways the original pioneers could never have anticipated. I recognize that any code I write or project I create today is only possible because of the tools, knowledge, and inspiration provided by others. In computing – as in all human endeavor – we achieve what we do by building on foundations laid by those who came before us.</p>
+<blockquote>
+<p>“If I have seen further it is by standing on the shoulders of Giants.” — Isaac Newton</p>
+</blockquote>
+<h2 id="colophon">Colophon</h2>
+<p>This website was lovingly crafted by a human being who believes in the power of the open web. It's built with care, attention to detail, and respect for both the medium and the audience.</p>
+<p>If you're inspired to create your own corner of the small web, I encourage you to start today. The web needs more voices like yours.</p>
+<p><strong>Last updated:</strong> 2025-06-01T15:07:17.520Z</p>
+
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<em><a href="/eleventy-base-blog/readme">README.md</a></em>
+		</footer>
+
+		<!-- This page `/readme/` was built on 2025-06-01T15:07:17.558Z -->
+		<script type="module" src="/eleventy-base-blog/dist/xbxy_EL6cU.js"></script>
+	</body>
+</html>

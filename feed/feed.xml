@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>James Blog</title>
+  <subtitle>I write, therefore I exist.</subtitle>
+  <link href="https://jpain.io/eleventy-base-blog/feed/feed.xml" rel="self" />
+  <link href="https://jpain.io/eleventy-base-blog/" />
+  <updated>2025-02-21T00:00:00Z</updated>
+  <id>https://jpain.io/eleventy-base-blog/</id>
+  <author>
+    <name>James Pain</name>
+  </author>
+  <entry>
+    <title>Does Size Matter: The Rise of Smarter AI Models</title>
+    <link href="https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/" />
+    <updated>2025-02-21T00:00:00Z</updated>
+    <id>https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/</id>
+    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/OOEDJlhFNN-1792.avif 1792w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/OOEDJlhFNN-1792.webp 1792w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/OOEDJlhFNN-1792.jpeg&quot; alt=&quot;An elephant and an ant carrying a leaf&quot; width=&quot;1792&quot; height=&quot;1024&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;For years now, everyone in AI has been obsessed with one thing: making models bigger. More parameters, more compute, more everything. And honestly? It&#39;s been working pretty well for companies like NVIDIA and TSMC - their stock prices certainly aren&#39;t complaining.&lt;/p&gt;
+&lt;p&gt;But here&#39;s the thing - I think we&#39;re hitting a wall.&lt;/p&gt;
+&lt;p&gt;I&#39;ve been following the development of models like DeepSeek-R1, and it&#39;s kind of blowing my mind. These smaller, scrappier models are going toe-to-toe with the big boys, and they&#39;re doing it on a fraction of the budget. It&#39;s making me wonder if we&#39;ve been thinking about this whole thing wrong.&lt;/p&gt;
+&lt;p&gt;So I&#39;ve been digging into this paper about something called &amp;quot;Recurrent Depth&amp;quot; (yeah, I know, another buzzword), but stick with me here because I think this might actually be important. What if instead of just throwing more silicon at the problem, we could make our models... think harder?&lt;/p&gt;
+&lt;p&gt;The paper I&#39;m talking about is &lt;a href=&quot;https://arxiv.org/html/2502.05171v2&quot;&gt;this one on arXiv&lt;/a&gt; - catchy title, right? &amp;quot;Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach.&amp;quot; But the idea is actually pretty cool. Instead of just making models bigger (more layers, more parameters, more of everything), what if we could make them think deeper by... wait for it... using the same layers multiple times?&lt;/p&gt;
+&lt;p&gt;They call it Recurrent Depth, and it&#39;s not the same as that chain-of-thought stuff you might have seen where the model writes out its reasoning step by step. This is happening under the hood - the model basically decides &amp;quot;hmm, this is a tough one, let me run through my neural pathways a few more times before I answer.&amp;quot;&lt;/p&gt;
+&lt;p&gt;What gets me excited about this is that it fits perfectly with where I think AI needs to go. I want models that can run on my laptop, maybe even my phone eventually, but still be smart enough to actually help me think through problems. Not everything needs a data center.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;so-what-actually-is-this-recurrent-depth-thing&quot;&gt;So What Actually Is This Recurrent Depth Thing?&lt;/h2&gt;
+&lt;p&gt;Okay, let me break this down without getting too technical (though I&#39;ll probably fail at that).&lt;/p&gt;
+&lt;p&gt;Normally, when you ask an LLM a question, it goes through its layers once - layer 1, layer 2, layer 3... all the way to the end, then spits out an answer. Whether you&#39;re asking &amp;quot;What&#39;s 2+2?&amp;quot; or &amp;quot;Explain quantum mechanics,&amp;quot; it&#39;s the same journey through the same number of layers.&lt;/p&gt;
+&lt;p&gt;What these researchers did was basically say: &amp;quot;What if we could loop back?&amp;quot; Like, what if after going through all the layers, the model could say &amp;quot;Actually, let me think about this again&amp;quot; and run through some of those layers multiple times?&lt;/p&gt;
+&lt;p&gt;And here&#39;s where it gets different from other tricks people have tried:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It&#39;s not like MoE (Mixture of Experts) where you&#39;re basically turning on different parts of the model for different tasks&lt;/li&gt;
+&lt;li&gt;It&#39;s not just giving the model more context to work with&lt;/li&gt;
+&lt;li&gt;It&#39;s literally letting the model decide how hard it needs to think about something&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of course, they ran into problems. Turns out (shocker) that training a model to work one way and then expecting it to work differently at test time... doesn&#39;t work great. They also realized that making every query go through multiple iterations was wasteful - you don&#39;t need deep philosophical contemplation to answer &amp;quot;What color is the sky?&amp;quot;&lt;/p&gt;
+&lt;p&gt;So they had to get clever about training the model to handle different levels of &amp;quot;thinking depth&amp;quot; gracefully.&lt;/p&gt;
+&lt;p&gt;The drawing analogy actually helps here. You know how when you&#39;re sketching, you might do a quick outline for simple stuff, but for complex scenes you keep going back, adding layers, refining details? That&#39;s basically what this is. The model starts with a rough &amp;quot;sketch&amp;quot; of the answer and can choose to refine it based on how complex the question is.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;some-thoughts-and-questions-this-raises&quot;&gt;Some Thoughts and Questions This Raises&lt;/h2&gt;
+&lt;p&gt;Look, I don&#39;t build models myself (I just use them and think about them way too much), but this paper got me thinking about a bunch of stuff:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Could we combine this with other efficiency tricks?&lt;/strong&gt; Like, what if you had a model that uses both this recurrent depth thing AND mixture of experts? The paper doesn&#39;t really go there, which surprises me. Seems like the obvious next step would be to throw everything at the wall and see what sticks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How do we teach models to figure out their own thinking depth?&lt;/strong&gt; Right now, you have to manually tell the model &amp;quot;okay, think about this 3 times&amp;quot; or whatever. But couldn&#39;t we train a tiny model - like those embedding models that are super fast - to look at a query and go &amp;quot;yeah, this needs about 5 iterations of thinking&amp;quot;? It&#39;d be like sentiment analysis, but for complexity assessment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Are companies actually going to use this?&lt;/strong&gt; I mean, they kind of have to at some point, right? We can&#39;t just keep making models bigger forever. There literally isn&#39;t enough memory in the world. Some companies will probably try to squeeze out one or two more generations of mega-models, but I think the smart money is on efficiency.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What about latency though?&lt;/strong&gt; This is the big one for me. Some models like Gemini Flash are all about speed - boom, instant response. But what if we could be clever about it? Imagine having a fast model that immediately goes &amp;quot;Great question! Let me think about that...&amp;quot; while a deeper-thinking model churns away in the background. It&#39;d feel way more natural than either waiting forever OR getting an instant but potentially shallow response.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;why-i-think-this-actually-matters&quot;&gt;Why I Think This Actually Matters&lt;/h2&gt;
+&lt;p&gt;Here&#39;s my take: the future of AI isn&#39;t about who can build the biggest model. It&#39;s about who can build the smartest, most efficient one. And I&#39;m not just saying that because I want to run models on my laptop (though I definitely do).&lt;/p&gt;
+&lt;p&gt;Think about it - if we want AI to be truly integrated into our daily lives, it can&#39;t always be phoning home to some massive data center. Your phone&#39;s AI assistant shouldn&#39;t need an internet connection to help you think through a problem. Your laptop should be able to run a model that&#39;s actually useful for coding or writing without melting through your desk.&lt;/p&gt;
+&lt;p&gt;That&#39;s why I&#39;m putting my money where my mouth is. I&#39;m investing in beefy local hardware not just to run existing models, but to experiment with what&#39;s possible when you have powerful, efficient AI that&#39;s always available. No API limits, no internet required, just you and your digital thinking partner.&lt;/p&gt;
+&lt;p&gt;The sustainability angle is huge too. We can&#39;t keep building bigger and bigger data centers forever. At some point (and I think we&#39;re getting close), the environmental and economic costs just won&#39;t make sense. Techniques like Recurrent Depth aren&#39;t just cool research - they&#39;re necessary for AI to have a future that doesn&#39;t involve burning through the planet&#39;s resources.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Look, I know there&#39;s a ton of AI hype out there, and honestly, most of it is noise. But this feels different. This feels like the kind of fundamental shift in thinking that could actually change things. Not overnight, but give it a few years and I bet we&#39;ll look back at the &amp;quot;just make it bigger&amp;quot; era and laugh.&lt;/p&gt;
+&lt;p&gt;What do you think? Am I being too optimistic about local AI? Have you played with any of the smaller models that are punching above their weight? I&#39;d love to hear your thoughts - hit me up on &lt;a href=&quot;https://www.linkedin.com/in/jpainio/&quot;&gt;LinkedIn&lt;/a&gt; if you want to chat about this stuff.&lt;/p&gt;
+&lt;p&gt;P.S. - If you&#39;re from OpenAI or Anthropic and you&#39;re reading this... please consider efficiency in your next models? My electricity bill will thank you.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>How We Built Home Health - An AI-Powered Web App for Home Improvement</title>
+    <link href="https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/" />
+    <updated>2025-02-01T00:00:00Z</updated>
+    <id>https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/</id>
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/content/blog/20250201-building-home-health/home-health-blog-header.jpg&quot; alt=&quot;Home Health Blog Header&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This story starts, like many good ideas, with a bit of curiosity and a product manager messing around with ChatGPT. They decided to see if AI could come up with job recommendations just by feeding it photos of his house. Turns out, it could. And that little experiment set us off on the journey of building &lt;em&gt;&lt;a href=&quot;https://homehealth.checkatrade.com/&quot;&gt;Home Health&lt;/a&gt;&lt;/em&gt;—a web app where homeowners upload photos of their homes and get back a detailed report with improvement suggestions.&lt;/p&gt;
+&lt;p&gt;I was pretty sceptical about using generative AI for something like this. But this project surprised me. It wasn&#39;t just about slapping AI onto a problem and hoping for the best—we had to figure out how to make it work, where it fell short, and when to trust it (and when not to). This blog is a look at how we built this thing, the problems we ran into, how I learned to work with AI agents, and why I&#39;m actually proud of how it turned out.&lt;/p&gt;
+&lt;h2 id=&quot;the-spark-from-idea-to-prototype&quot;&gt;The Spark: From Idea to Prototype&lt;/h2&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/7CNzplmFvs-1242.avif 1242w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/7CNzplmFvs-1242.webp 1242w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/7CNzplmFvs-1242.png&quot; alt=&quot;The first AI Generated prototype&quot; width=&quot;1242&quot; height=&quot;968&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;The whole idea for &lt;em&gt;Home Health&lt;/em&gt; came from Jamie, our product manager, who&#39;s been at Checkatrade longer than I&#39;ve had the patience to count and knows how to spot a good opportunity. His goal was simple: inspire homeowners to post more jobs on Checkatrade. More jobs mean more work for our tradespeople. Initially, he thought about adding a blog or a kind of digital magazine to the Checkatrade app—something homeowners could flip through for ideas, like &amp;quot;maybe it&#39;s time for that new kitchen&amp;quot; or &amp;quot;I should finally fix that noisy bathroom fan.&amp;quot;&lt;/p&gt;
+&lt;p&gt;But then Jamie, being the curious type, wondered if generative AI could do better. Inspired by recent advancements in ChatGPT, he uploaded photos of his house and asked it to generate a home improvement report. The results were surprisingly good. The AI returned suggestions written in a way that felt like they were tailored for a real homeowner—practical, specific, and, most importantly, inspiring. That&#39;s when he looped me in.&lt;/p&gt;
+&lt;p&gt;At the time, we were just kicking off &lt;em&gt;Checkatrade Labs&lt;/em&gt;, a small, fast-paced R&amp;amp;D team focused on rapid prototyping and launching experimental projects. This was our first big test. Jamie approached me in late November with a simple request: &amp;quot;Let&#39;s launch this before Christmas.&amp;quot; That gave me about three weeks—on top of my full-time commitment to another major project called &lt;em&gt;&lt;a href=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/how-we-decommissioned-heritage-without-toppling-the-tower&quot;&gt;Heritage Switch Off&lt;/a&gt;&lt;/em&gt;. So, with no time during work hours, I rolled up my sleeves and started building in the evenings and weekends.&lt;/p&gt;
+&lt;h2 id=&quot;prototyping-with-retool&quot;&gt;Prototyping with Retool&lt;/h2&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/48419TQ9Zl-875.avif 875w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/48419TQ9Zl-875.webp 875w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/48419TQ9Zl-875.png&quot; alt=&quot;Early Retool Proof of Concept&quot; width=&quot;875&quot; height=&quot;627&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;I hadn&#39;t built a front-end app in a while, so I reached for something that would let me move fast: &lt;a href=&quot;https://retool.com/&quot;&gt;Retool&lt;/a&gt;. It had just been procured at Checkatrade and was gaining traction internally. I hadn&#39;t used it for anything serious before, but it seemed like a good fit for quick prototyping—drag-and-drop components, an embedded database, and, most importantly, built-in AI integration. I figured I could slap together a working prototype in a few days.&lt;/p&gt;
+&lt;p&gt;And I did. But it wasn&#39;t without its headaches.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Pros:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Speed:&lt;/strong&gt; Retool let me get an internal version of the app up and running quickly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Built-in AI Integration:&lt;/strong&gt; I didn&#39;t need to mess around with API endpoints—AI tools were already baked in.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ease of Use:&lt;/strong&gt; The drag-and-drop interface made it easy to visualize and tweak the UI.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The Cons:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Performance Issues:&lt;/strong&gt; The app slowed down significantly when users uploaded high-quality images. Retool stores images in the browser as base64, and once you hit 10+ photos, things got sluggish fast.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;File Upload Limitations:&lt;/strong&gt; The default file upload component didn&#39;t support mobile camera input, which was a problem.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI Response Formatting:&lt;/strong&gt; Retool didn&#39;t support OpenAI&#39;s JSON response format natively, so I had to craft prompts carefully and write functions to strip out non-JSON text.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Slow Workflows:&lt;/strong&gt; The AI-generated reports took over two minutes to process, causing timeouts and failed generations. I had to add a retry button to handle these issues.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/1y358dHe2W-682.avif 682w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/1y358dHe2W-682.webp 682w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/1y358dHe2W-682.png&quot; alt=&quot;The Retool version released internally&quot; width=&quot;682&quot; height=&quot;1158&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Despite the challenges, we released the prototype internally before Christmas. It wasn&#39;t perfect, but it worked. And more importantly, it proved the concept. People at Checkatrade loved it, sharing their reports and comparing home scores like it was a game.&lt;/p&gt;
+&lt;h2 id=&quot;transitioning-to-a-full-fledged-web-app&quot;&gt;Transitioning to a Full-Fledged Web App&lt;/h2&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/WKyPQPGvfN-2048.avif 2048w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/WKyPQPGvfN-2048.webp 2048w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/WKyPQPGvfN-2048.png&quot; alt=&quot;Using Cline to make the app&quot; width=&quot;2048&quot; height=&quot;1280&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Once the internal prototype was a hit, it was clear we needed to rebuild it for public release. Retool was great for prototyping, but it wasn&#39;t reliable or performant enough for a wider audience.&lt;/p&gt;
+&lt;p&gt;Here&#39;s the thing: I hadn&#39;t built a proper web app in years. But instead of spending weeks refreshing my React skills, I let AI do the heavy lifting. I used &lt;a href=&quot;https://www.anthropic.com/claude&quot;&gt;Anthropic&#39;s Claude&lt;/a&gt; through a VS Code extension called &lt;a href=&quot;https://github.com/cline/cline&quot;&gt;Cline&lt;/a&gt; to bootstrap the project. I gave it a simple prompt: &amp;quot;Build me a web app like this Retool prototype.&amp;quot; And it did.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Stack:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;React with Tailwind CSS:&lt;/strong&gt; Clean, responsive UI.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Next.js:&lt;/strong&gt; For easy routing and server-side rendering.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;shadcn UI components:&lt;/strong&gt; Polished, pre-built components that made everything look professional without much effort.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I was skeptical about going with the typical React/Next.js stack—I usually like finding simpler, less mainstream solutions. But the AI agents knew this stack inside out, and the wealth of online resources made troubleshooting a breeze. Plus, I wasn&#39;t flying blind. The Retool prototype served as a template, so the AI agents could recreate the app in Next.js without starting from scratch.&lt;/p&gt;
+&lt;p&gt;Deploying was straightforward. I set up a GitHub repo, added GitHub Actions for CI/CD, and deployed to Google App Engine (though in hindsight, I might have preferred Cloud Run). The whole process was smooth, and the performance boost compared to Retool was night and day.&lt;/p&gt;
+&lt;h2 id=&quot;integrating-generative-ai-for-image-recognition&quot;&gt;Integrating Generative AI for Image Recognition&lt;/h2&gt;
+&lt;p&gt;Getting the AI to analyse photos and generate useful recommendations was a challenge. Early on, we tried stuffing too much into a single prompt—asking the AI to describe the room, identify issues, suggest improvements, recommend trades, and estimate costs all at once. The results were… not great. The AI would often default to examples from the prompt, especially when the photo lacked clear information (like a black image).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Solution:&lt;/strong&gt; I broke the process into multiple steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Room Identification:&lt;/strong&gt; &amp;quot;What room is this? Describe it.&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Issue Detection:&lt;/strong&gt; &amp;quot;What home improvement issues can you spot in this photo?&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Job Formatting:&lt;/strong&gt; Turn the identified issues into job recommendations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trade Categorization:&lt;/strong&gt; Match each job with the appropriate trade category.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Splitting the tasks made the AI&#39;s job easier and improved accuracy. It also let us use lighter, cheaper models like &lt;a href=&quot;https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/&quot;&gt;GPT-4o Mini&lt;/a&gt;, which cut down costs and sped up processing.&lt;/p&gt;
+&lt;p&gt;I did, at one point, pitch the idea of building our own computer vision model—one trained specifically on home improvement issues. Imagine an AI that could tell if your boiler&#39;s outdated or if there&#39;s damp in your ceiling. But time and budget constraints made that a &amp;quot;maybe someday&amp;quot; idea. For now, the generative AI solution works well enough, especially for a free tool.&lt;/p&gt;
+&lt;p&gt;Interestingly, the most expensive part of the project wasn&#39;t the AI. It was the address lookup feature. We needed Unique Property Reference Numbers (UPRNs) to pull data from Chimney, a third-party service that provides detailed property information (build year, roof type, property value, etc.). Standard services like Google Autocomplete didn&#39;t provide UPRNs, so we used &lt;a href=&quot;https://ideal-postcodes.co.uk/&quot;&gt;Ideal Postcodes&lt;/a&gt;, which charges up to 15 pence per query for comprehensive data—the biggest cost in the project.&lt;/p&gt;
+&lt;h2 id=&quot;launching-home-health-and-gathering-feedback&quot;&gt;Launching Home Health and Gathering Feedback&lt;/h2&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/5-j0X101e8-1612.avif 1612w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/5-j0X101e8-1612.webp 1612w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/5-j0X101e8-1612.jpeg&quot; alt=&quot;The Header of the Home Health app&quot; width=&quot;1612&quot; height=&quot;1285&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;We&#39;re publicly rolling out &lt;em&gt;Home Health&lt;/em&gt; gradually through email campaigns in small batches. It&#39;s currently still in its gradual rollout phase.&lt;/p&gt;
+&lt;p&gt;Internally at Checkatrade, it&#39;s been a hit. People love comparing their home scores (we included a fun, credit-score-like rating in the report), and it&#39;s sparked a lot of engagement. We&#39;re excited to see how the public reacts as we continue the rollout.&lt;/p&gt;
+&lt;h2 id=&quot;lessons-learned-and-future-directions&quot;&gt;Lessons Learned and Future Directions&lt;/h2&gt;
+&lt;p&gt;The biggest lesson? AI agents can build a web app faster than I expected—especially when they&#39;re working within familiar frameworks. If I could do it over, I&#39;d skip Retool and go straight to Next.js. Not because Retool was bad, but because the AI tools I used made building a full-fledged app just as fast (and far more performant).&lt;/p&gt;
+&lt;p&gt;I learned a lot about working with AI agents. Using Cline in VS Code, I supervised every change, giving real-time feedback. It felt like pair programming, but with an AI. I also experimented with Devin, a cloud-hosted AI agent that worked independently. While having multiple agents running in parallel sounded great, reviewing their pull requests was a nightmare—they&#39;d often drift from the original task, and understanding their logic after the fact was time-consuming. I&#39;m curious to explore multi-agent systems further, maybe even building my own with distinct roles (developer, project manager, QA tester) to keep things on track.&lt;/p&gt;
+&lt;p&gt;As for &lt;em&gt;Home Health&lt;/em&gt;, the next logical step is developing a custom computer vision model. The current AI setup works, but I&#39;d love to see it get better at recognizing specific home issues—things like cracks in tiles, outdated boilers, or subtle signs of damp. But for now, I&#39;m proud of where the app stands.&lt;/p&gt;
+&lt;h2 id=&quot;advice-for-aspiring-ai-driven-web-app-builders&quot;&gt;Advice for Aspiring AI-Driven Web App Builders&lt;/h2&gt;
+&lt;p&gt;The best thing we did was validate the concept early. Jamie didn&#39;t wait for a fancy tool or a big team—he just used ChatGPT to see if the idea had legs. And that&#39;s my advice to anyone looking to build with AI: just use it. Don&#39;t overthink it. Experiment, break things, see what works. Generative AI isn&#39;t some mysterious black box—it&#39;s a tool. And the best way to understand what it can do is to put it to work.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Home Health&lt;/em&gt; started as an experiment and turned into something I&#39;m genuinely proud of. It&#39;s not perfect (and I&#39;ll always have ideas for making it better), but seeing it go from Jamie&#39;s ChatGPT test to a live app people are using is pretty rewarding. The biggest thing I&#39;ve learned? AI is a lot more useful when you stop theorizing about what it &lt;em&gt;might&lt;/em&gt; do and actually put it to work. Sure, it&#39;s not always right, and it&#39;ll happily hallucinate its way through a prompt if you let it—but with the right setup, it can speed things up in ways I didn&#39;t expect.&lt;/p&gt;
+&lt;p&gt;For anyone thinking about building AI-driven apps, my advice is simple: just start. Experiment, validate your ideas with accessible tools, and don&#39;t be afraid to let AI help you learn and build. This project taught me that you don&#39;t need some grand plan or perfect process—you just need to start. And who knows? You might end up building something cool along the way.&lt;/p&gt;
+&lt;p&gt;You can use Home Health right now at &lt;a href=&quot;https://homehealth.checkatrade.com/&quot;&gt;homehealth.checkatrade.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you&#39;ve got thoughts, questions, or just want to compare home scores, drop me a line. I&#39;m always up for a chat about this stuff.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>This is my fourth post</title>
+    <link href="https://jpain.io/eleventy-base-blog/blog/fourthpost/" />
+    <updated>2018-09-30T00:00:00Z</updated>
+    <id>https://jpain.io/eleventy-base-blog/blog/fourthpost/</id>
+    <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
+&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/fourthpost/xbVnp_hAou-350.avif 350w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/fourthpost/xbVnp_hAou-350.webp 350w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/fourthpost/xbVnp_hAou-350.png&quot; alt=&quot;A possum parent and two possum kids hanging from the iconic red balloon&quot; width=&quot;350&quot; height=&quot;685&quot;&gt;&lt;/picture&gt;
+&lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
+&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>This is my third post.</title>
+    <link href="https://jpain.io/eleventy-base-blog/blog/thirdpost/" />
+    <updated>2018-08-24T00:00:00Z</updated>
+    <id>https://jpain.io/eleventy-base-blog/blog/thirdpost/</id>
+    <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+&lt;h3 id=&quot;this-is-a-very-long-heading-that-i-want-to-wrap-this-is-a-very-long-heading-that-i-want-to-wrap-this-is-a-very-long-heading-that-i-want-to-wrap-this-is-a-very-long-heading-that-i-want-to-wrap&quot;&gt;This is a very long heading that I want to wrap This is a very long heading that I want to wrap This is a very long heading that I want to wrap This is a very long heading that I want to wrap&lt;/h3&gt;
+&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// this is a command&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myCommand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	counter&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;heading-with-a-link&quot;&gt;Heading with a &lt;a href=&quot;https://jpain.io/eleventy-base-blog/blog/thirdpost/#code&quot;&gt;link&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// this is a command
+function myCommand() {
+	let counter = 0;
+	counter++;
+}
+
+// Test with a line break above this line.
+console.log(&#39;Test&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
+&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>This is my second post with a much longer title.</title>
+    <link href="https://jpain.io/eleventy-base-blog/blog/secondpost/" />
+    <updated>2018-07-04T00:00:00Z</updated>
+    <id>https://jpain.io/eleventy-base-blog/blog/secondpost/</id>
+    <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
+&lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://jpain.io/eleventy-base-blog/blog/firstpost/&quot;&gt;First post&lt;/a&gt;
+&lt;a href=&quot;https://jpain.io/eleventy-base-blog/blog/thirdpost/&quot;&gt;Third post&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
+&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>This is my first post.</title>
+    <link href="https://jpain.io/eleventy-base-blog/blog/firstpost/" />
+    <updated>2018-05-01T00:00:00Z</updated>
+    <id>https://jpain.io/eleventy-base-blog/blog/firstpost/</id>
+    <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
+&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
+&lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
+&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+&lt;pre class=&quot;language-diff-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-diff-js&quot;&gt; // this is a command
+ function myCommand() {
++  let counter = 0;
+-  let counter = 1;
+   counter++;
+ }
+
+ // Test with a line break above this line.
+ console.log(&#39;Test&#39;);&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+</feed>

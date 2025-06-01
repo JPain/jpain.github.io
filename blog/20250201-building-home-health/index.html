@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>How We Built Home Health - An AI-Powered Web App for Home Improvement</title>
+		<meta name="description" content="The story of building Home Health, a web app where homeowners upload photos and get AI-powered home improvement suggestions. From ChatGPT experiment to production app.">
+		<meta name="color-scheme" content="light dark">
+		<meta name="theme-color" content="#04143a">
+		<meta property="og:title" content="How We Built Home Health - An AI-Powered Web App for Home Improvement">
+		<meta property="og:description" content="The story of building Home Health, a web app where homeowners upload photos and get AI-powered home improvement suggestions. From ChatGPT experiment to production app.">
+		<meta property="og:type" content="article">
+		<meta property="og:url" content="https://jpain.io/blog/20250201-building-home-health/">
+		<meta property="og:site_name" content="James Blog">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="How We Built Home Health - An AI-Powered Web App for Home Improvement">
+		<meta name="twitter:description" content="The story of building Home Health, a web app where homeowners upload photos and get AI-powered home improvement suggestions. From ChatGPT experiment to production app.">
+		
+		<link rel="alternate" href="/eleventy-base-blog/feed/feed.xml" type="application/atom+xml" title="James Blog">
+		<link rel="canonical" href="https://jpain.io/blog/20250201-building-home-health/">
+		<link rel="icon" type="image/x-icon" href="/eleventy-base-blog/favicon.ico">
+		<link rel="icon" type="image/png" sizes="16x16" href="/eleventy-base-blog/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/eleventy-base-blog/favicon-32x32.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/eleventy-base-blog/apple-touch-icon.png">
+		<link rel="manifest" href="/eleventy-base-blog/site.webmanifest">
+		
+		
+		<style>:root {
+  --width: 800px;
+  --font-scale: 1em;
+  --background-color: #fff;
+  --tangaroa: #04143a; /* Heading color */
+  --light-slate-gray: #2f3743; /* Text color - darkened for better readability */
+  --havelock-blue: #468ee5; /* Link color */
+  --visited-color: #8b6fcb;
+  --code-background-color: #f2f2f2;
+  --code-color: #04143a; /* Matching heading color */
+  --blockquote-color: #04143a;
+  --link-water: #dbe9fa; /* Light background color */
+  --light-gray: #eee;
+}
+
+/* Reset and base styles */
+html,
+body {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: monospace;
+  font-size: var(--font-scale);
+  margin: auto;
+  padding: 0;
+  max-width: var(--width);
+  text-align: left;
+  background-color: var(--background-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: var(--light-slate-gray);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: monospace;
+  color: var(--tangaroa);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+p {
+  margin-block-start: 1.5em;
+  margin-block-end: 1.5em;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: var(--havelock-blue);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--visited-color);
+}
+
+/* Strong/bold text */
+strong,
+b {
+  color: var(--tangaroa);
+}
+
+/* Time elements */
+time {
+  font-family: monospace;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--light-slate-gray);
+}
+
+/* Main content area */
+main {
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+table td,
+table th {
+  padding: 0.5em;
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* Horizontal rules */
+hr {
+  border: 0;
+  border-top: 1px dashed var(--light-gray);
+  margin: 2em 0;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Code styling */
+code {
+  font-family: monospace;
+  padding: 2px 4px;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: 1em;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  border-radius: 3px;
+  margin: 1em 0;
+  overflow-x: auto;
+  line-height: 1.4;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 3px solid var(--light-gray);
+  color: var(--code-color);
+  padding-left: 20px;
+  margin-left: 0;
+  font-style: italic;
+}
+
+/* Header & navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-color: var(--light-gray);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-bottom: 4rem;
+  padding: 1rem;
+}
+
+header a.home-link {
+  text-decoration: none;
+  font-size: 17px;
+  margin: 0;
+  font-family: monospace;
+  color: var(--tangaroa);
+  font-weight: bold;
+}
+
+header a.home-link:hover {
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+
+header nav a {
+  color: var(--light-slate-gray);
+  text-decoration: none;
+  font-family: monospace;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+header nav a[aria-current="page"] {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  font-size: 12px;
+  padding: 1rem 1rem;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin-top: 4rem;
+  color: var(--light-slate-gray);
+}
+
+footer a {
+  color: var(--light-slate-gray);
+}
+
+/* Blog post lists */
+.postlist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.postlist-item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1em;
+  gap: 1rem;
+}
+
+.postlist-date {
+  flex: 0 0 130px;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--light-slate-gray);
+}
+
+.postlist-link {
+  flex: 1;
+  font-family: monospace;
+  color: var(--havelock-blue);
+  text-decoration: underline;
+}
+
+.postlist-link:visited {
+  color: var(--visited-color);
+}
+
+/* Post metadata */
+.post-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Tags */
+.post-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 6px;
+  color: var(--havelock-blue);
+  background-color: var(--link-water);
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: monospace;
+}
+
+.post-tag:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* Skip link accessibility */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+#skip-link {
+  text-decoration: none;
+  background: var(--background-color);
+  color: var(--tangaroa);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--tangaroa);
+  border-radius: 3px;
+}
+
+#skip-link.visually-hidden:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 999;
+}
+
+/* Navigation between posts */
+.links-nextprev {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  border-top: 1px dashed var(--light-gray);
+  padding: 2rem 0 1rem;
+  margin: 2rem 0 0;
+}
+
+.links-nextprev > * {
+  flex-grow: 1;
+}
+
+.links-nextprev-next {
+  text-align: right;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 0 0.5rem;
+  }
+  
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  header nav {
+    justify-content: center;
+  }
+  
+  .postlist-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .postlist-date {
+    flex: none;
+  }
+}
+
+/* Syntax highlighting adjustments */
+.highlight,
+.code {
+  padding: 1em;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  border-radius: 3px;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+/* Hero section */
+section.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+section.hero h1.name {
+  font-size: 2.25em;
+  margin-bottom: 0.5rem;
+  color: var(--tangaroa);
+}
+
+section.hero ul.tags {
+  padding: 0;
+  list-style: none;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+section.hero ul.tags li.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  color: var(--havelock-blue);
+  background-color: var(--link-water);
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+section.hero p.bio {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+section.hero p.bio a {
+  color: var(--light-slate-gray);
+}
+
+/* Ensure proper spacing for first/last elements */
+main :first-child {
+  margin-top: 0;
+}
+
+main :last-child {
+  margin-bottom: 0;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/eleventy-base-blog/" class="home-link">James Blog</a>
+
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+					<a href="/eleventy-base-blog/blog/">/blog</a>
+					<a href="/eleventy-base-blog/feed/feed.xml">/rss</a>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+<h1 id="how-we-built-home-health-an-ai-powered-web-app-for-home-improvement">How We Built Home Health - An AI-Powered Web App for Home Improvement</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2025-02-01">01 February 2025</time></li>
+	<li><a href="/eleventy-base-blog/tags/ai/" class="post-tag">AI</a>, </li>
+	<li><a href="/eleventy-base-blog/tags/web-development/" class="post-tag">web development</a>, </li>
+	<li><a href="/eleventy-base-blog/tags/projects/" class="post-tag">projects</a>, </li>
+	<li><a href="/eleventy-base-blog/tags/react/" class="post-tag">React</a>, </li>
+	<li><a href="/eleventy-base-blog/tags/next-js/" class="post-tag">Next.js</a></li>
+</ul>
+
+<p><img src="content/blog/20250201-building-home-health/home-health-blog-header.jpg" alt="Home Health Blog Header"></p>
+<h2 id="introduction">Introduction</h2>
+<p>This story starts, like many good ideas, with a bit of curiosity and a product manager messing around with ChatGPT. They decided to see if AI could come up with job recommendations just by feeding it photos of his house. Turns out, it could. And that little experiment set us off on the journey of building <em><a href="https://homehealth.checkatrade.com/">Home Health</a></em>—a web app where homeowners upload photos of their homes and get back a detailed report with improvement suggestions.</p>
+<p>I was pretty sceptical about using generative AI for something like this. But this project surprised me. It wasn't just about slapping AI onto a problem and hoping for the best—we had to figure out how to make it work, where it fell short, and when to trust it (and when not to). This blog is a look at how we built this thing, the problems we ran into, how I learned to work with AI agents, and why I'm actually proud of how it turned out.</p>
+<h2 id="the-spark-from-idea-to-prototype">The Spark: From Idea to Prototype</h2>
+<p><picture><source type="image/avif" srcset="/eleventy-base-blog/blog/20250201-building-home-health/7CNzplmFvs-1242.avif 1242w"><source type="image/webp" srcset="/eleventy-base-blog/blog/20250201-building-home-health/7CNzplmFvs-1242.webp 1242w"><img loading="lazy" decoding="async" src="/eleventy-base-blog/blog/20250201-building-home-health/7CNzplmFvs-1242.png" alt="The first AI Generated prototype" width="1242" height="968"></picture></p>
+<p>The whole idea for <em>Home Health</em> came from Jamie, our product manager, who's been at Checkatrade longer than I've had the patience to count and knows how to spot a good opportunity. His goal was simple: inspire homeowners to post more jobs on Checkatrade. More jobs mean more work for our tradespeople. Initially, he thought about adding a blog or a kind of digital magazine to the Checkatrade app—something homeowners could flip through for ideas, like &quot;maybe it's time for that new kitchen&quot; or &quot;I should finally fix that noisy bathroom fan.&quot;</p>
+<p>But then Jamie, being the curious type, wondered if generative AI could do better. Inspired by recent advancements in ChatGPT, he uploaded photos of his house and asked it to generate a home improvement report. The results were surprisingly good. The AI returned suggestions written in a way that felt like they were tailored for a real homeowner—practical, specific, and, most importantly, inspiring. That's when he looped me in.</p>
+<p>At the time, we were just kicking off <em>Checkatrade Labs</em>, a small, fast-paced R&amp;D team focused on rapid prototyping and launching experimental projects. This was our first big test. Jamie approached me in late November with a simple request: &quot;Let's launch this before Christmas.&quot; That gave me about three weeks—on top of my full-time commitment to another major project called <em><a href="how-we-decommissioned-heritage-without-toppling-the-tower">Heritage Switch Off</a></em>. So, with no time during work hours, I rolled up my sleeves and started building in the evenings and weekends.</p>
+<h2 id="prototyping-with-retool">Prototyping with Retool</h2>
+<p><picture><source type="image/avif" srcset="/eleventy-base-blog/blog/20250201-building-home-health/48419TQ9Zl-875.avif 875w"><source type="image/webp" srcset="/eleventy-base-blog/blog/20250201-building-home-health/48419TQ9Zl-875.webp 875w"><img loading="lazy" decoding="async" src="/eleventy-base-blog/blog/20250201-building-home-health/48419TQ9Zl-875.png" alt="Early Retool Proof of Concept" width="875" height="627"></picture></p>
+<p>I hadn't built a front-end app in a while, so I reached for something that would let me move fast: <a href="https://retool.com/">Retool</a>. It had just been procured at Checkatrade and was gaining traction internally. I hadn't used it for anything serious before, but it seemed like a good fit for quick prototyping—drag-and-drop components, an embedded database, and, most importantly, built-in AI integration. I figured I could slap together a working prototype in a few days.</p>
+<p>And I did. But it wasn't without its headaches.</p>
+<p><strong>The Pros:</strong></p>
+<ul>
+<li><strong>Speed:</strong> Retool let me get an internal version of the app up and running quickly.</li>
+<li><strong>Built-in AI Integration:</strong> I didn't need to mess around with API endpoints—AI tools were already baked in.</li>
+<li><strong>Ease of Use:</strong> The drag-and-drop interface made it easy to visualize and tweak the UI.</li>
+</ul>
+<p><strong>The Cons:</strong></p>
+<ul>
+<li><strong>Performance Issues:</strong> The app slowed down significantly when users uploaded high-quality images. Retool stores images in the browser as base64, and once you hit 10+ photos, things got sluggish fast.</li>
+<li><strong>File Upload Limitations:</strong> The default file upload component didn't support mobile camera input, which was a problem.</li>
+<li><strong>AI Response Formatting:</strong> Retool didn't support OpenAI's JSON response format natively, so I had to craft prompts carefully and write functions to strip out non-JSON text.</li>
+<li><strong>Slow Workflows:</strong> The AI-generated reports took over two minutes to process, causing timeouts and failed generations. I had to add a retry button to handle these issues.</li>
+</ul>
+<p><picture><source type="image/avif" srcset="/eleventy-base-blog/blog/20250201-building-home-health/1y358dHe2W-682.avif 682w"><source type="image/webp" srcset="/eleventy-base-blog/blog/20250201-building-home-health/1y358dHe2W-682.webp 682w"><img loading="lazy" decoding="async" src="/eleventy-base-blog/blog/20250201-building-home-health/1y358dHe2W-682.png" alt="The Retool version released internally" width="682" height="1158"></picture></p>
+<p>Despite the challenges, we released the prototype internally before Christmas. It wasn't perfect, but it worked. And more importantly, it proved the concept. People at Checkatrade loved it, sharing their reports and comparing home scores like it was a game.</p>
+<h2 id="transitioning-to-a-full-fledged-web-app">Transitioning to a Full-Fledged Web App</h2>
+<p><picture><source type="image/avif" srcset="/eleventy-base-blog/blog/20250201-building-home-health/WKyPQPGvfN-2048.avif 2048w"><source type="image/webp" srcset="/eleventy-base-blog/blog/20250201-building-home-health/WKyPQPGvfN-2048.webp 2048w"><img loading="lazy" decoding="async" src="/eleventy-base-blog/blog/20250201-building-home-health/WKyPQPGvfN-2048.png" alt="Using Cline to make the app" width="2048" height="1280"></picture></p>
+<p>Once the internal prototype was a hit, it was clear we needed to rebuild it for public release. Retool was great for prototyping, but it wasn't reliable or performant enough for a wider audience.</p>
+<p>Here's the thing: I hadn't built a proper web app in years. But instead of spending weeks refreshing my React skills, I let AI do the heavy lifting. I used <a href="https://www.anthropic.com/claude">Anthropic's Claude</a> through a VS Code extension called <a href="https://github.com/cline/cline">Cline</a> to bootstrap the project. I gave it a simple prompt: &quot;Build me a web app like this Retool prototype.&quot; And it did.</p>
+<p><strong>The Stack:</strong></p>
+<ul>
+<li><strong>React with Tailwind CSS:</strong> Clean, responsive UI.</li>
+<li><strong>Next.js:</strong> For easy routing and server-side rendering.</li>
+<li><strong>shadcn UI components:</strong> Polished, pre-built components that made everything look professional without much effort.</li>
+</ul>
+<p>I was skeptical about going with the typical React/Next.js stack—I usually like finding simpler, less mainstream solutions. But the AI agents knew this stack inside out, and the wealth of online resources made troubleshooting a breeze. Plus, I wasn't flying blind. The Retool prototype served as a template, so the AI agents could recreate the app in Next.js without starting from scratch.</p>
+<p>Deploying was straightforward. I set up a GitHub repo, added GitHub Actions for CI/CD, and deployed to Google App Engine (though in hindsight, I might have preferred Cloud Run). The whole process was smooth, and the performance boost compared to Retool was night and day.</p>
+<h2 id="integrating-generative-ai-for-image-recognition">Integrating Generative AI for Image Recognition</h2>
+<p>Getting the AI to analyse photos and generate useful recommendations was a challenge. Early on, we tried stuffing too much into a single prompt—asking the AI to describe the room, identify issues, suggest improvements, recommend trades, and estimate costs all at once. The results were… not great. The AI would often default to examples from the prompt, especially when the photo lacked clear information (like a black image).</p>
+<p><strong>The Solution:</strong> I broke the process into multiple steps:</p>
+<ol>
+<li><strong>Room Identification:</strong> &quot;What room is this? Describe it.&quot;</li>
+<li><strong>Issue Detection:</strong> &quot;What home improvement issues can you spot in this photo?&quot;</li>
+<li><strong>Job Formatting:</strong> Turn the identified issues into job recommendations.</li>
+<li><strong>Trade Categorization:</strong> Match each job with the appropriate trade category.</li>
+</ol>
+<p>Splitting the tasks made the AI's job easier and improved accuracy. It also let us use lighter, cheaper models like <a href="https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/">GPT-4o Mini</a>, which cut down costs and sped up processing.</p>
+<p>I did, at one point, pitch the idea of building our own computer vision model—one trained specifically on home improvement issues. Imagine an AI that could tell if your boiler's outdated or if there's damp in your ceiling. But time and budget constraints made that a &quot;maybe someday&quot; idea. For now, the generative AI solution works well enough, especially for a free tool.</p>
+<p>Interestingly, the most expensive part of the project wasn't the AI. It was the address lookup feature. We needed Unique Property Reference Numbers (UPRNs) to pull data from Chimney, a third-party service that provides detailed property information (build year, roof type, property value, etc.). Standard services like Google Autocomplete didn't provide UPRNs, so we used <a href="https://ideal-postcodes.co.uk/">Ideal Postcodes</a>, which charges up to 15 pence per query for comprehensive data—the biggest cost in the project.</p>
+<h2 id="launching-home-health-and-gathering-feedback">Launching Home Health and Gathering Feedback</h2>
+<p><picture><source type="image/avif" srcset="/eleventy-base-blog/blog/20250201-building-home-health/5-j0X101e8-1612.avif 1612w"><source type="image/webp" srcset="/eleventy-base-blog/blog/20250201-building-home-health/5-j0X101e8-1612.webp 1612w"><img loading="lazy" decoding="async" src="/eleventy-base-blog/blog/20250201-building-home-health/5-j0X101e8-1612.jpeg" alt="The Header of the Home Health app" width="1612" height="1285"></picture></p>
+<p>We're publicly rolling out <em>Home Health</em> gradually through email campaigns in small batches. It's currently still in its gradual rollout phase.</p>
+<p>Internally at Checkatrade, it's been a hit. People love comparing their home scores (we included a fun, credit-score-like rating in the report), and it's sparked a lot of engagement. We're excited to see how the public reacts as we continue the rollout.</p>
+<h2 id="lessons-learned-and-future-directions">Lessons Learned and Future Directions</h2>
+<p>The biggest lesson? AI agents can build a web app faster than I expected—especially when they're working within familiar frameworks. If I could do it over, I'd skip Retool and go straight to Next.js. Not because Retool was bad, but because the AI tools I used made building a full-fledged app just as fast (and far more performant).</p>
+<p>I learned a lot about working with AI agents. Using Cline in VS Code, I supervised every change, giving real-time feedback. It felt like pair programming, but with an AI. I also experimented with Devin, a cloud-hosted AI agent that worked independently. While having multiple agents running in parallel sounded great, reviewing their pull requests was a nightmare—they'd often drift from the original task, and understanding their logic after the fact was time-consuming. I'm curious to explore multi-agent systems further, maybe even building my own with distinct roles (developer, project manager, QA tester) to keep things on track.</p>
+<p>As for <em>Home Health</em>, the next logical step is developing a custom computer vision model. The current AI setup works, but I'd love to see it get better at recognizing specific home issues—things like cracks in tiles, outdated boilers, or subtle signs of damp. But for now, I'm proud of where the app stands.</p>
+<h2 id="advice-for-aspiring-ai-driven-web-app-builders">Advice for Aspiring AI-Driven Web App Builders</h2>
+<p>The best thing we did was validate the concept early. Jamie didn't wait for a fancy tool or a big team—he just used ChatGPT to see if the idea had legs. And that's my advice to anyone looking to build with AI: just use it. Don't overthink it. Experiment, break things, see what works. Generative AI isn't some mysterious black box—it's a tool. And the best way to understand what it can do is to put it to work.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p><em>Home Health</em> started as an experiment and turned into something I'm genuinely proud of. It's not perfect (and I'll always have ideas for making it better), but seeing it go from Jamie's ChatGPT test to a live app people are using is pretty rewarding. The biggest thing I've learned? AI is a lot more useful when you stop theorizing about what it <em>might</em> do and actually put it to work. Sure, it's not always right, and it'll happily hallucinate its way through a prompt if you let it—but with the right setup, it can speed things up in ways I didn't expect.</p>
+<p>For anyone thinking about building AI-driven apps, my advice is simple: just start. Experiment, validate your ideas with accessible tools, and don't be afraid to let AI help you learn and build. This project taught me that you don't need some grand plan or perfect process—you just need to start. And who knows? You might end up building something cool along the way.</p>
+<p>You can use Home Health right now at <a href="https://homehealth.checkatrade.com/">homehealth.checkatrade.com</a></p>
+<p>If you've got thoughts, questions, or just want to compare home scores, drop me a line. I'm always up for a chat about this stuff.</p>
+
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/eleventy-base-blog/blog/fourthpost/">This is my fourth post</a></li><li class="links-nextprev-next">Next →<br><a href="/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/">Does Size Matter: The Rise of Smarter AI Models</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<em><a href="/eleventy-base-blog/readme">README.md</a></em>
+		</footer>
+
+		<!-- This page `/blog/20250201-building-home-health/` was built on 2025-06-01T15:07:17.559Z -->
+		<script type="module" src="/eleventy-base-blog/dist/xbxy_EL6cU.js"></script>
+	</body>
+</html>
