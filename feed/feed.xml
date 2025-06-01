@@ -3,19 +3,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title>James Blog</title>
   <subtitle>I write, therefore I exist.</subtitle>
-  <link href="https://jpain.io/eleventy-base-blog/feed/feed.xml" rel="self" />
-  <link href="https://jpain.io/eleventy-base-blog/" />
+  <link href="https://jpain.io/feed/feed.xml" rel="self" />
+  <link href="https://jpain.io/" />
   <updated>2025-02-21T00:00:00Z</updated>
-  <id>https://jpain.io/eleventy-base-blog/</id>
+  <id>https://jpain.io/</id>
   <author>
     <name>James Pain</name>
   </author>
   <entry>
     <title>Does Size Matter: The Rise of Smarter AI Models</title>
-    <link href="https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/" />
+    <link href="https://jpain.io/blog/20250221-does-size-matter-ai-models/" />
     <updated>2025-02-21T00:00:00Z</updated>
-    <id>https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/</id>
-    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/OOEDJlhFNN-1792.avif 1792w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/OOEDJlhFNN-1792.webp 1792w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250221-does-size-matter-ai-models/OOEDJlhFNN-1792.jpeg&quot; alt=&quot;An elephant and an ant carrying a leaf&quot; width=&quot;1792&quot; height=&quot;1024&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+    <id>https://jpain.io/blog/20250221-does-size-matter-ai-models/</id>
+    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/blog/20250221-does-size-matter-ai-models/OOEDJlhFNN-1792.avif 1792w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/blog/20250221-does-size-matter-ai-models/OOEDJlhFNN-1792.webp 1792w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/blog/20250221-does-size-matter-ai-models/OOEDJlhFNN-1792.jpeg&quot; alt=&quot;An elephant and an ant carrying a leaf&quot; width=&quot;1792&quot; height=&quot;1024&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;For years now, everyone in AI has been obsessed with one thing: making models bigger. More parameters, more compute, more everything. And honestly? It&#39;s been working pretty well for companies like NVIDIA and TSMC - their stock prices certainly aren&#39;t complaining.&lt;/p&gt;
 &lt;p&gt;But here&#39;s the thing - I think we&#39;re hitting a wall.&lt;/p&gt;
 &lt;p&gt;I&#39;ve been following the development of models like DeepSeek-R1, and it&#39;s kind of blowing my mind. These smaller, scrappier models are going toe-to-toe with the big boys, and they&#39;re doing it on a fraction of the budget. It&#39;s making me wonder if we&#39;ve been thinking about this whole thing wrong.&lt;/p&gt;
@@ -58,20 +58,20 @@
   </entry>
   <entry>
     <title>How We Built Home Health - An AI-Powered Web App for Home Improvement</title>
-    <link href="https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/" />
+    <link href="https://jpain.io/blog/20250201-building-home-health/" />
     <updated>2025-02-01T00:00:00Z</updated>
-    <id>https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/</id>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/content/blog/20250201-building-home-health/home-health-blog-header.jpg&quot; alt=&quot;Home Health Blog Header&quot;&gt;&lt;/p&gt;
+    <id>https://jpain.io/blog/20250201-building-home-health/</id>
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://jpain.io/blog/20250201-building-home-health/content/blog/20250201-building-home-health/home-health-blog-header.jpg&quot; alt=&quot;Home Health Blog Header&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This story starts, like many good ideas, with a bit of curiosity and a product manager messing around with ChatGPT. They decided to see if AI could come up with job recommendations just by feeding it photos of his house. Turns out, it could. And that little experiment set us off on the journey of building &lt;em&gt;&lt;a href=&quot;https://homehealth.checkatrade.com/&quot;&gt;Home Health&lt;/a&gt;&lt;/em&gt;—a web app where homeowners upload photos of their homes and get back a detailed report with improvement suggestions.&lt;/p&gt;
 &lt;p&gt;I was pretty sceptical about using generative AI for something like this. But this project surprised me. It wasn&#39;t just about slapping AI onto a problem and hoping for the best—we had to figure out how to make it work, where it fell short, and when to trust it (and when not to). This blog is a look at how we built this thing, the problems we ran into, how I learned to work with AI agents, and why I&#39;m actually proud of how it turned out.&lt;/p&gt;
 &lt;h2 id=&quot;the-spark-from-idea-to-prototype&quot;&gt;The Spark: From Idea to Prototype&lt;/h2&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/7CNzplmFvs-1242.avif 1242w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/7CNzplmFvs-1242.webp 1242w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/7CNzplmFvs-1242.png&quot; alt=&quot;The first AI Generated prototype&quot; width=&quot;1242&quot; height=&quot;968&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/7CNzplmFvs-1242.avif 1242w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/7CNzplmFvs-1242.webp 1242w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/blog/20250201-building-home-health/7CNzplmFvs-1242.png&quot; alt=&quot;The first AI Generated prototype&quot; width=&quot;1242&quot; height=&quot;968&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;The whole idea for &lt;em&gt;Home Health&lt;/em&gt; came from Jamie, our product manager, who&#39;s been at Checkatrade longer than I&#39;ve had the patience to count and knows how to spot a good opportunity. His goal was simple: inspire homeowners to post more jobs on Checkatrade. More jobs mean more work for our tradespeople. Initially, he thought about adding a blog or a kind of digital magazine to the Checkatrade app—something homeowners could flip through for ideas, like &amp;quot;maybe it&#39;s time for that new kitchen&amp;quot; or &amp;quot;I should finally fix that noisy bathroom fan.&amp;quot;&lt;/p&gt;
 &lt;p&gt;But then Jamie, being the curious type, wondered if generative AI could do better. Inspired by recent advancements in ChatGPT, he uploaded photos of his house and asked it to generate a home improvement report. The results were surprisingly good. The AI returned suggestions written in a way that felt like they were tailored for a real homeowner—practical, specific, and, most importantly, inspiring. That&#39;s when he looped me in.&lt;/p&gt;
-&lt;p&gt;At the time, we were just kicking off &lt;em&gt;Checkatrade Labs&lt;/em&gt;, a small, fast-paced R&amp;amp;D team focused on rapid prototyping and launching experimental projects. This was our first big test. Jamie approached me in late November with a simple request: &amp;quot;Let&#39;s launch this before Christmas.&amp;quot; That gave me about three weeks—on top of my full-time commitment to another major project called &lt;em&gt;&lt;a href=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/how-we-decommissioned-heritage-without-toppling-the-tower&quot;&gt;Heritage Switch Off&lt;/a&gt;&lt;/em&gt;. So, with no time during work hours, I rolled up my sleeves and started building in the evenings and weekends.&lt;/p&gt;
+&lt;p&gt;At the time, we were just kicking off &lt;em&gt;Checkatrade Labs&lt;/em&gt;, a small, fast-paced R&amp;amp;D team focused on rapid prototyping and launching experimental projects. This was our first big test. Jamie approached me in late November with a simple request: &amp;quot;Let&#39;s launch this before Christmas.&amp;quot; That gave me about three weeks—on top of my full-time commitment to another major project called &lt;em&gt;&lt;a href=&quot;https://jpain.io/blog/20250201-building-home-health/how-we-decommissioned-heritage-without-toppling-the-tower&quot;&gt;Heritage Switch Off&lt;/a&gt;&lt;/em&gt;. So, with no time during work hours, I rolled up my sleeves and started building in the evenings and weekends.&lt;/p&gt;
 &lt;h2 id=&quot;prototyping-with-retool&quot;&gt;Prototyping with Retool&lt;/h2&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/48419TQ9Zl-875.avif 875w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/48419TQ9Zl-875.webp 875w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/48419TQ9Zl-875.png&quot; alt=&quot;Early Retool Proof of Concept&quot; width=&quot;875&quot; height=&quot;627&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/48419TQ9Zl-875.avif 875w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/48419TQ9Zl-875.webp 875w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/blog/20250201-building-home-health/48419TQ9Zl-875.png&quot; alt=&quot;Early Retool Proof of Concept&quot; width=&quot;875&quot; height=&quot;627&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;I hadn&#39;t built a front-end app in a while, so I reached for something that would let me move fast: &lt;a href=&quot;https://retool.com/&quot;&gt;Retool&lt;/a&gt;. It had just been procured at Checkatrade and was gaining traction internally. I hadn&#39;t used it for anything serious before, but it seemed like a good fit for quick prototyping—drag-and-drop components, an embedded database, and, most importantly, built-in AI integration. I figured I could slap together a working prototype in a few days.&lt;/p&gt;
 &lt;p&gt;And I did. But it wasn&#39;t without its headaches.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The Pros:&lt;/strong&gt;&lt;/p&gt;
@@ -87,10 +87,10 @@
 &lt;li&gt;&lt;strong&gt;AI Response Formatting:&lt;/strong&gt; Retool didn&#39;t support OpenAI&#39;s JSON response format natively, so I had to craft prompts carefully and write functions to strip out non-JSON text.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Slow Workflows:&lt;/strong&gt; The AI-generated reports took over two minutes to process, causing timeouts and failed generations. I had to add a retry button to handle these issues.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/1y358dHe2W-682.avif 682w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/1y358dHe2W-682.webp 682w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/1y358dHe2W-682.png&quot; alt=&quot;The Retool version released internally&quot; width=&quot;682&quot; height=&quot;1158&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/1y358dHe2W-682.avif 682w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/1y358dHe2W-682.webp 682w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/blog/20250201-building-home-health/1y358dHe2W-682.png&quot; alt=&quot;The Retool version released internally&quot; width=&quot;682&quot; height=&quot;1158&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;Despite the challenges, we released the prototype internally before Christmas. It wasn&#39;t perfect, but it worked. And more importantly, it proved the concept. People at Checkatrade loved it, sharing their reports and comparing home scores like it was a game.&lt;/p&gt;
 &lt;h2 id=&quot;transitioning-to-a-full-fledged-web-app&quot;&gt;Transitioning to a Full-Fledged Web App&lt;/h2&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/WKyPQPGvfN-2048.avif 2048w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/WKyPQPGvfN-2048.webp 2048w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/WKyPQPGvfN-2048.png&quot; alt=&quot;Using Cline to make the app&quot; width=&quot;2048&quot; height=&quot;1280&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/WKyPQPGvfN-2048.avif 2048w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/WKyPQPGvfN-2048.webp 2048w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/blog/20250201-building-home-health/WKyPQPGvfN-2048.png&quot; alt=&quot;Using Cline to make the app&quot; width=&quot;2048&quot; height=&quot;1280&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;Once the internal prototype was a hit, it was clear we needed to rebuild it for public release. Retool was great for prototyping, but it wasn&#39;t reliable or performant enough for a wider audience.&lt;/p&gt;
 &lt;p&gt;Here&#39;s the thing: I hadn&#39;t built a proper web app in years. But instead of spending weeks refreshing my React skills, I let AI do the heavy lifting. I used &lt;a href=&quot;https://www.anthropic.com/claude&quot;&gt;Anthropic&#39;s Claude&lt;/a&gt; through a VS Code extension called &lt;a href=&quot;https://github.com/cline/cline&quot;&gt;Cline&lt;/a&gt; to bootstrap the project. I gave it a simple prompt: &amp;quot;Build me a web app like this Retool prototype.&amp;quot; And it did.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The Stack:&lt;/strong&gt;&lt;/p&gt;
@@ -114,7 +114,7 @@
 &lt;p&gt;I did, at one point, pitch the idea of building our own computer vision model—one trained specifically on home improvement issues. Imagine an AI that could tell if your boiler&#39;s outdated or if there&#39;s damp in your ceiling. But time and budget constraints made that a &amp;quot;maybe someday&amp;quot; idea. For now, the generative AI solution works well enough, especially for a free tool.&lt;/p&gt;
 &lt;p&gt;Interestingly, the most expensive part of the project wasn&#39;t the AI. It was the address lookup feature. We needed Unique Property Reference Numbers (UPRNs) to pull data from Chimney, a third-party service that provides detailed property information (build year, roof type, property value, etc.). Standard services like Google Autocomplete didn&#39;t provide UPRNs, so we used &lt;a href=&quot;https://ideal-postcodes.co.uk/&quot;&gt;Ideal Postcodes&lt;/a&gt;, which charges up to 15 pence per query for comprehensive data—the biggest cost in the project.&lt;/p&gt;
 &lt;h2 id=&quot;launching-home-health-and-gathering-feedback&quot;&gt;Launching Home Health and Gathering Feedback&lt;/h2&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/5-j0X101e8-1612.avif 1612w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/5-j0X101e8-1612.webp 1612w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/20250201-building-home-health/5-j0X101e8-1612.jpeg&quot; alt=&quot;The Header of the Home Health app&quot; width=&quot;1612&quot; height=&quot;1285&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/5-j0X101e8-1612.avif 1612w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/blog/20250201-building-home-health/5-j0X101e8-1612.webp 1612w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/blog/20250201-building-home-health/5-j0X101e8-1612.jpeg&quot; alt=&quot;The Header of the Home Health app&quot; width=&quot;1612&quot; height=&quot;1285&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;We&#39;re publicly rolling out &lt;em&gt;Home Health&lt;/em&gt; gradually through email campaigns in small batches. It&#39;s currently still in its gradual rollout phase.&lt;/p&gt;
 &lt;p&gt;Internally at Checkatrade, it&#39;s been a hit. People love comparing their home scores (we included a fun, credit-score-like rating in the report), and it&#39;s sparked a lot of engagement. We&#39;re excited to see how the public reacts as we continue the rollout.&lt;/p&gt;
 &lt;h2 id=&quot;lessons-learned-and-future-directions&quot;&gt;Lessons Learned and Future Directions&lt;/h2&gt;
@@ -132,21 +132,21 @@
   </entry>
   <entry>
     <title>This is my fourth post</title>
-    <link href="https://jpain.io/eleventy-base-blog/blog/fourthpost/" />
+    <link href="https://jpain.io/blog/fourthpost/" />
     <updated>2018-09-30T00:00:00Z</updated>
-    <id>https://jpain.io/eleventy-base-blog/blog/fourthpost/</id>
+    <id>https://jpain.io/blog/fourthpost/</id>
     <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
 &lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/fourthpost/xbVnp_hAou-350.avif 350w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/eleventy-base-blog/blog/fourthpost/xbVnp_hAou-350.webp 350w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/eleventy-base-blog/blog/fourthpost/xbVnp_hAou-350.png&quot; alt=&quot;A possum parent and two possum kids hanging from the iconic red balloon&quot; width=&quot;350&quot; height=&quot;685&quot;&gt;&lt;/picture&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jpain.io/blog/fourthpost/xbVnp_hAou-350.avif 350w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jpain.io/blog/fourthpost/xbVnp_hAou-350.webp 350w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jpain.io/blog/fourthpost/xbVnp_hAou-350.png&quot; alt=&quot;A possum parent and two possum kids hanging from the iconic red balloon&quot; width=&quot;350&quot; height=&quot;685&quot;&gt;&lt;/picture&gt;
 &lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
 &lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>This is my third post.</title>
-    <link href="https://jpain.io/eleventy-base-blog/blog/thirdpost/" />
+    <link href="https://jpain.io/blog/thirdpost/" />
     <updated>2018-08-24T00:00:00Z</updated>
-    <id>https://jpain.io/eleventy-base-blog/blog/thirdpost/</id>
+    <id>https://jpain.io/blog/thirdpost/</id>
     <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
 &lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
 &lt;h3 id=&quot;this-is-a-very-long-heading-that-i-want-to-wrap-this-is-a-very-long-heading-that-i-want-to-wrap-this-is-a-very-long-heading-that-i-want-to-wrap-this-is-a-very-long-heading-that-i-want-to-wrap&quot;&gt;This is a very long heading that I want to wrap This is a very long heading that I want to wrap This is a very long heading that I want to wrap This is a very long heading that I want to wrap&lt;/h3&gt;
@@ -159,7 +159,7 @@
 
 &lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;
 console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;heading-with-a-link&quot;&gt;Heading with a &lt;a href=&quot;https://jpain.io/eleventy-base-blog/blog/thirdpost/#code&quot;&gt;link&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;heading-with-a-link&quot;&gt;Heading with a &lt;a href=&quot;https://jpain.io/blog/thirdpost/#code&quot;&gt;link&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;// this is a command
 function myCommand() {
@@ -176,22 +176,22 @@ console.log(&#39;Test&#39;);
   </entry>
   <entry>
     <title>This is my second post with a much longer title.</title>
-    <link href="https://jpain.io/eleventy-base-blog/blog/secondpost/" />
+    <link href="https://jpain.io/blog/secondpost/" />
     <updated>2018-07-04T00:00:00Z</updated>
-    <id>https://jpain.io/eleventy-base-blog/blog/secondpost/</id>
+    <id>https://jpain.io/blog/secondpost/</id>
     <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
 &lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://jpain.io/eleventy-base-blog/blog/firstpost/&quot;&gt;First post&lt;/a&gt;
-&lt;a href=&quot;https://jpain.io/eleventy-base-blog/blog/thirdpost/&quot;&gt;Third post&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://jpain.io/blog/firstpost/&quot;&gt;First post&lt;/a&gt;
+&lt;a href=&quot;https://jpain.io/blog/thirdpost/&quot;&gt;Third post&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
 &lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>This is my first post.</title>
-    <link href="https://jpain.io/eleventy-base-blog/blog/firstpost/" />
+    <link href="https://jpain.io/blog/firstpost/" />
     <updated>2018-05-01T00:00:00Z</updated>
-    <id>https://jpain.io/eleventy-base-blog/blog/firstpost/</id>
+    <id>https://jpain.io/blog/firstpost/</id>
     <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
 &lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
 &lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
