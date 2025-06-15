@@ -1,6 +1,8 @@
 :root {
   --width: 800px;
   --font-scale: 1em;
+  
+  /* Light mode colors */
   --background-color: #fff;
   --tangaroa: #04143a; /* Heading color */
   --light-slate-gray: #2f3743; /* Text color - darkened for better readability */
@@ -11,6 +13,57 @@
   --blockquote-color: #04143a;
   --link-water: #dbe9fa; /* Light background color */
   --light-gray: #eee;
+  --footer-background: #f4f4f4;
+  --border-color: #eee;
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a1a1a;
+    --tangaroa: #e8f4fd; /* Light heading color */
+    --light-slate-gray: #c9d1d9; /* Light text color */
+    --havelock-blue: #58a6ff; /* Brighter link color for dark mode */
+    --visited-color: #bc8cff;
+    --code-background-color: #2d333b;
+    --code-color: #e8f4fd;
+    --blockquote-color: #c9d1d9;
+    --link-water: #2d333b; /* Dark background for tags */
+    --light-gray: #444;
+    --footer-background: #0d1117;
+    --border-color: #444;
+  }
+}
+
+/* Manual dark mode toggle - overrides system preference when active */
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --tangaroa: #e8f4fd;
+  --light-slate-gray: #c9d1d9;
+  --havelock-blue: #58a6ff;
+  --visited-color: #bc8cff;
+  --code-background-color: #2d333b;
+  --code-color: #e8f4fd;
+  --blockquote-color: #c9d1d9;
+  --link-water: #2d333b;
+  --light-gray: #444;
+  --footer-background: #0d1117;
+  --border-color: #444;
+}
+
+[data-theme="light"] {
+  --background-color: #fff;
+  --tangaroa: #04143a;
+  --light-slate-gray: #2f3743;
+  --havelock-blue: #468ee5;
+  --visited-color: #8b6fcb;
+  --code-background-color: #f2f2f2;
+  --code-color: #04143a;
+  --blockquote-color: #04143a;
+  --link-water: #dbe9fa;
+  --light-gray: #eee;
+  --footer-background: #f4f4f4;
+  --border-color: #eee;
 }
 
 /* Reset and base styles */
@@ -113,13 +166,13 @@ table td,
 table th {
   padding: 0.5em;
   text-align: left;
-  border-bottom: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Horizontal rules */
 hr {
   border: 0;
-  border-top: 1px dashed var(--light-gray);
+  border-top: 1px dashed var(--border-color);
   margin: 2em 0;
 }
 
@@ -158,7 +211,7 @@ pre code {
 
 /* Blockquotes */
 blockquote {
-  border-left: 3px solid var(--light-gray);
+  border-left: 3px solid var(--border-color);
   color: var(--code-color);
   padding-left: 20px;
   margin-left: 0;
@@ -170,7 +223,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-color: var(--light-gray);
+  border-color: var(--border-color);
   border-bottom-style: solid;
   border-bottom-width: 1px;
   margin-bottom: 4rem;
@@ -194,6 +247,7 @@ header nav {
   display: flex;
   gap: 1rem;
   margin: 0;
+  align-items: center;
 }
 
 header nav a {
@@ -215,7 +269,7 @@ footer {
   font-size: 12px;
   padding: 1rem 1rem;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color: var(--footer-background);
   margin-top: 4rem;
   color: var(--light-slate-gray);
 }
@@ -317,7 +371,7 @@ footer a {
   justify-content: space-between;
   gap: 1rem;
   list-style: none;
-  border-top: 1px dashed var(--light-gray);
+  border-top: 1px dashed var(--border-color);
   padding: 2rem 0 1rem;
   margin: 2rem 0 0;
 }
@@ -344,6 +398,7 @@ footer a {
   
   header nav {
     justify-content: center;
+    flex-wrap: wrap;
   }
   
   .postlist-item {
@@ -353,6 +408,10 @@ footer a {
   
   .postlist-date {
     flex: none;
+  }
+  
+  .theme-toggle {
+    order: -1; /* Move theme toggle to the start on mobile */
   }
 }
 
@@ -419,4 +478,64 @@ main :first-child {
 
 main :last-child {
   margin-bottom: 0;
+}
+
+/* Dark mode toggle button - styled like a text link */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--light-slate-gray);
+  cursor: pointer;
+  font-family: monospace;
+  font-size: inherit;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  text-decoration: underline;
+  color: var(--havelock-blue);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--havelock-blue);
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+
+/* Theme text content changes based on current state */
+.theme-text {
+  font-style: normal;
+  font-size: inherit;
+}
+
+/* Dynamic content based on theme state */
+[data-theme="light"] .theme-text {
+  color: var(--light-slate-gray);
+}
+
+[data-theme="light"] .theme-text::after {
+  content: " (light)";
+  opacity: 0.6;
+  font-size: 0.9em;
+}
+
+[data-theme="dark"] .theme-text {
+  color: var(--light-slate-gray);
+}
+
+[data-theme="dark"] .theme-text::after {
+  content: " (dark)";
+  opacity: 0.6;
+  font-size: 0.9em;
+}
+
+/* When no data-theme is set (auto mode) */
+:root:not([data-theme]) .theme-text::after {
+  content: " (auto)";
+  opacity: 0.6;
+  font-size: 0.9em;
 }
