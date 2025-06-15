@@ -2,6 +2,7 @@
 title: How We Built Home Health - An AI-Powered Web App for Home Improvement
 description: The story of building Home Health, a web app where homeowners upload photos and get AI-powered home improvement suggestions. From ChatGPT experiment to production app.
 date: 2025-02-01
+type: article
 tags:
   - AI
   - web development

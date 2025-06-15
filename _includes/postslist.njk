@@ -1,8 +1,48 @@
 <ul class="postlist">
-{%- for post in postslist | reverse %}
-	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLL yyyy") }}</time>
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+{%- for post in postsList %}
+	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}" data-post-type="{{ post.data.type or 'article' }}">
+		<a href="{{ post.url }}" class="postlist-item-link">
+			<div class="postlist-meta">
+				<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLL yyyy") }}</time>
+				
+				{# Post type - displayed under date #}
+				{% set postType = post.data.type or 'article' %}
+				{% if postTypes and postTypes[postType] %}
+					{% set typeConfig = postTypes[postType] %}
+					<div class="postlist-type postlist-type-{{ postType }}">
+						<span class="postlist-type-emoji">{{ typeConfig.emoji }}</span>
+						<span class="postlist-type-label">{{ typeConfig.label }}</span>
+					</div>
+				{% else %}
+					{# Fallback for posts without type config #}
+					<div class="postlist-type postlist-type-{{ postType }}">
+						<span class="postlist-type-emoji">
+							{%- if postType == 'quick' -%}⚡
+							{%- elif postType == 'link' -%}🔗
+							{%- elif postType == 'project' -%}🚀
+							{%- else -%}📄
+							{%- endif -%}
+						</span>
+						<span class="postlist-type-label">
+							{%- if postType == 'quick' -%}Quick
+							{%- elif postType == 'link' -%}Link
+							{%- elif postType == 'project' -%}Project
+							{%- else -%}Article
+							{%- endif -%}
+						</span>
+					</div>
+				{% endif %}
+			</div>
+			
+			<div class="postlist-content">
+				<div class="postlist-header">
+					<span class="postlist-title">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</span>
+				</div>
+				{%- if post.data.description -%}
+					<p class="postlist-description postlist-description-{{ post.data.type or 'article' }}">{{ post.data.description }}</p>
+				{%- endif -%}
+			</div>
+		</a>
 	</li>
 {%- endfor %}
 </ul>

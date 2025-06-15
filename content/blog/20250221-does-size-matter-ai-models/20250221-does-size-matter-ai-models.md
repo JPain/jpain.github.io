@@ -2,6 +2,7 @@
 title: "Does Size Matter: The Rise of Smarter AI Models"
 description: "Exploring how smaller, more efficient AI models with techniques like Recurrent Depth are challenging the 'bigger is better' paradigm in artificial intelligence."
 date: 2025-02-21
+type: article
 tags: 
   - AI
   - machine learning

@@ -1,5 +1,6 @@
 ---js
-const numberOfLatestPostsToShow = 5;
+const numberOfLatestPostsToShow = 3;
+const numberOfLatestArticlesToShow = 2;
 ---
 <section class="hero">
   <h1 class="name">{{ metadata.author.name }}</h1>
@@ -8,19 +9,45 @@ const numberOfLatestPostsToShow = 5;
     <li class="tag">#writer</li>
     <li class="tag">#creator</li>
   </ul>
+  <p class="bio">Building things with code and sharing what I learn along the way. Welcome to my corner of the web where I write about development, AI, and the craft of making digital products.</p>
 </section>
 
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h2>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h2>
+{# Recent Activity - show mix of recent posts #}
+<section class="home-section">
+	<h2>Recent Activity</h2>
+	<p class="section-description">Latest posts, thoughts, and discoveries</p>
+	{% set postsCount = collections.posts | length %}
+	{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+	{% set postsList = collections.posts | reverse | head(numberOfLatestPostsToShow) %}
+	{% include "postslist.njk" %}
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
+	{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+	{% if morePosts > 0 %}
+	<p class="more-link-compact"><a href="/blog/">View {{ morePosts }} more →</a></p>
+	{% endif %}
+</section>
 
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
+{# Featured Articles - prioritize these #}
+{# Build articles list #}
+{% set articlesList = [] %}
+{%- for post in collections.posts | reverse -%}
+	{%- if post.data.type == "article" -%}
+		{%- set articlesList = articlesList.concat([post]) -%}
+	{%- endif -%}
+{%- endfor -%}
+
+{% if articlesList.length > 0 %}
+<section class="home-section">
+	<h2>Latest Articles</h2>
+	<p class="section-description">In-depth posts and tutorials</p>
+	{% set postsList = articlesList | head(numberOfLatestArticlesToShow) %}
+	{% include "postslist.njk" %}
+	
+	{% set moreArticles = articlesList.length - numberOfLatestArticlesToShow %}
+	{% if moreArticles > 0 %}
+	<p class="more-link-compact"><a href="/blog/">View {{ moreArticles }} more →</a></p>
+	{% endif %}
+</section>
 {% endif %}
 
 {# List every content page in the project #}
