@@ -72,8 +72,8 @@ export default async function(eleventyConfig) {
 		},
 		metadata: {
 			language: "en",
-			title: "James Blog",
-			subtitle: "I write, therefore I exist.",
+			title: "James Pain's Weblog",
+			subtitle: "James Pain's Weblog",
 			base: "https://jpain.io/",
 			author: {
 				name: "James Pain"
