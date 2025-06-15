@@ -2,26 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://jpain.io/blog/firstpost/</loc>
-		<lastmod>2018-05-01</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://jpain.io/blog/secondpost/</loc>
-		<lastmod>2018-07-04</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://jpain.io/blog/thirdpost/</loc>
-		<lastmod>2018-08-24</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://jpain.io/blog/fourthpost/</loc>
-		<lastmod>2018-09-30</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://jpain.io/blog/20250201-building-home-health/</loc>
 		<lastmod>2025-02-01</lastmod>
 	</url>
@@ -29,6 +9,11 @@
 	<url>
 		<loc>https://jpain.io/blog/20250221-does-size-matter-ai-models/</loc>
 		<lastmod>2025-02-21</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://jpain.io/acknowledgements/</loc>
+		<lastmod>2025-06-15</lastmod>
 	</url>
 	
 	<url>
@@ -43,6 +28,11 @@
 	
 	<url>
 		<loc>https://jpain.io/readme/</loc>
+		<lastmod>2025-06-15</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://jpain.io/small-web/</loc>
 		<lastmod>2025-06-15</lastmod>
 	</url>
 	

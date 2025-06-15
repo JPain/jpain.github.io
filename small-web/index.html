@@ -3,21 +3,21 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>This is my fourth post</title>
-		<meta name="description" content="This is a post on My Blog about touchpoints and circling wagons.">
+		<title>Small Web</title>
+		<meta name="description" content="Learn about the technology, philosophy, and principles behind this website">
 		<meta name="color-scheme" content="light dark">
 		<meta name="theme-color" content="#04143a">
-		<meta property="og:title" content="This is my fourth post">
-		<meta property="og:description" content="This is a post on My Blog about touchpoints and circling wagons.">
-		<meta property="og:type" content="article">
-		<meta property="og:url" content="https://jpain.io/blog/fourthpost/">
-		<meta property="og:site_name" content="James Blog">
+		<meta property="og:title" content="Small Web">
+		<meta property="og:description" content="Learn about the technology, philosophy, and principles behind this website">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://jpain.io/small-web/">
+		<meta property="og:site_name" content="James Pain&#39;s Weblog">
 		<meta name="twitter:card" content="summary">
-		<meta name="twitter:title" content="This is my fourth post">
-		<meta name="twitter:description" content="This is a post on My Blog about touchpoints and circling wagons.">
+		<meta name="twitter:title" content="Small Web">
+		<meta name="twitter:description" content="Learn about the technology, philosophy, and principles behind this website">
 		
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="James Blog">
-		<link rel="canonical" href="https://jpain.io/blog/fourthpost/">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="James Pain&#39;s Weblog">
+		<link rel="canonical" href="https://jpain.io/small-web/">
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -446,174 +446,6 @@ main :first-child {
 
 main :last-child {
   margin-bottom: 0;
-}
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #8292a2;
-}
-
-.token.punctuation {
-	color: #f8f8f2;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #a6e22e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
-}
-
-.token.keyword {
-	color: #66d9ef;
-}
-
-.token.regex,
-.token.important {
-	color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-/*
- * New diff- syntax
- */
-
-pre[class*="language-diff-"] {
-	--eleventy-code-padding: 1.25em;
-	padding-left: var(--eleventy-code-padding);
-	padding-right: var(--eleventy-code-padding);
-}
-.token.deleted {
-	background-color: hsl(0, 51%, 37%);
-	color: inherit;
-}
-.token.inserted {
-	background-color: hsl(126, 31%, 39%);
-	color: inherit;
-}
-
-/* Make the + and - characters unselectable for copy/paste */
-.token.prefix.unchanged,
-.token.prefix.inserted,
-.token.prefix.deleted {
-	-webkit-user-select: none;
-	user-select: none;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-.token.prefix.inserted,
-.token.prefix.deleted {
-	width: var(--eleventy-code-padding);
-	background-color: rgba(0,0,0,.2);
-}
-
-/* Optional: full-width background color */
-.token.inserted:not(.prefix),
-.token.deleted:not(.prefix) {
-	display: block;
-	margin-left: calc(-1 * var(--eleventy-code-padding));
-	margin-right: calc(-1 * var(--eleventy-code-padding));
-	text-decoration: none; /* override del, ins, mark defaults */
-	color: inherit; /* override del, ins, mark defaults */
 }</style>
 		
 	</head>
@@ -621,7 +453,7 @@ pre[class*="language-diff-"] {
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/" class="home-link">James Blog</a>
+			<a href="/" class="home-link">James Pain&#39;s Weblog</a>
 
 			<nav>
 				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
@@ -633,23 +465,45 @@ pre[class*="language-diff-"] {
 		<main id="main">
 			<heading-anchors>
 				
-
-
-<h1 id="this-is-my-fourth-post">This is my fourth post</h1>
-
-<ul class="post-metadata">
-	<li><time datetime="2018-09-30">30 September 2018</time></li>
-	<li><a href="/tags/second-tag/" class="post-tag">second tag</a></li>
+<h1 id="embracing-the-small-web">Embracing the Small Web</h1>
+<p><em>The web doesn't have to be slow, bloated, or invasive. This site proves that you can create something beautiful, functional, and fast while respecting your visitors' time, privacy, and bandwidth.</em></p>
+<p>This website is a proud member of the <strong>small web</strong> — a movement that champions simplicity, sustainability, and human-scale technology over the bloated, surveillance-heavy platforms that dominate today's internet.</p>
+<h2 id="what-is-the-small-web">What is the Small Web?</h2>
+<p>The small web represents a return to the original vision of the World Wide Web: a decentralized network of independent websites, each with its own character and purpose. It's about:</p>
+<ul>
+<li><strong>Personal ownership:</strong> Your content, your domain, your rules</li>
+<li><strong>Simplicity over complexity:</strong> Fast-loading pages that work everywhere</li>
+<li><strong>Privacy by design:</strong> No tracking, no data harvesting, no surveillance capitalism</li>
+<li><strong>Environmental responsibility:</strong> Lightweight sites that consume less energy</li>
+<li><strong>Accessibility first:</strong> Content that everyone can access and enjoy</li>
+<li><strong>Human scale:</strong> Technology that serves people, not corporations</li>
+</ul>
+<h2 id="why-this-matters">Why This Matters</h2>
+<p>In an era where a handful of tech giants control most of our online interactions, the small web offers an alternative. It's a space where:</p>
+<blockquote>
+<p>Creativity flourishes without algorithmic interference. Where you can discover genuine human voices instead of engagement-optimized content. Where your attention isn't the product being sold.</p>
+</blockquote>
+<p>Every small website is an act of digital resistance — a declaration that the web can be better, more humane, and more sustainable.</p>
+<h2 id="join-the-movement">Join the Movement</h2>
+<p>You don't need to be a developer to participate in the small web. Here's how you can contribute:</p>
+<ul>
+<li><strong>Create your own website:</strong> Use simple tools like <a href="https://www.11ty.dev/">Eleventy</a>, <a href="https://jekyllrb.com/">Jekyll</a>, or even hand-coded HTML</li>
+<li><strong>Support independent creators:</strong> Visit personal blogs, subscribe to RSS feeds, share interesting content</li>
+<li><strong>Choose sustainable hosting:</strong> Use green hosting providers or static site hosts</li>
+<li><strong>Keep it simple:</strong> Resist the urge to add unnecessary complexity</li>
+<li><strong>Link generously:</strong> Connect to other small websites and help the web stay interconnected</li>
+<li><strong>Own your content:</strong> Post on your own site first, then syndicate elsewhere</li>
+</ul>
+<h2 id="resources-for-the-small-web">Resources for the Small Web</h2>
+<ul>
+<li><a href="https://indieweb.org/">IndieWeb</a> — A community working to make the web more independent</li>
+<li><a href="https://512kb.club/">512KB Club</a> — Websites that prioritize performance</li>
+<li><a href="https://1mb.club/">1MB Club</a> — The web is for everyone</li>
+<li><a href="https://250kb.club/">250KB Club</a> — Ultra-lightweight websites</li>
+<li><a href="https://theoldnet.com/">The Old Net</a> — Browse the web as it was</li>
+<li><a href="https://sadgrl.online/cyberspace/internet-manifesto">Internet Manifesto</a> — A call for a better web</li>
 </ul>
 
-<p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-<picture><source type="image/avif" srcset="/blog/fourthpost/xbVnp_hAou-350.avif 350w"><source type="image/webp" srcset="/blog/fourthpost/xbVnp_hAou-350.webp 350w"><img loading="lazy" decoding="async" src="/blog/fourthpost/xbVnp_hAou-350.png" alt="A possum parent and two possum kids hanging from the iconic red balloon" width="350" height="685"></picture>
-<h2 id="section-header">Section Header</h2>
-<p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-
-<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/thirdpost/">This is my third post.</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/20250201-building-home-health/">How We Built Home Health - An AI-Powered Web App for Home Improvement</a></li>
-</ul>
 
 			</heading-anchors>
 		</main>
@@ -658,7 +512,7 @@ pre[class*="language-diff-"] {
 			<em><a href="/readme">README.md</a></em>
 		</footer>
 
-		<!-- This page `/blog/fourthpost/` was built on 2025-06-15T08:33:22.328Z -->
+		<!-- This page `/small-web/` was built on 2025-06-15T09:18:32.443Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
