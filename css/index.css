@@ -74,6 +74,18 @@ body {
   padding: 0;
 }
 
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Disable transitions for reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
 body {
   font-family: monospace;
   font-size: var(--font-scale);
@@ -492,7 +504,7 @@ main :last-child {
   padding: 0;
   margin: 0;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease, opacity 0.2s ease;
 }
 
 .theme-toggle:hover {
@@ -510,6 +522,11 @@ main :last-child {
 .theme-text {
   font-style: normal;
   font-size: inherit;
+  transition: color 0.3s ease;
+}
+
+.theme-text::after {
+  transition: opacity 0.3s ease;
 }
 
 /* Dynamic content based on theme state */
