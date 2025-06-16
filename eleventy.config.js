@@ -3,6 +3,7 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import markdownItAnchor from "markdown-it-anchor";
 
 import pluginFilters from "./_config/filters.js";
 
@@ -104,6 +105,17 @@ export default async function(eleventyConfig) {
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
+
+	// Configure markdown-it with anchor plugin
+	eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownItAnchor, {
+		permalink: markdownItAnchor.permalink.ariaHidden({
+			placement: 'before',
+			class: 'heading-anchor',
+			symbol: '#',
+			level: [1, 2, 3, 4, 5, 6],
+		}),
+		slugify: eleventyConfig.getFilter("slugify")
+	}));
 
 	eleventyConfig.addPlugin(IdAttributePlugin, {
 		// by default we use Eleventy’s built-in `slugify` filter:
