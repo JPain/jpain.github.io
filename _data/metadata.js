@@ -6,6 +6,6 @@ export default {
 	author: {
 		name: "James Pain",
 		email: "jamesepain@gmail.com",
-		url: "https://jpain.io/about-me/"
+		url: "https://jpain.io/"
 	}
 }
