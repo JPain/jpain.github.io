@@ -6,5 +6,5 @@ const eleventyNavigation = {
 ---
 <h1>Blog</h1>
 
-{% set postsList = collections.posts %}
+{% set postsList = collections.posts | reverse %}
 {% include "postslist.njk" %}
