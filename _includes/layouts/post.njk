@@ -4,11 +4,16 @@ layout: layouts/base.njk
 {# Only include the syntax highlighter CSS on blog posts, included with the CSS per-page bundle #}
 <style>{% include "node_modules/prismjs/themes/prism-okaidia.css" %}</style>
 <style>{% include "css/prism-diff.css" %}</style>
+<style>
+.post-metadata a {
+	text-decoration: none;
+}
+</style>
 
 <h1>{{ title }}</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+	<li><a href="{{ page.url }}"><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></a></li>
 	
 	{# Display post type in metadata #}
 	{% set postType = type or 'article' %}

@@ -1,5 +1,5 @@
 ---js
-const numberOfLatestPostsToShow = 3;
+const numberOfLatestPostsToShow = 5;
 const numberOfLatestArticlesToShow = 2;
 ---
 <section class="hero">
@@ -12,13 +12,20 @@ const numberOfLatestArticlesToShow = 2;
   <p class="bio">Building things with code and sharing what I learn along the way. Welcome to my corner of the web where I write about development, AI, and the craft of making digital products.</p>
 </section>
 
-{# Recent Activity - show mix of recent posts #}
+{# Recent Activity - show mix of recent posts excluding articles #}
 <section class="home-section">
 	<h2>Recent Activity</h2>
 	<p class="section-description">Latest posts, thoughts, and discoveries</p>
-	{% set postsCount = collections.posts | length %}
+	{# Filter out articles from recent activity #}
+	{% set nonArticlePosts = [] %}
+	{%- for post in collections.posts -%}
+		{%- if post.data.type != "article" -%}
+			{%- set nonArticlePosts = nonArticlePosts.concat([post]) -%}
+		{%- endif -%}
+	{%- endfor -%}
+	{% set postsCount = nonArticlePosts | length %}
 	{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-	{% set postsList = collections.posts | reverse | head(numberOfLatestPostsToShow) %}
+	{% set postsList = nonArticlePosts | reverse | head(numberOfLatestPostsToShow) %}
 	{% include "postslist.njk" %}
 
 	{% set morePosts = postsCount - numberOfLatestPostsToShow %}
