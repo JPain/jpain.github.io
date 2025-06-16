@@ -107,6 +107,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Disable transitions during initial page load to prevent flash */
+.no-transitions * {
+  transition: none !important;
+}
+
 /* Disable transitions for reduced motion users */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -441,6 +446,29 @@ footer a {
   margin: 1rem 0;
   padding: 0;
   list-style: none;
+}
+
+/* Post type styling for individual posts - integrated with metadata */
+.post-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 12px;
+  color: var(--light-slate-gray);
+  font-family: monospace;
+  padding: 2px 6px;
+  background-color: var(--link-water);
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.post-type-emoji {
+  font-size: 0.9rem;
+}
+
+.post-type-label {
+  text-transform: lowercase;
+  font-style: italic;
 }
 
 /* Tags */
@@ -794,8 +822,45 @@ main :last-child {
   content: " (auto)";
   opacity: 0.6;
   font-size: 0.9em;
+}
+
+/* Heading anchor links */
+.heading-anchor {
+  color: var(--light-slate-gray);
+  opacity: 0.3;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-weight: normal;
+  transition: opacity 0.2s ease;
+}
+
+.heading-anchor:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.heading-anchor:visited {
+  color: var(--light-slate-gray);
+}
+
+/* Show anchor links on heading hover */
+h1:hover .heading-anchor,
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor,
+h5:hover .heading-anchor,
+h6:hover .heading-anchor {
+  opacity: 0.7;
+}
+
+/* Focus state for accessibility */
+.heading-anchor:focus {
+  opacity: 1;
+  outline: 2px solid var(--havelock-blue);
+  outline-offset: 2px;
 }</style>
 		
+
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
@@ -814,11 +879,10 @@ main :last-child {
 		</header>
 
 		<main id="main">
-			<heading-anchors>
-				
-<h1 id="acknowledgements">Acknowledgements</h1>
+			
+<h1 id="acknowledgements" tabindex="-1"><a class="heading-anchor" href="#acknowledgements" aria-hidden="true">#</a> Acknowledgements</h1>
 <p>In the great tapestry of computing, each thread represents the work of a visionary thinker or innovator woven across time. This personal site – and indeed every modern digital creation – stands on the foundation of their labor and genius. I am profoundly grateful to the mathematicians who laid the groundwork, the engineers who sparked an electronic revolution, the programming pioneers who taught machines to obey our commands. I also thank the network visionaries who connected the world, the open-source communities that democratized knowledge, and the modern web architects who turned the Internet into a vibrant global commons. This page pays homage to those giants of computing history, whose ideas and inventions made our present possible.</p>
-<h2 id="mathematical-foundations">Mathematical Foundations</h2>
+<h2 id="mathematical-foundations" tabindex="-1"><a class="heading-anchor" href="#mathematical-foundations" aria-hidden="true">#</a> Mathematical Foundations</h2>
 <p>In the early days, computing existed only as an idea rooted in mathematics and logic. We honor the scholars whose abstract thinking laid the groundwork for later technological breakthroughs:</p>
 <ul>
 <li><strong>Muhammad al-Khwarizmi (c.780–850)</strong> – 9th-century Persian mathematician whose work on algebra and arithmetic gave us the word algorithm, reflecting how foundational mathematical ideas underlie all of computing (<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi">al-Khwarizmi</a>).</li>
@@ -830,7 +894,7 @@ main :last-child {
 <li><strong>Claude Shannon (1916–2001)</strong> – Showed in 1937 that electrical circuits could perform Boolean logic, thus designing the foundation of digital circuit theory. In 1948 he introduced information theory, quantifying how data can be encoded and transmitted – a critical underpinning for computers and communication networks (<a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a>).</li>
 <li><strong>John von Neumann (1903–1957)</strong> – Formulated the stored-program computer architecture in 1945 (the von Neumann architecture), in which a computer’s program and data reside in memory together. This elegant design – described in his EDVAC report – underpins virtually all modern computers, allowing programs to modify themselves and be easily re-used (<a href="https://en.wikipedia.org/wiki/John_von_Neumann">John von Neumann</a>).</li>
 </ul>
-<h2 id="electronic-revolution">Electronic Revolution</h2>
+<h2 id="electronic-revolution" tabindex="-1"><a class="heading-anchor" href="#electronic-revolution" aria-hidden="true">#</a> Electronic Revolution</h2>
 <p>By the mid-20th century, theoretical ideas gave rise to physical machines. We acknowledge the engineers and inventors who transformed computing from gears and paper into electronic speeds, shrinking machines from room-sized to microchip-sized:</p>
 <ul>
 <li><strong>Konrad Zuse (1910–1995)</strong> – Built the Z3 computer in 1941, regarded as the world’s first fully functioning programmable, automatic digital computer. Zuse’s electromechanical design in wartime Germany pioneered binary arithmetic and program control in computing (<a href="https://en.wikipedia.org/wiki/Konrad_Zuse">Konrad Zuse</a>).</li>
@@ -843,7 +907,7 @@ main :last-child {
 <li><strong>Steve Jobs (1955–2011) and Steve Wozniak (1950–)</strong> – Co-founders of Apple who in 1977 introduced the Apple II, one of the first highly successful personal computers. The Apple II’s user-friendly design helped bring computing out of labs and into homes and schools, igniting the personal computer revolution (<a href="https://en.wikipedia.org/wiki/Apple_II">Apple II</a>).</li>
 <li><strong>Bill Gates (1955–) and Paul Allen (1953–2018)</strong> – Co-founded Microsoft in 1975 and created software like Altair BASIC for the MITS Altair 8800 (1975), an early microcomputer kit. Their work catalyzed the personal computer software industry, making microcomputers useful for hobbyists and, eventually, billions of users (<a href="https://en.wikipedia.org/wiki/Altair_8800">Altair 8800</a>).</li>
 </ul>
-<h2 id="programming-pioneers">Programming Pioneers</h2>
+<h2 id="programming-pioneers" tabindex="-1"><a class="heading-anchor" href="#programming-pioneers" aria-hidden="true">#</a> Programming Pioneers</h2>
 <p>Once computers existed, a new challenge arose: instructing these machines. We recognize the programming pioneers who developed the languages, compilers, and operating systems that unlocked computers’ potential:</p>
 <ul>
 <li><strong>Grace Hopper (1906–1992)</strong> – Developed the first compiler (1940s) and co-authored the COBOL language (1959), which allowed computers to be programmed with English-like commands. Admiral Hopper’s innovations in automatic programming greatly expanded accessibility, earning her the nickname “Grandma of COBOL” and a place as a software pioneer (<a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a>).</li>
@@ -855,7 +919,7 @@ main :last-child {
 <li><strong>Margaret Hamilton (1936–)</strong> – Led the team that developed on-board flight software for NASA’s Apollo missions in the 1960s. She coined the term “software engineering” to emphasize the discipline needed in programming. Hamilton’s rigor and error-checking in the Apollo Guidance Computer code averted mission disasters and proved the importance of software quality (<a href="https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)">Margaret Hamilton</a>).</li>
 <li><strong>Alan Kay (1940–)</strong> – A pioneer of graphical user interfaces and object-oriented programming. At Xerox PARC in the 1970s, Kay helped create the Smalltalk language and the concept of overlapping windows on screen. His vision of “personal dynamic media” presaged the modern personal computer and many of the user interface ideas we now take for granted (<a href="https://en.wikipedia.org/wiki/Alan_Kay">Alan Kay</a>).</li>
 </ul>
-<h2 id="network-visionaries">Network Visionaries</h2>
+<h2 id="network-visionaries" tabindex="-1"><a class="heading-anchor" href="#network-visionaries" aria-hidden="true">#</a> Network Visionaries</h2>
 <p>No computer is an island – connecting computers multiplied their power. We salute the visionaries who imagined and built the networks that evolved into today’s Internet:</p>
 <ul>
 <li><strong>J. C. R. Licklider (1915–1990)</strong> – Psychologist and computer scientist who in 1960 envisioned a “Galactic Network” of globally interconnected computers. As the first director of ARPA’s computer programs, Licklider championed the research that led to the ARPANET, planting the seeds of the Internet decades before it became a reality (<a href="https://en.wikipedia.org/wiki/J._C._R._Licklider">J. C. R. Licklider</a>).</li>
@@ -865,7 +929,7 @@ main :last-child {
 <li><strong>Vint Cerf (1943–) and Bob Kahn (1938–)</strong> – Co-inventors of the TCP/IP protocols (published 1974, adopted by ARPANET in 1983) that allow diverse computer networks to interconnect and route traffic as a single internet. Often called the “fathers of the Internet,” Cerf and Kahn designed the communication standards that underlie the global Internet, enabling everything from web browsing to livestreaming (<a href="https://en.wikipedia.org/wiki/Internet_protocol_suite">Internet Protocol Suite</a>).</li>
 <li><strong>Robert Metcalfe (1946–)</strong> – Invented Ethernet at Xerox PARC in 1973, creating a simple networking system for local area networks (LANs) using coaxial cable. Ethernet (and Metcalfe’s Law highlighting the value of networks) became the dominant technology for connecting PCs in offices and homes, and it remains fundamental in modern wired networking (<a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a>).</li>
 </ul>
-<h2 id="open-source-revolution">Open Source Revolution</h2>
+<h2 id="open-source-revolution" tabindex="-1"><a class="heading-anchor" href="#open-source-revolution" aria-hidden="true">#</a> Open Source Revolution</h2>
 <p>Beyond hardware and networks, a movement arose to share software freely. We acknowledge the hackers and organizations that championed open source principles, making computing a collaborative effort:</p>
 <ul>
 <li><strong>Richard Stallman (1953–)</strong> – Launched the GNU Project in 1983 and the Free Software Foundation in 1985, spearheading the free software movement. Frustrated by proprietary systems, Stallman developed free replacements (like GNU Compiler Collection and GNU Emacs) and the GNU General Public License (GPL) to guarantee users the freedom to run, study, modify, and share software (<a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>).</li>
@@ -873,7 +937,7 @@ main :last-child {
 <li><strong>Apache Software Foundation (est. 1999)</strong> – Evolved from the group of volunteers who developed the Apache HTTP Server (first released 1995), which became the world’s most popular web server. Apache’s success demonstrated the power of open-source collaboration in critical infrastructure, and the foundation now hosts dozens of community-driven projects that run on millions of machines (<a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache HTTP Server</a>).</li>
 <li><strong>Open-Source Communities</strong> – Millions of volunteer programmers around the world have contributed to free and open-source software. From scripting languages like Perl and Python, to web browsers like Mozilla Firefox, to entire operating systems and databases, these communities have proven that transparent, collaborative development can out-innovate traditional models. This very website, like much of the web, runs on open-source components – a testament to the collective effort of countless unnamed contributors who share their code for the benefit of all.</li>
 </ul>
-<h2 id="modern-web-era">Modern Web Era</h2>
+<h2 id="modern-web-era" tabindex="-1"><a class="heading-anchor" href="#modern-web-era" aria-hidden="true">#</a> Modern Web Era</h2>
 <p>Finally, we arrive at the modern era, where computing became ubiquitous. Building on all previous innovations, the Internet and the Web transformed how we communicate, work, and live. We pay tribute to key figures and milestones of the Web age:</p>
 <ul>
 <li><strong>Tim Berners-Lee (1955–)</strong> – Invented the World Wide Web in 1989 while at CERN, defining the HTTP protocol and HTML language that allowed internet-linked documents to be shared and viewed in a browser. By 1991 he had the first web server and web page online, and instead of patenting his invention, Berners-Lee released the Web protocols freely – unleashing a global information revolution (<a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a>).</li>
@@ -883,25 +947,24 @@ main :last-child {
 <li><strong>Steve Jobs (1955–2011)</strong> – As Apple’s co-founder and CEO, he led the creation of the iPhone (introduced 2007) and its App Store, which redefined personal computing and telecommunications. The iPhone put the power of a desktop computer into a mobile device for the first time, ushering in the age of smartphones and ubiquitous computing. Jobs’s relentless focus on user-centered design and innovation has left an indelible mark on the way we interact with technology (<a href="https://en.wikipedia.org/wiki/Steve_Jobs">Steve Jobs</a>).</li>
 </ul>
 <p><em>(Many other worthy names and milestones exist – from advances in cybersecurity and artificial intelligence, to the rise of cloud computing and social media – but sadly not all can be listed here. Every new chapter of tech builds on the last, and the story continues.)</em></p>
-<h2 id="infrastructure-and-development-tools">Infrastructure and Development Tools</h2>
+<h2 id="infrastructure-and-development-tools" tabindex="-1"><a class="heading-anchor" href="#infrastructure-and-development-tools" aria-hidden="true">#</a> Infrastructure and Development Tools</h2>
 <p>I am also grateful for the infrastructure and tools that make a website like this possible. This site, like so many others, runs on open-source foundations: the Linux operating system powering the server, web servers such as Apache and Nginx delivering content via open protocols, and the open standards (HTML, CSS, JavaScript) that ensure any browser can display these pages. Readily available programming languages (like Python and JavaScript) and countless libraries and frameworks empower developers to turn ideas into reality with relative ease (<a href="https://www.python.org/">Python</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>).</p>
 <p>Equally important are the developer tools and communities that support modern creation. Tools like Git for version control (and platforms built on it, such as GitHub) enable global collaboration on code (<a href="https://git-scm.com/">Git</a>, <a href="https://github.com/">GitHub</a>). Package managers, build tools, and testing frameworks (largely open-source themselves) make complex development manageable. And the vast ecosystem of knowledge-sharing – from official documentation to Q&amp;A communities like Stack Overflow – means that solutions to problems are often just a web search away (<a href="https://stackoverflow.com/">Stack Overflow</a>). Without this rich, shared infrastructure of software and information, a personal project like this would be immeasurably more difficult. I owe thanks to the maintainers, documenters, and fellow developers who contribute to these tools and communities every day.</p>
-<h2 id="reflection-on-interdependence">Reflection on Interdependence</h2>
+<h2 id="reflection-on-interdependence" tabindex="-1"><a class="heading-anchor" href="#reflection-on-interdependence" aria-hidden="true">#</a> Reflection on Interdependence</h2>
 <p>I’m humbled by how interconnected and cumulative technological progress is. Each generation of technologists builds upon the last, often in ways the original pioneers could never have anticipated. I recognize that any code I write or project I create today is only possible because of the tools, knowledge, and inspiration provided by others. In computing, as in all human endeavor, we achieve what we do by building on foundations laid by those who came before us.</p>
 <blockquote>
 <p>“If I have seen further it is by standing on the shoulders of Giants.” — Isaac Newton</p>
 </blockquote>
 
 
-			</heading-anchors>
 		</main>
 
 		<footer>
 			<em><a href="/readme">README.md</a></em>
 		</footer>
 
-		<!-- This page `/acknowledgements/` was built on 2025-06-16T16:05:23.882Z -->
-		<script type="module" src="/dist/EQfoox7dWU.js"></script>
+		<!-- This page `/acknowledgements/` was built on 2025-06-16T17:57:31.282Z -->
+		<script type="module" src="/dist/4vWmuI0k9z.js"></script>
 		
 		
 		

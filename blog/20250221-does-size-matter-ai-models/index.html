@@ -107,6 +107,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Disable transitions during initial page load to prevent flash */
+.no-transitions * {
+  transition: none !important;
+}
+
 /* Disable transitions for reduced motion users */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -441,6 +446,29 @@ footer a {
   margin: 1rem 0;
   padding: 0;
   list-style: none;
+}
+
+/* Post type styling for individual posts - integrated with metadata */
+.post-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 12px;
+  color: var(--light-slate-gray);
+  font-family: monospace;
+  padding: 2px 6px;
+  background-color: var(--link-water);
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.post-type-emoji {
+  font-size: 0.9rem;
+}
+
+.post-type-label {
+  text-transform: lowercase;
+  font-style: italic;
 }
 
 /* Tags */
@@ -795,6 +823,42 @@ main :last-child {
   opacity: 0.6;
   font-size: 0.9em;
 }
+
+/* Heading anchor links */
+.heading-anchor {
+  color: var(--light-slate-gray);
+  opacity: 0.3;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-weight: normal;
+  transition: opacity 0.2s ease;
+}
+
+.heading-anchor:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.heading-anchor:visited {
+  color: var(--light-slate-gray);
+}
+
+/* Show anchor links on heading hover */
+h1:hover .heading-anchor,
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor,
+h5:hover .heading-anchor,
+h6:hover .heading-anchor {
+  opacity: 0.7;
+}
+
+/* Focus state for accessibility */
+.heading-anchor:focus {
+  opacity: 1;
+  outline: 2px solid var(--havelock-blue);
+  outline-offset: 2px;
+}
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -964,6 +1028,7 @@ pre[class*="language-diff-"] {
 	color: inherit; /* override del, ins, mark defaults */
 }</style>
 		
+
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
@@ -982,14 +1047,24 @@ pre[class*="language-diff-"] {
 		</header>
 
 		<main id="main">
-			<heading-anchors>
-				
+			
+
 
 
 <h1 id="does-size-matter-the-rise-of-smarter-ai-models">Does Size Matter: The Rise of Smarter AI Models</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2025-02-21">21 February 2025</time></li>
+	
+	
+	
+	
+		
+		<li class="post-type post-type-article">
+			<span class="post-type-emoji">📄</span>
+			<span class="post-type-label">Article</span>
+		</li>
+	
 	<li><a href="/tags/ai/" class="post-tag">AI</a>, </li>
 	<li><a href="/tags/machine-learning/" class="post-tag">machine learning</a>, </li>
 	<li><a href="/tags/efficiency/" class="post-tag">efficiency</a>, </li>
@@ -1005,7 +1080,7 @@ pre[class*="language-diff-"] {
 <p>They call it Recurrent Depth, and it's not the same as that chain-of-thought stuff you might have seen where the model writes out its reasoning step by step. This is happening under the hood - the model basically decides &quot;hmm, this is a tough one, let me run through my neural pathways a few more times before I answer.&quot;</p>
 <p>What gets me excited about this is that it fits perfectly with where I think AI needs to go. I want models that can run on my laptop, maybe even my phone eventually, but still be smart enough to actually help me think through problems. Not everything needs a data center.</p>
 <hr>
-<h2 id="so-what-actually-is-this-recurrent-depth-thing">So What Actually Is This Recurrent Depth Thing?</h2>
+<h2 id="so-what-actually-is-this-recurrent-depth-thing" tabindex="-1"><a class="heading-anchor" href="#so-what-actually-is-this-recurrent-depth-thing" aria-hidden="true">#</a> So What Actually Is This Recurrent Depth Thing?</h2>
 <p>Okay, let me break this down without getting too technical (though I'll probably fail at that).</p>
 <p>Normally, when you ask an LLM a question, it goes through its layers once - layer 1, layer 2, layer 3... all the way to the end, then spits out an answer. Whether you're asking &quot;What's 2+2?&quot; or &quot;Explain quantum mechanics,&quot; it's the same journey through the same number of layers.</p>
 <p>What these researchers did was basically say: &quot;What if we could loop back?&quot; Like, what if after going through all the layers, the model could say &quot;Actually, let me think about this again&quot; and run through some of those layers multiple times?</p>
@@ -1019,14 +1094,14 @@ pre[class*="language-diff-"] {
 <p>So they had to get clever about training the model to handle different levels of &quot;thinking depth&quot; gracefully.</p>
 <p>The drawing analogy actually helps here. You know how when you're sketching, you might do a quick outline for simple stuff, but for complex scenes you keep going back, adding layers, refining details? That's basically what this is. The model starts with a rough &quot;sketch&quot; of the answer and can choose to refine it based on how complex the question is.</p>
 <hr>
-<h2 id="some-thoughts-and-questions-this-raises">Some Thoughts and Questions This Raises</h2>
+<h2 id="some-thoughts-and-questions-this-raises" tabindex="-1"><a class="heading-anchor" href="#some-thoughts-and-questions-this-raises" aria-hidden="true">#</a> Some Thoughts and Questions This Raises</h2>
 <p>Look, I don't build models myself (I just use them and think about them way too much), but this paper got me thinking about a bunch of stuff:</p>
 <p><strong>Could we combine this with other efficiency tricks?</strong> Like, what if you had a model that uses both this recurrent depth thing AND mixture of experts? The paper doesn't really go there, which surprises me. Seems like the obvious next step would be to throw everything at the wall and see what sticks.</p>
 <p><strong>How do we teach models to figure out their own thinking depth?</strong> Right now, you have to manually tell the model &quot;okay, think about this 3 times&quot; or whatever. But couldn't we train a tiny model - like those embedding models that are super fast - to look at a query and go &quot;yeah, this needs about 5 iterations of thinking&quot;? It'd be like sentiment analysis, but for complexity assessment.</p>
 <p><strong>Are companies actually going to use this?</strong> I mean, they kind of have to at some point, right? We can't just keep making models bigger forever. There literally isn't enough memory in the world. Some companies will probably try to squeeze out one or two more generations of mega-models, but I think the smart money is on efficiency.</p>
 <p><strong>What about latency though?</strong> This is the big one for me. Some models like Gemini Flash are all about speed - boom, instant response. But what if we could be clever about it? Imagine having a fast model that immediately goes &quot;Great question! Let me think about that...&quot; while a deeper-thinking model churns away in the background. It'd feel way more natural than either waiting forever OR getting an instant but potentially shallow response.</p>
 <hr>
-<h2 id="why-i-think-this-actually-matters">Why I Think This Actually Matters</h2>
+<h2 id="why-i-think-this-actually-matters" tabindex="-1"><a class="heading-anchor" href="#why-i-think-this-actually-matters" aria-hidden="true">#</a> Why I Think This Actually Matters</h2>
 <p>Here's my take: the future of AI isn't about who can build the biggest model. It's about who can build the smartest, most efficient one. And I'm not just saying that because I want to run models on my laptop (though I definitely do).</p>
 <p>Think about it - if we want AI to be truly integrated into our daily lives, it can't always be phoning home to some massive data center. Your phone's AI assistant shouldn't need an internet connection to help you think through a problem. Your laptop should be able to run a model that's actually useful for coding or writing without melting through your desk.</p>
 <p>That's why I'm putting my money where my mouth is. I'm investing in beefy local hardware not just to run existing models, but to experiment with what's possible when you have powerful, efficient AI that's always available. No API limits, no internet required, just you and your digital thinking partner.</p>
@@ -1039,15 +1114,14 @@ pre[class*="language-diff-"] {
 <ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/20250201-building-home-health/">How We Built Home Health - An AI-Powered Web App for Home Improvement</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/20250605-state-of-js-2024/">Interesting read: The State of JS 2024</a></li>
 </ul>
 
-			</heading-anchors>
 		</main>
 
 		<footer>
 			<em><a href="/readme">README.md</a></em>
 		</footer>
 
-		<!-- This page `/blog/20250221-does-size-matter-ai-models/` was built on 2025-06-16T16:05:23.883Z -->
-		<script type="module" src="/dist/EQfoox7dWU.js"></script>
+		<!-- This page `/blog/20250221-does-size-matter-ai-models/` was built on 2025-06-16T17:57:31.283Z -->
+		<script type="module" src="/dist/4vWmuI0k9z.js"></script>
 		
 		
 		

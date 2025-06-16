@@ -107,6 +107,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Disable transitions during initial page load to prevent flash */
+.no-transitions * {
+  transition: none !important;
+}
+
 /* Disable transitions for reduced motion users */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -441,6 +446,29 @@ footer a {
   margin: 1rem 0;
   padding: 0;
   list-style: none;
+}
+
+/* Post type styling for individual posts - integrated with metadata */
+.post-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 12px;
+  color: var(--light-slate-gray);
+  font-family: monospace;
+  padding: 2px 6px;
+  background-color: var(--link-water);
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.post-type-emoji {
+  font-size: 0.9rem;
+}
+
+.post-type-label {
+  text-transform: lowercase;
+  font-style: italic;
 }
 
 /* Tags */
@@ -794,8 +822,45 @@ main :last-child {
   content: " (auto)";
   opacity: 0.6;
   font-size: 0.9em;
+}
+
+/* Heading anchor links */
+.heading-anchor {
+  color: var(--light-slate-gray);
+  opacity: 0.3;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-weight: normal;
+  transition: opacity 0.2s ease;
+}
+
+.heading-anchor:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.heading-anchor:visited {
+  color: var(--light-slate-gray);
+}
+
+/* Show anchor links on heading hover */
+h1:hover .heading-anchor,
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor,
+h5:hover .heading-anchor,
+h6:hover .heading-anchor {
+  opacity: 0.7;
+}
+
+/* Focus state for accessibility */
+.heading-anchor:focus {
+  opacity: 1;
+  outline: 2px solid var(--havelock-blue);
+  outline-offset: 2px;
 }</style>
 		
+
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
@@ -814,12 +879,11 @@ main :last-child {
 		</header>
 
 		<main id="main">
-			<heading-anchors>
-				
-<h1 id="embracing-the-small-web">Embracing the Small Web</h1>
+			
+<h1 id="embracing-the-small-web" tabindex="-1"><a class="heading-anchor" href="#embracing-the-small-web" aria-hidden="true">#</a> Embracing the Small Web</h1>
 <p><em>The web doesn't have to be slow, bloated, or invasive. This site proves that you can create something beautiful, functional, and fast while respecting your visitors' time, privacy, and bandwidth.</em></p>
 <p>This website is a proud member of the <strong>small web</strong> — a movement that champions simplicity, sustainability, and human-scale technology over the bloated, surveillance-heavy platforms that dominate today's internet.</p>
-<h2 id="what-is-the-small-web">What is the Small Web?</h2>
+<h2 id="what-is-the-small-web" tabindex="-1"><a class="heading-anchor" href="#what-is-the-small-web" aria-hidden="true">#</a> What is the Small Web?</h2>
 <p>The small web represents a return to the original vision of the World Wide Web: a decentralized network of independent websites, each with its own character and purpose. It's about:</p>
 <ul>
 <li><strong>Personal ownership:</strong> Your content, your domain, your rules</li>
@@ -829,13 +893,13 @@ main :last-child {
 <li><strong>Accessibility first:</strong> Content that everyone can access and enjoy</li>
 <li><strong>Human scale:</strong> Technology that serves people, not corporations</li>
 </ul>
-<h2 id="why-this-matters">Why This Matters</h2>
+<h2 id="why-this-matters" tabindex="-1"><a class="heading-anchor" href="#why-this-matters" aria-hidden="true">#</a> Why This Matters</h2>
 <p>In an era where a handful of tech giants control most of our online interactions, the small web offers an alternative. It's a space where:</p>
 <blockquote>
 <p>Creativity flourishes without algorithmic interference. Where you can discover genuine human voices instead of engagement-optimized content. Where your attention isn't the product being sold.</p>
 </blockquote>
 <p>Every small website is an act of digital resistance — a declaration that the web can be better, more humane, and more sustainable.</p>
-<h2 id="join-the-movement">Join the Movement</h2>
+<h2 id="join-the-movement" tabindex="-1"><a class="heading-anchor" href="#join-the-movement" aria-hidden="true">#</a> Join the Movement</h2>
 <p>You don't need to be a developer to participate in the small web. Here's how you can contribute:</p>
 <ul>
 <li><strong>Create your own website:</strong> Use simple tools like <a href="https://www.11ty.dev/">Eleventy</a>, <a href="https://jekyllrb.com/">Jekyll</a>, or even hand-coded HTML</li>
@@ -845,7 +909,7 @@ main :last-child {
 <li><strong>Link generously:</strong> Connect to other small websites and help the web stay interconnected</li>
 <li><strong>Own your content:</strong> Post on your own site first, then syndicate elsewhere</li>
 </ul>
-<h2 id="resources-for-the-small-web">Resources for the Small Web</h2>
+<h2 id="resources-for-the-small-web" tabindex="-1"><a class="heading-anchor" href="#resources-for-the-small-web" aria-hidden="true">#</a> Resources for the Small Web</h2>
 <ul>
 <li><a href="https://indieweb.org/">IndieWeb</a> — A community working to make the web more independent</li>
 <li><a href="https://512kb.club/">512KB Club</a> — Websites that prioritize performance</li>
@@ -856,15 +920,14 @@ main :last-child {
 </ul>
 
 
-			</heading-anchors>
 		</main>
 
 		<footer>
 			<em><a href="/readme">README.md</a></em>
 		</footer>
 
-		<!-- This page `/small-web/` was built on 2025-06-16T16:05:23.883Z -->
-		<script type="module" src="/dist/EQfoox7dWU.js"></script>
+		<!-- This page `/small-web/` was built on 2025-06-16T17:57:31.283Z -->
+		<script type="module" src="/dist/4vWmuI0k9z.js"></script>
 		
 		
 		

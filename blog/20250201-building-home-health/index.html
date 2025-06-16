@@ -107,6 +107,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Disable transitions during initial page load to prevent flash */
+.no-transitions * {
+  transition: none !important;
+}
+
 /* Disable transitions for reduced motion users */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -441,6 +446,29 @@ footer a {
   margin: 1rem 0;
   padding: 0;
   list-style: none;
+}
+
+/* Post type styling for individual posts - integrated with metadata */
+.post-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 12px;
+  color: var(--light-slate-gray);
+  font-family: monospace;
+  padding: 2px 6px;
+  background-color: var(--link-water);
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.post-type-emoji {
+  font-size: 0.9rem;
+}
+
+.post-type-label {
+  text-transform: lowercase;
+  font-style: italic;
 }
 
 /* Tags */
@@ -795,6 +823,42 @@ main :last-child {
   opacity: 0.6;
   font-size: 0.9em;
 }
+
+/* Heading anchor links */
+.heading-anchor {
+  color: var(--light-slate-gray);
+  opacity: 0.3;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-weight: normal;
+  transition: opacity 0.2s ease;
+}
+
+.heading-anchor:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.heading-anchor:visited {
+  color: var(--light-slate-gray);
+}
+
+/* Show anchor links on heading hover */
+h1:hover .heading-anchor,
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor,
+h5:hover .heading-anchor,
+h6:hover .heading-anchor {
+  opacity: 0.7;
+}
+
+/* Focus state for accessibility */
+.heading-anchor:focus {
+  opacity: 1;
+  outline: 2px solid var(--havelock-blue);
+  outline-offset: 2px;
+}
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -964,6 +1028,7 @@ pre[class*="language-diff-"] {
 	color: inherit; /* override del, ins, mark defaults */
 }</style>
 		
+
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
@@ -982,14 +1047,24 @@ pre[class*="language-diff-"] {
 		</header>
 
 		<main id="main">
-			<heading-anchors>
-				
+			
+
 
 
 <h1 id="how-we-built-home-health-an-ai-powered-web-app-for-home-improvement">How We Built Home Health - An AI-Powered Web App for Home Improvement</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2025-02-01">01 February 2025</time></li>
+	
+	
+	
+	
+		
+		<li class="post-type post-type-article">
+			<span class="post-type-emoji">📄</span>
+			<span class="post-type-label">Article</span>
+		</li>
+	
 	<li><a href="/tags/ai/" class="post-tag">AI</a>, </li>
 	<li><a href="/tags/web-development/" class="post-tag">web development</a>, </li>
 	<li><a href="/tags/projects/" class="post-tag">projects</a>, </li>
@@ -998,15 +1073,15 @@ pre[class*="language-diff-"] {
 </ul>
 
 <p><img src="content/blog/20250201-building-home-health/home-health-blog-header.jpg" alt="Home Health Blog Header"></p>
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction" tabindex="-1"><a class="heading-anchor" href="#introduction" aria-hidden="true">#</a> Introduction</h2>
 <p>This story starts, like many good ideas, with a bit of curiosity and a product manager messing around with ChatGPT. They decided to see if AI could come up with job recommendations just by feeding it photos of his house. Turns out, it could. And that little experiment set us off on the journey of building <em><a href="https://homehealth.checkatrade.com/">Home Health</a></em>—a web app where homeowners upload photos of their homes and get back a detailed report with improvement suggestions.</p>
 <p>I was pretty sceptical about using generative AI for something like this. But this project surprised me. It wasn't just about slapping AI onto a problem and hoping for the best—we had to figure out how to make it work, where it fell short, and when to trust it (and when not to). This blog is a look at how we built this thing, the problems we ran into, how I learned to work with AI agents, and why I'm actually proud of how it turned out.</p>
-<h2 id="the-spark-from-idea-to-prototype">The Spark: From Idea to Prototype</h2>
+<h2 id="the-spark-from-idea-to-prototype" tabindex="-1"><a class="heading-anchor" href="#the-spark-from-idea-to-prototype" aria-hidden="true">#</a> The Spark: From Idea to Prototype</h2>
 <p><picture><source type="image/avif" srcset="/blog/20250201-building-home-health/7CNzplmFvs-1242.avif 1242w"><source type="image/webp" srcset="/blog/20250201-building-home-health/7CNzplmFvs-1242.webp 1242w"><img loading="lazy" decoding="async" src="/blog/20250201-building-home-health/7CNzplmFvs-1242.png" alt="The first AI Generated prototype" width="1242" height="968"></picture></p>
 <p>The whole idea for <em>Home Health</em> came from Jamie, our product manager, who's been at Checkatrade longer than I've had the patience to count and knows how to spot a good opportunity. His goal was simple: inspire homeowners to post more jobs on Checkatrade. More jobs mean more work for our tradespeople. Initially, he thought about adding a blog or a kind of digital magazine to the Checkatrade app—something homeowners could flip through for ideas, like &quot;maybe it's time for that new kitchen&quot; or &quot;I should finally fix that noisy bathroom fan.&quot;</p>
 <p>But then Jamie, being the curious type, wondered if generative AI could do better. Inspired by recent advancements in ChatGPT, he uploaded photos of his house and asked it to generate a home improvement report. The results were surprisingly good. The AI returned suggestions written in a way that felt like they were tailored for a real homeowner—practical, specific, and, most importantly, inspiring. That's when he looped me in.</p>
 <p>At the time, we were just kicking off <em>Checkatrade Labs</em>, a small, fast-paced R&amp;D team focused on rapid prototyping and launching experimental projects. This was our first big test. Jamie approached me in late November with a simple request: &quot;Let's launch this before Christmas.&quot; That gave me about three weeks—on top of my full-time commitment to another major project called <em><a href="how-we-decommissioned-heritage-without-toppling-the-tower">Heritage Switch Off</a></em>. So, with no time during work hours, I rolled up my sleeves and started building in the evenings and weekends.</p>
-<h2 id="prototyping-with-retool">Prototyping with Retool</h2>
+<h2 id="prototyping-with-retool" tabindex="-1"><a class="heading-anchor" href="#prototyping-with-retool" aria-hidden="true">#</a> Prototyping with Retool</h2>
 <p><picture><source type="image/avif" srcset="/blog/20250201-building-home-health/48419TQ9Zl-875.avif 875w"><source type="image/webp" srcset="/blog/20250201-building-home-health/48419TQ9Zl-875.webp 875w"><img loading="lazy" decoding="async" src="/blog/20250201-building-home-health/48419TQ9Zl-875.png" alt="Early Retool Proof of Concept" width="875" height="627"></picture></p>
 <p>I hadn't built a front-end app in a while, so I reached for something that would let me move fast: <a href="https://retool.com/">Retool</a>. It had just been procured at Checkatrade and was gaining traction internally. I hadn't used it for anything serious before, but it seemed like a good fit for quick prototyping—drag-and-drop components, an embedded database, and, most importantly, built-in AI integration. I figured I could slap together a working prototype in a few days.</p>
 <p>And I did. But it wasn't without its headaches.</p>
@@ -1025,7 +1100,7 @@ pre[class*="language-diff-"] {
 </ul>
 <p><picture><source type="image/avif" srcset="/blog/20250201-building-home-health/1y358dHe2W-682.avif 682w"><source type="image/webp" srcset="/blog/20250201-building-home-health/1y358dHe2W-682.webp 682w"><img loading="lazy" decoding="async" src="/blog/20250201-building-home-health/1y358dHe2W-682.png" alt="The Retool version released internally" width="682" height="1158"></picture></p>
 <p>Despite the challenges, we released the prototype internally before Christmas. It wasn't perfect, but it worked. And more importantly, it proved the concept. People at Checkatrade loved it, sharing their reports and comparing home scores like it was a game.</p>
-<h2 id="transitioning-to-a-full-fledged-web-app">Transitioning to a Full-Fledged Web App</h2>
+<h2 id="transitioning-to-a-full-fledged-web-app" tabindex="-1"><a class="heading-anchor" href="#transitioning-to-a-full-fledged-web-app" aria-hidden="true">#</a> Transitioning to a Full-Fledged Web App</h2>
 <p><picture><source type="image/avif" srcset="/blog/20250201-building-home-health/WKyPQPGvfN-2048.avif 2048w"><source type="image/webp" srcset="/blog/20250201-building-home-health/WKyPQPGvfN-2048.webp 2048w"><img loading="lazy" decoding="async" src="/blog/20250201-building-home-health/WKyPQPGvfN-2048.png" alt="Using Cline to make the app" width="2048" height="1280"></picture></p>
 <p>Once the internal prototype was a hit, it was clear we needed to rebuild it for public release. Retool was great for prototyping, but it wasn't reliable or performant enough for a wider audience.</p>
 <p>Here's the thing: I hadn't built a proper web app in years. But instead of spending weeks refreshing my React skills, I let AI do the heavy lifting. I used <a href="https://www.anthropic.com/claude">Anthropic's Claude</a> through a VS Code extension called <a href="https://github.com/cline/cline">Cline</a> to bootstrap the project. I gave it a simple prompt: &quot;Build me a web app like this Retool prototype.&quot; And it did.</p>
@@ -1037,7 +1112,7 @@ pre[class*="language-diff-"] {
 </ul>
 <p>I was skeptical about going with the typical React/Next.js stack—I usually like finding simpler, less mainstream solutions. But the AI agents knew this stack inside out, and the wealth of online resources made troubleshooting a breeze. Plus, I wasn't flying blind. The Retool prototype served as a template, so the AI agents could recreate the app in Next.js without starting from scratch.</p>
 <p>Deploying was straightforward. I set up a GitHub repo, added GitHub Actions for CI/CD, and deployed to Google App Engine (though in hindsight, I might have preferred Cloud Run). The whole process was smooth, and the performance boost compared to Retool was night and day.</p>
-<h2 id="integrating-generative-ai-for-image-recognition">Integrating Generative AI for Image Recognition</h2>
+<h2 id="integrating-generative-ai-for-image-recognition" tabindex="-1"><a class="heading-anchor" href="#integrating-generative-ai-for-image-recognition" aria-hidden="true">#</a> Integrating Generative AI for Image Recognition</h2>
 <p>Getting the AI to analyse photos and generate useful recommendations was a challenge. Early on, we tried stuffing too much into a single prompt—asking the AI to describe the room, identify issues, suggest improvements, recommend trades, and estimate costs all at once. The results were… not great. The AI would often default to examples from the prompt, especially when the photo lacked clear information (like a black image).</p>
 <p><strong>The Solution:</strong> I broke the process into multiple steps:</p>
 <ol>
@@ -1049,17 +1124,17 @@ pre[class*="language-diff-"] {
 <p>Splitting the tasks made the AI's job easier and improved accuracy. It also let us use lighter, cheaper models like <a href="https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/">GPT-4o Mini</a>, which cut down costs and sped up processing.</p>
 <p>I did, at one point, pitch the idea of building our own computer vision model—one trained specifically on home improvement issues. Imagine an AI that could tell if your boiler's outdated or if there's damp in your ceiling. But time and budget constraints made that a &quot;maybe someday&quot; idea. For now, the generative AI solution works well enough, especially for a free tool.</p>
 <p>Interestingly, the most expensive part of the project wasn't the AI. It was the address lookup feature. We needed Unique Property Reference Numbers (UPRNs) to pull data from Chimney, a third-party service that provides detailed property information (build year, roof type, property value, etc.). Standard services like Google Autocomplete didn't provide UPRNs, so we used <a href="https://ideal-postcodes.co.uk/">Ideal Postcodes</a>, which charges up to 15 pence per query for comprehensive data—the biggest cost in the project.</p>
-<h2 id="launching-home-health-and-gathering-feedback">Launching Home Health and Gathering Feedback</h2>
+<h2 id="launching-home-health-and-gathering-feedback" tabindex="-1"><a class="heading-anchor" href="#launching-home-health-and-gathering-feedback" aria-hidden="true">#</a> Launching Home Health and Gathering Feedback</h2>
 <p><picture><source type="image/avif" srcset="/blog/20250201-building-home-health/5-j0X101e8-1612.avif 1612w"><source type="image/webp" srcset="/blog/20250201-building-home-health/5-j0X101e8-1612.webp 1612w"><img loading="lazy" decoding="async" src="/blog/20250201-building-home-health/5-j0X101e8-1612.jpeg" alt="The Header of the Home Health app" width="1612" height="1285"></picture></p>
 <p>We're publicly rolling out <em>Home Health</em> gradually through email campaigns in small batches. It's currently still in its gradual rollout phase.</p>
 <p>Internally at Checkatrade, it's been a hit. People love comparing their home scores (we included a fun, credit-score-like rating in the report), and it's sparked a lot of engagement. We're excited to see how the public reacts as we continue the rollout.</p>
-<h2 id="lessons-learned-and-future-directions">Lessons Learned and Future Directions</h2>
+<h2 id="lessons-learned-and-future-directions" tabindex="-1"><a class="heading-anchor" href="#lessons-learned-and-future-directions" aria-hidden="true">#</a> Lessons Learned and Future Directions</h2>
 <p>The biggest lesson? AI agents can build a web app faster than I expected—especially when they're working within familiar frameworks. If I could do it over, I'd skip Retool and go straight to Next.js. Not because Retool was bad, but because the AI tools I used made building a full-fledged app just as fast (and far more performant).</p>
 <p>I learned a lot about working with AI agents. Using Cline in VS Code, I supervised every change, giving real-time feedback. It felt like pair programming, but with an AI. I also experimented with Devin, a cloud-hosted AI agent that worked independently. While having multiple agents running in parallel sounded great, reviewing their pull requests was a nightmare—they'd often drift from the original task, and understanding their logic after the fact was time-consuming. I'm curious to explore multi-agent systems further, maybe even building my own with distinct roles (developer, project manager, QA tester) to keep things on track.</p>
 <p>As for <em>Home Health</em>, the next logical step is developing a custom computer vision model. The current AI setup works, but I'd love to see it get better at recognizing specific home issues—things like cracks in tiles, outdated boilers, or subtle signs of damp. But for now, I'm proud of where the app stands.</p>
-<h2 id="advice-for-aspiring-ai-driven-web-app-builders">Advice for Aspiring AI-Driven Web App Builders</h2>
+<h2 id="advice-for-aspiring-ai-driven-web-app-builders" tabindex="-1"><a class="heading-anchor" href="#advice-for-aspiring-ai-driven-web-app-builders" aria-hidden="true">#</a> Advice for Aspiring AI-Driven Web App Builders</h2>
 <p>The best thing we did was validate the concept early. Jamie didn't wait for a fancy tool or a big team—he just used ChatGPT to see if the idea had legs. And that's my advice to anyone looking to build with AI: just use it. Don't overthink it. Experiment, break things, see what works. Generative AI isn't some mysterious black box—it's a tool. And the best way to understand what it can do is to put it to work.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion" tabindex="-1"><a class="heading-anchor" href="#conclusion" aria-hidden="true">#</a> Conclusion</h2>
 <p><em>Home Health</em> started as an experiment and turned into something I'm genuinely proud of. It's not perfect (and I'll always have ideas for making it better), but seeing it go from Jamie's ChatGPT test to a live app people are using is pretty rewarding. The biggest thing I've learned? AI is a lot more useful when you stop theorizing about what it <em>might</em> do and actually put it to work. Sure, it's not always right, and it'll happily hallucinate its way through a prompt if you let it—but with the right setup, it can speed things up in ways I didn't expect.</p>
 <p>For anyone thinking about building AI-driven apps, my advice is simple: just start. Experiment, validate your ideas with accessible tools, and don't be afraid to let AI help you learn and build. This project taught me that you don't need some grand plan or perfect process—you just need to start. And who knows? You might end up building something cool along the way.</p>
 <p>You can use Home Health right now at <a href="https://homehealth.checkatrade.com/">homehealth.checkatrade.com</a></p>
@@ -1068,15 +1143,14 @@ pre[class*="language-diff-"] {
 <ul class="links-nextprev"><li class="links-nextprev-next">Next →<br><a href="/blog/20250221-does-size-matter-ai-models/">Does Size Matter: The Rise of Smarter AI Models</a></li>
 </ul>
 
-			</heading-anchors>
 		</main>
 
 		<footer>
 			<em><a href="/readme">README.md</a></em>
 		</footer>
 
-		<!-- This page `/blog/20250201-building-home-health/` was built on 2025-06-16T16:05:23.883Z -->
-		<script type="module" src="/dist/EQfoox7dWU.js"></script>
+		<!-- This page `/blog/20250201-building-home-health/` was built on 2025-06-16T17:57:31.283Z -->
+		<script type="module" src="/dist/4vWmuI0k9z.js"></script>
 		
 		
 		

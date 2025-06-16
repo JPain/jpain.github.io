@@ -107,6 +107,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Disable transitions during initial page load to prevent flash */
+.no-transitions * {
+  transition: none !important;
+}
+
 /* Disable transitions for reduced motion users */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -441,6 +446,29 @@ footer a {
   margin: 1rem 0;
   padding: 0;
   list-style: none;
+}
+
+/* Post type styling for individual posts - integrated with metadata */
+.post-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 12px;
+  color: var(--light-slate-gray);
+  font-family: monospace;
+  padding: 2px 6px;
+  background-color: var(--link-water);
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.post-type-emoji {
+  font-size: 0.9rem;
+}
+
+.post-type-label {
+  text-transform: lowercase;
+  font-style: italic;
 }
 
 /* Tags */
@@ -795,6 +823,42 @@ main :last-child {
   opacity: 0.6;
   font-size: 0.9em;
 }
+
+/* Heading anchor links */
+.heading-anchor {
+  color: var(--light-slate-gray);
+  opacity: 0.3;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-weight: normal;
+  transition: opacity 0.2s ease;
+}
+
+.heading-anchor:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.heading-anchor:visited {
+  color: var(--light-slate-gray);
+}
+
+/* Show anchor links on heading hover */
+h1:hover .heading-anchor,
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor,
+h5:hover .heading-anchor,
+h6:hover .heading-anchor {
+  opacity: 0.7;
+}
+
+/* Focus state for accessibility */
+.heading-anchor:focus {
+  opacity: 1;
+  outline: 2px solid var(--havelock-blue);
+  outline-offset: 2px;
+}
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -964,6 +1028,7 @@ pre[class*="language-diff-"] {
 	color: inherit; /* override del, ins, mark defaults */
 }</style>
 		
+
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
@@ -982,19 +1047,29 @@ pre[class*="language-diff-"] {
 		</header>
 
 		<main id="main">
-			<heading-anchors>
-				
+			
+
 
 
 <h1 id="cool-css-grid-trick-i-learned-today">Cool CSS Grid trick I learned today</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2025-06-10">10 June 2025</time></li>
+	
+	
+	
+	
+		
+		<li class="post-type post-type-quick">
+			<span class="post-type-emoji">⚡</span>
+			<span class="post-type-label">Quick Post</span>
+		</li>
+	
 	<li><a href="/tags/web-development/" class="post-tag">web development</a>, </li>
 	<li><a href="/tags/css/" class="post-tag">CSS</a></li>
 </ul>
 
-<h2 id="css-grid-auto-responsive-layout">CSS Grid Auto-Responsive Layout</h2>
+<h2 id="css-grid-auto-responsive-layout" tabindex="-1"><a class="heading-anchor" href="#css-grid-auto-responsive-layout" aria-hidden="true">#</a> CSS Grid Auto-Responsive Layout</h2>
 <p>Just discovered this neat trick:</p>
 <pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.grid</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
@@ -1019,15 +1094,14 @@ pre[class*="language-diff-"] {
 <ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/20250605-state-of-js-2024/">Interesting read: The State of JS 2024</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/20250615-quick-thought-on-ai-ux/">Quick thought on AI-driven UX patterns</a></li>
 </ul>
 
-			</heading-anchors>
 		</main>
 
 		<footer>
 			<em><a href="/readme">README.md</a></em>
 		</footer>
 
-		<!-- This page `/blog/20250610-css-grid-trick/` was built on 2025-06-16T16:05:23.883Z -->
-		<script type="module" src="/dist/EQfoox7dWU.js"></script>
+		<!-- This page `/blog/20250610-css-grid-trick/` was built on 2025-06-16T17:57:31.284Z -->
+		<script type="module" src="/dist/4vWmuI0k9z.js"></script>
 		
 		
 		

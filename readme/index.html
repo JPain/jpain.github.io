@@ -107,6 +107,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Disable transitions during initial page load to prevent flash */
+.no-transitions * {
+  transition: none !important;
+}
+
 /* Disable transitions for reduced motion users */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -441,6 +446,29 @@ footer a {
   margin: 1rem 0;
   padding: 0;
   list-style: none;
+}
+
+/* Post type styling for individual posts - integrated with metadata */
+.post-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 12px;
+  color: var(--light-slate-gray);
+  font-family: monospace;
+  padding: 2px 6px;
+  background-color: var(--link-water);
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.post-type-emoji {
+  font-size: 0.9rem;
+}
+
+.post-type-label {
+  text-transform: lowercase;
+  font-style: italic;
 }
 
 /* Tags */
@@ -794,8 +822,45 @@ main :last-child {
   content: " (auto)";
   opacity: 0.6;
   font-size: 0.9em;
+}
+
+/* Heading anchor links */
+.heading-anchor {
+  color: var(--light-slate-gray);
+  opacity: 0.3;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-weight: normal;
+  transition: opacity 0.2s ease;
+}
+
+.heading-anchor:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.heading-anchor:visited {
+  color: var(--light-slate-gray);
+}
+
+/* Show anchor links on heading hover */
+h1:hover .heading-anchor,
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor,
+h5:hover .heading-anchor,
+h6:hover .heading-anchor {
+  opacity: 0.7;
+}
+
+/* Focus state for accessibility */
+.heading-anchor:focus {
+  opacity: 1;
+  outline: 2px solid var(--havelock-blue);
+  outline-offset: 2px;
 }</style>
 		
+
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
@@ -814,12 +879,11 @@ main :last-child {
 		</header>
 
 		<main id="main">
-			<heading-anchors>
-				
-<h1 id="readme-md">README.md</h1>
+			
+<h1 id="readme-md" tabindex="-1"><a class="heading-anchor" href="#readme-md" aria-hidden="true">#</a> README.md</h1>
 <p><em>Documentation for this website's architecture, philosophy, and implementation.</em></p>
-<h2 id="technical-details">Technical Details</h2>
-<h3 id="technology-stack">Technology Stack</h3>
+<h2 id="technical-details" tabindex="-1"><a class="heading-anchor" href="#technical-details" aria-hidden="true">#</a> Technical Details</h2>
+<h3 id="technology-stack" tabindex="-1"><a class="heading-anchor" href="#technology-stack" aria-hidden="true">#</a> Technology Stack</h3>
 <ul>
 <li><strong>Static Site Generator:</strong> <a href="https://www.11ty.dev/">Eleventy v3.1.1</a></li>
 <li><strong>Templating:</strong> <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a></li>
@@ -827,7 +891,7 @@ main :last-child {
 <li><strong>Hosting:</strong> GitHub Pages (Probably. Haven't decided as I write this)</li>
 <li><strong>Performance:</strong> No JavaScript frameworks, minimal dependencies</li>
 </ul>
-<h3 id="design-principles">Design Principles</h3>
+<h3 id="design-principles" tabindex="-1"><a class="heading-anchor" href="#design-principles" aria-hidden="true">#</a> Design Principles</h3>
 <ul>
 <li><strong>Simple:</strong> Uses <a href="/small-web">Small Web</a> principles</li>
 <li><strong>Fast:</strong> Static HTML loads instantly</li>
@@ -837,7 +901,7 @@ main :last-child {
 <li><strong>Privacy-focused:</strong> No tracking scripts or analytics</li>
 <li><strong>Distraction-free:</strong> No overlays, animations, or prompts</li>
 </ul>
-<h2 id="this-websites-impact">This Website's Impact</h2>
+<h2 id="this-websites-impact" tabindex="-1"><a class="heading-anchor" href="#this-websites-impact" aria-hidden="true">#</a> This Website's Impact</h2>
 <p>As of the last build, this website:</p>
 <ul>
 <li><strong>Page weight:</strong> Typically under 50KB per page</li>
@@ -847,18 +911,17 @@ main :last-child {
 <li><strong>JavaScript dependency:</strong> Zero for core functionality</li>
 <li><strong>Third-party requests:</strong> None (no tracking, no ads, no external dependencies)</li>
 </ul>
-<p><strong>Last updated:</strong> 2025-06-16T16:05:07.939Z</p>
+<p><strong>Last updated:</strong> 2025-06-16T17:57:15.304Z</p>
 
 
-			</heading-anchors>
 		</main>
 
 		<footer>
 			<em><a href="/readme">README.md</a></em>
 		</footer>
 
-		<!-- This page `/readme/` was built on 2025-06-16T16:05:23.883Z -->
-		<script type="module" src="/dist/EQfoox7dWU.js"></script>
+		<!-- This page `/readme/` was built on 2025-06-16T17:57:31.283Z -->
+		<script type="module" src="/dist/4vWmuI0k9z.js"></script>
 		
 		
 		
