@@ -51,6 +51,24 @@
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
+		{#- Prevent theme flash by initializing theme before body renders #}
+		<script>
+			// Initialize theme immediately to prevent flash
+			(function() {
+				// Disable transitions during initial load
+				document.documentElement.classList.add('no-transitions');
+				
+				const storedTheme = localStorage.getItem('theme');
+				if (storedTheme) {
+					document.documentElement.setAttribute('data-theme', storedTheme);
+				}
+				
+				// Re-enable transitions after a brief delay
+				setTimeout(() => {
+					document.documentElement.classList.remove('no-transitions');
+				}, 100);
+			})();
+		</script>
 
 	</head>
 	<body>
@@ -116,14 +134,6 @@
 					}
 				};
 				
-				// Initialize theme on page load
-				const initTheme = () => {
-					const storedTheme = getStoredTheme();
-					if (storedTheme) {
-						html.setAttribute('data-theme', storedTheme);
-					}
-				};
-				
 				// Event listeners
 				themeToggle?.addEventListener('click', toggleTheme);
 				
@@ -135,8 +145,6 @@
 					}
 				});
 				
-				// Initialize
-				initTheme();
 			})();
 		</script>
 	</body>

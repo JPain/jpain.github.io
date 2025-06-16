@@ -4,10 +4,40 @@ layout: layouts/base.njk
 {# Only include the syntax highlighter CSS on blog posts, included with the CSS per-page bundle #}
 <style>{% include "node_modules/prismjs/themes/prism-okaidia.css" %}</style>
 <style>{% include "css/prism-diff.css" %}</style>
+
 <h1>{{ title }}</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+	
+	{# Display post type in metadata #}
+	{% set postType = type or 'article' %}
+	{% if postTypes and postTypes[postType] %}
+		{% set typeConfig = postTypes[postType] %}
+		<li class="post-type post-type-{{ postType }}">
+			<span class="post-type-emoji">{{ typeConfig.emoji }}</span>
+			<span class="post-type-label">{{ typeConfig.label }}</span>
+		</li>
+	{% else %}
+		{# Fallback for posts without type config #}
+		<li class="post-type post-type-{{ postType }}">
+			<span class="post-type-emoji">
+				{%- if postType == 'quick' -%}⚡
+				{%- elif postType == 'link' -%}🔗
+				{%- elif postType == 'project' -%}🚀
+				{%- else -%}📄
+				{%- endif -%}
+			</span>
+			<span class="post-type-label">
+				{%- if postType == 'quick' -%}Quick Post
+				{%- elif postType == 'link' -%}Link Share
+				{%- elif postType == 'project' -%}Project
+				{%- else -%}Article
+				{%- endif -%}
+			</span>
+		</li>
+	{% endif %}
+	
 	{%- for tag in tags | filterTagList %}
 	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
