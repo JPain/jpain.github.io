@@ -3,7 +3,7 @@ created: 2025-06-17
 modified: 2025-06-17
 title: Alt Cloud Railway is the new hotness
 description: Railway, an alternative cloud provider, has had an onrush of new customers after a recent Google Cloud outage.
-tags: [Google Cloud, cloud]
+tags: [cloud, Google Cloud]
 ---
 
 I've been a fan of Railway ever since they published their [deep dive on building their own data centre](https://blog.railway.com/p/data-center-build-part-one), stepping away from Google Cloud. It’s everything I look for in a blog post: clear reasoning, gritty technical detail, honest mistakes, and real learnings. That post made me like and respect them a lot.
