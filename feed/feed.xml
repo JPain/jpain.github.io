@@ -5,34 +5,34 @@
   <subtitle>James Pain&#39;s Weblog</subtitle>
   <link href="https://jpain.io/feed/feed.xml" rel="self" />
   <link href="https://jpain.io/" />
-  <updated>2025-06-17T20:17:53Z</updated>
+  <updated>2025-06-17T20:23:18Z</updated>
   <id>https://jpain.io/</id>
   <author>
     <name>James Pain</name>
   </author>
   <entry>
-    <title>A word about preventing Prompt Injection in AI Apps</title>
-    <link href="https://jpain.io/blog/2025/20250617-prompt-injection/" />
-    <updated>2025-06-17T20:17:53Z</updated>
-    <id>https://jpain.io/blog/2025/20250617-prompt-injection/</id>
-    <content type="html">&lt;p&gt;One of my favourite hobbies when evaluating third party AI apps is to try to break them. If an application can&#39;t survive my attempts, I know a curious teenager will find the same hole and ruin my day.&lt;/p&gt;
-&lt;p&gt;My goto attack is prompt injection. Feeding carefully crafted input that persuades the model to ignore its instructions and do mine instead. Give a 5 year old a cleverly worded dare and they’ll try it. Many LLMs are just as trusting.&lt;/p&gt;
-&lt;p&gt;Simon Willison recently argued that &lt;a href=&quot;https://simonwillison.net/2025/Jun/16/100-percent/&quot;&gt;we shouldn&#39;t settle for mitigations that work “99% of the time.”&lt;/a&gt; He draws an analogy with SQL injection: use parameterised queries correctly and you do get a 100% defence. Any remaining holes are bugs, not fundamental flaws.&lt;/p&gt;
-&lt;p&gt;I agree with Simon. I believe the easiest way to fix those bugs may be to fix it at app design stage and avoid free text inputs altogether. Over the last 18 months every generative AI app I’ve shipped uses tightly validated form fields, structured third-party data, and user supplied photos. No open chat boxes. I dislike chat as a UX anyway; it’s slow, opaque, and hard to test.&lt;/p&gt;
-&lt;p&gt;Structured inputs dramatically shrink the attack surface, but they don’t eliminate it. While researching for this post, I found &lt;a href=&quot;https://blog.roboflow.com/gpt-4-vision-prompt-injection/&quot;&gt;visual prompt injection attacks are possible&lt;/a&gt;, that hide instructions inside images or adversarial patches, successfully hijacking GPT‑4V, Gemini, and other vision/language models. These are still lab grade examples from researchers, but they prove the technique is possible today.&lt;/p&gt;
-&lt;p&gt;My take away here is architectural. If prompt injection poses a risk to you, redesign the interface so untrusted users can’t send arbitrary text (or images!) straight to the model. The best defence may be to give attackers nothing to inject in the first place.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Alt Cloud Railway is the new hotness</title>
-    <link href="https://jpain.io/blog/2025/20250617-alt-cloud-railway-is-the-new-hotness/" />
-    <updated>2025-06-17T20:17:53Z</updated>
-    <id>https://jpain.io/blog/2025/20250617-alt-cloud-railway-is-the-new-hotness/</id>
+    <link href="https://jpain.io/blog/2025/alt-cloud-railway-is-the-new-hotness/" />
+    <updated>2025-06-17T20:23:18Z</updated>
+    <id>https://jpain.io/blog/2025/alt-cloud-railway-is-the-new-hotness/</id>
     <content type="html">&lt;p&gt;I&#39;ve been a fan of Railway ever since they published their &lt;a href=&quot;https://blog.railway.com/p/data-center-build-part-one&quot;&gt;deep dive on building their own data centre&lt;/a&gt;, stepping away from Google Cloud. It’s everything I look for in a blog post: clear reasoning, gritty technical detail, honest mistakes, and real learnings. That post made me like and respect them a lot.&lt;/p&gt;
 &lt;p&gt;They remind me of how I felt about Cloudflare in the early days. There’s something special about small, innovative, dev-focused companies. They speak directly to my heart, before they go mainstream and I inevitably lose interest. I guess I’m just a big old hipster at heart.&lt;/p&gt;
 &lt;p&gt;On 12th June 2025, just a couple of days ago, Google Cloud had one of &lt;em&gt;those&lt;/em&gt; outages. The kind that ripples across the internet and reminds us just how fragile our technological foundations really are.&lt;/p&gt;
 &lt;p&gt;So I’ll admit I was pleased to see &lt;a href=&quot;https://www.theregister.com/2025/06/16/railway_pauses_lowest_tiers/&quot;&gt;Railway temporarily pause their lowest pricing tiers after a wave of GCP customers rushed in&lt;/a&gt;. Not because they struggle, but because it meant I wasn’t alone in my hipster-y affection for Railway.&lt;/p&gt;
 &lt;p&gt;Moments like this remind me why I&#39;m drawn to companies who take bold risks and forge their own paths. There&#39;s something compelling about tech teams who choose control, clarity, and the occasional misstep over convenience. Maybe it&#39;s a bit of nostalgia, or perhaps a deep-seated desire for technology that feels human and approachable. Either way, I&#39;m excited to see what Railway does next-and secretly hoping they&#39;ll keep their indie spirit alive just a little while longer.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>A word about preventing Prompt Injection in AI Apps</title>
+    <link href="https://jpain.io/blog/2025/a-word-about-prompt-injection/" />
+    <updated>2025-06-17T20:23:18Z</updated>
+    <id>https://jpain.io/blog/2025/a-word-about-prompt-injection/</id>
+    <content type="html">&lt;p&gt;One of my favourite hobbies when evaluating third party AI apps is to try to break them. If an application can&#39;t survive my attempts, I know a curious teenager will find the same hole and ruin my day.&lt;/p&gt;
+&lt;p&gt;My goto attack is prompt injection. Feeding carefully crafted input that persuades the model to ignore its instructions and do mine instead. It feels as easy as trying to hypnotise a 5 year old.&lt;/p&gt;
+&lt;p&gt;Simon Willison recently argued that &lt;a href=&quot;https://simonwillison.net/2025/Jun/16/100-percent/&quot;&gt;we shouldn&#39;t settle for mitigations that work “99% of the time.”&lt;/a&gt; He draws an analogy with SQL injection: use parameterised queries correctly and you do get a 100% defence. Any remaining holes should be treated as bugs.&lt;/p&gt;
+&lt;p&gt;I agree with Simon. I believe the easiest way to fix those bugs may be to fix it at app design stage and avoid free text inputs altogether. Over the last 18 months every generative AI app I’ve shipped uses tightly validated form fields, structured third-party data, and user supplied photos. No open chat boxes. I dislike chat as a UX anyway; it’s slow, opaque, and hard to test.&lt;/p&gt;
+&lt;p&gt;Structured inputs dramatically shrink the attack surface, but they don’t eliminate it. While researching for this post, I found &lt;a href=&quot;https://blog.roboflow.com/gpt-4-vision-prompt-injection/&quot;&gt;visual prompt injection attacks are possible&lt;/a&gt;, that hide instructions inside images or adversarial patches, successfully hijacking GPT‑4V, Gemini, and other vision/language models. These are still lab grade examples from researchers, but they prove the technique is possible today.&lt;/p&gt;
+&lt;p&gt;My take away here is architectural. If prompt injection poses a risk to you, redesign the interface so untrusted users can’t send arbitrary text (or images!) straight to the model. The best defence may be to give attackers nothing to inject in the first place.&lt;/p&gt;
 </content>
   </entry>
   <entry>
