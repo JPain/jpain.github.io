@@ -5,7 +5,7 @@
   <subtitle>James Pain&#39;s Weblog</subtitle>
   <link href="https://jpain.io/feed/feed.xml" rel="self" />
   <link href="https://jpain.io/" />
-  <updated>2025-06-17T00:56:00Z</updated>
+  <updated>2025-06-17T00:56:45Z</updated>
   <id>https://jpain.io/</id>
   <author>
     <name>James Pain</name>
@@ -13,31 +13,13 @@
   <entry>
     <title>Alt Cloud Railway is the new hotness</title>
     <link href="https://jpain.io/blog/20250617-alt-cloud-railway-is-the-new-hotness/" />
-    <updated>2025-06-17T00:56:00Z</updated>
+    <updated>2025-06-17T00:56:45Z</updated>
     <id>https://jpain.io/blog/20250617-alt-cloud-railway-is-the-new-hotness/</id>
     <content type="html">&lt;p&gt;I&#39;ve been a fan of Railway ever since they published their &lt;a href=&quot;https://blog.railway.com/p/data-center-build-part-one&quot;&gt;deep dive on building their own data centre&lt;/a&gt;, stepping away from Google Cloud. It’s everything I look for in a blog post: clear reasoning, gritty technical detail, honest mistakes, and real learnings. That post made me like and respect them a lot.&lt;/p&gt;
 &lt;p&gt;They remind me of how I felt about Cloudflare in the early days. There’s something special about small, innovative, dev-focused companies. They speak directly to my heart, before they go mainstream and I inevitably lose interest. I guess I’m just a big old hipster at heart.&lt;/p&gt;
 &lt;p&gt;On 12th June 2025, just a couple of days ago, Google Cloud had one of &lt;em&gt;those&lt;/em&gt; outages. The kind that ripples across the internet and reminds us just how fragile our technological foundations really are.&lt;/p&gt;
 &lt;p&gt;So I’ll admit I was pleased to see &lt;a href=&quot;https://www.theregister.com/2025/06/16/railway_pauses_lowest_tiers/&quot;&gt;Railway temporarily pause their lowest pricing tiers after a wave of GCP customers rushed in&lt;/a&gt;. Not because they struggle, but because it meant I wasn’t alone in my hipster-y affection for Railway.&lt;/p&gt;
 &lt;p&gt;Moments like this remind me why I&#39;m drawn to companies who take bold risks and forge their own paths. There&#39;s something compelling about tech teams who choose control, clarity, and the occasional misstep over convenience. Maybe it&#39;s a bit of nostalgia, or perhaps a deep-seated desire for technology that feels human and approachable. Either way, I&#39;m excited to see what Railway does next-and secretly hoping they&#39;ll keep their indie spirit alive just a little while longer.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Interesting read: The State of JS 2024</title>
-    <link href="https://jpain.io/blog/20250605-state-of-js-2024/" />
-    <updated>2025-06-05T00:00:00Z</updated>
-    <id>https://jpain.io/blog/20250605-state-of-js-2024/</id>
-    <content type="html">&lt;p&gt;The State of JS 2024 results just dropped: &lt;a href=&quot;https://stateofjs.com/2024/&quot;&gt;https://stateofjs.com/2024/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Some interesting takeaways:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Astro&lt;/strong&gt; continues its meteoric rise - now at 83% satisfaction rate&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Solid&lt;/strong&gt; is gaining serious traction, especially among React developers looking for performance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Vite&lt;/strong&gt; has basically won the bundler wars - 98% would use again&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;TypeScript&lt;/strong&gt; adoption is slowing, but stabilizing at around 75%&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The most surprising finding: &lt;strong&gt;Vanilla JS&lt;/strong&gt; is making a comeback for smaller projects. Seems like developer fatigue with complex toolchains is real.&lt;/p&gt;
-&lt;p&gt;Also worth noting the growing interest in &lt;strong&gt;WASM&lt;/strong&gt; - 34% want to learn it, up from 22% last year.&lt;/p&gt;
-&lt;p&gt;Worth a read if you&#39;re trying to stay on top of where the ecosystem is heading.&lt;/p&gt;
 </content>
   </entry>
   <entry>
