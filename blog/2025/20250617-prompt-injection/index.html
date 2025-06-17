@@ -21,22 +21,22 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>README.md</title>
-		<meta name="description" content="Learn about the technology, philosophy, and principles behind this website">
+		<title>A word about preventing Prompt Injection in AI Apps</title>
+		<meta name="description" content="Prompt injection attacks in AI apps are common. The safest design might be avoiding free text input altogether.">
 		<meta name="color-scheme" content="light dark">
 		<meta name="theme-color" content="#04143a" media="(prefers-color-scheme: light)">
 		<meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-		<meta property="og:title" content="README.md">
-		<meta property="og:description" content="Learn about the technology, philosophy, and principles behind this website">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://jpain.io/readme/">
+		<meta property="og:title" content="A word about preventing Prompt Injection in AI Apps">
+		<meta property="og:description" content="Prompt injection attacks in AI apps are common. The safest design might be avoiding free text input altogether.">
+		<meta property="og:type" content="article">
+		<meta property="og:url" content="https://jpain.io/blog/2025/20250617-prompt-injection/">
 		<meta property="og:site_name" content="James Pain&#39;s Weblog">
 		<meta name="twitter:card" content="summary">
-		<meta name="twitter:title" content="README.md">
-		<meta name="twitter:description" content="Learn about the technology, philosophy, and principles behind this website">
+		<meta name="twitter:title" content="A word about preventing Prompt Injection in AI Apps">
+		<meta name="twitter:description" content="Prompt injection attacks in AI apps are common. The safest design might be avoiding free text input altogether.">
 		
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="James Pain&#39;s Weblog">
-		<link rel="canonical" href="https://jpain.io/readme/">
+		<link rel="canonical" href="https://jpain.io/blog/2025/20250617-prompt-injection/">
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -876,6 +876,177 @@ h6:hover .heading-anchor {
   opacity: 1;
   outline: 2px solid var(--havelock-blue);
   outline-offset: 2px;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+.post-metadata a {
+	text-decoration: none;
 }</style>
 		
 
@@ -898,39 +1069,62 @@ h6:hover .heading-anchor {
 
 		<main id="main">
 			
-<h1 id="readme-md" tabindex="-1"><a class="heading-anchor" href="#readme-md" aria-hidden="true">#</a> README.md</h1>
-<p><em>Documentation for this website's architecture, philosophy, and implementation.</em></p>
-<h2 id="technical-details" tabindex="-1"><a class="heading-anchor" href="#technical-details" aria-hidden="true">#</a> Technical Details</h2>
-<h3 id="technology-stack" tabindex="-1"><a class="heading-anchor" href="#technology-stack" aria-hidden="true">#</a> Technology Stack</h3>
-<ul>
-<li><strong>Static Site Generator:</strong> <a href="https://www.11ty.dev/">Eleventy v3.1.1</a></li>
-<li><strong>Templating:</strong> <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a></li>
-<li><strong>Styling:</strong> Vanilla CSS with modern features</li>
-<li><strong>Hosting:</strong> GitHub Pages (Probably. Haven't decided as I write this)</li>
-<li><strong>Performance:</strong> No JavaScript frameworks, minimal dependencies</li>
-</ul>
-<h3 id="design-principles" tabindex="-1"><a class="heading-anchor" href="#design-principles" aria-hidden="true">#</a> Design Principles</h3>
-<ul>
-<li><strong>Simple:</strong> Uses <a href="/small-web">Small Web</a> principles</li>
-<li><strong>Fast:</strong> Static HTML loads instantly</li>
-<li><strong>Accessible:</strong> Semantic HTML and ARIA labels</li>
-<li><strong>Responsive:</strong> Works on all screen sizes</li>
-<li><strong>Sustainable:</strong> Minimal energy consumption</li>
-<li><strong>Privacy-focused:</strong> No tracking scripts or analytics</li>
-<li><strong>Distraction-free:</strong> No overlays, animations, or prompts</li>
-</ul>
-<h2 id="this-websites-impact" tabindex="-1"><a class="heading-anchor" href="#this-websites-impact" aria-hidden="true">#</a> This Website's Impact</h2>
-<p>As of the last build, this website:</p>
-<ul>
-<li><strong>Page weight:</strong> Typically under 50KB per page</li>
-<li><strong>Load time:</strong> Sub-second on most connections</li>
-<li><strong>Carbon footprint:</strong> Minimal due to static hosting and efficient code</li>
-<li><strong>Accessibility score:</strong> Designed to meet WCAG 2.1 AA standards</li>
-<li><strong>JavaScript dependency:</strong> Zero for core functionality</li>
-<li><strong>Third-party requests:</strong> None (no tracking, no ads, no external dependencies)</li>
-</ul>
-<p><strong>Last updated:</strong> 2025-06-17T22:56:31.196Z</p>
 
+
+
+
+<article itemscope="" itemtype="https://schema.org/BlogPosting">
+<h1 itemprop="headline" id="a-word-about-preventing-prompt-injection-in-ai-apps">A word about preventing Prompt Injection in AI Apps</h1>
+
+<ul class="post-metadata">
+	<li><a href="/blog/2025/20250617-prompt-injection/" itemprop="url"><time datetime="2025-06-17" itemprop="datePublished">17 June 2025</time></a></li>
+	
+	
+	<span itemprop="author" itemscope="" itemtype="https://schema.org/Person" style="display: none;">
+		<span itemprop="name">James Pain</span>
+		<span itemprop="url">https://jpain.io/</span>
+	</span>
+	
+	
+	<span itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization" style="display: none;">
+		<span itemprop="name">James Pain&#39;s Weblog</span>
+		<span itemprop="url">https://jpain.io</span>
+	</span>
+	
+	
+	
+	<meta itemprop="description" content="Prompt injection attacks in AI apps are common. The safest design might be avoiding free text input altogether.">
+	
+	
+	
+	<meta itemprop="dateModified" content="2025-06-17">
+	
+	
+	
+	
+		
+		<li class="post-type post-type-quick">
+			<span class="post-type-emoji">⚡</span>
+			<span class="post-type-label">Quick Post</span>
+		</li>
+	
+	<li><a href="/tags/ai/" class="post-tag" itemprop="keywords">AI</a>, </li>
+	<li><a href="/tags/security/" class="post-tag" itemprop="keywords">security</a>, </li>
+	<li><a href="/tags/prompt-injection/" class="post-tag" itemprop="keywords">prompt injection</a></li>
+</ul>
+
+<div itemprop="articleBody">
+<p>One of my favourite pastimes when evaluating third party AI apps is to try to break them. If an application can't survive my attempts, I know a curious teenager will find the same hole and ruin my day.</p>
+<p>My goto attack is prompt injection. Feeding carefully crafted input that persuades the model to ignore its instructions and do mine instead. Give a 5 year old a cleverly worded dare and they’ll try it. Many LLMs are just as trusting.</p>
+<p>Simon Willison recently argued that <a href="https://simonwillison.net/2025/Jun/16/100-percent/">we shouldn't settle for mitigations that work “99% of the time.”</a> He draws an analogy with SQL injection: use parameterised queries correctly and you do get a 100% defence. Any remaining holes are bugs, not fundamental flaws.</p>
+<p>I agree with Simon. I believe the east to reach similar assurance for LLMs may be to avoid free text inputs altogether. Over the last 18  months every generative AI app I’ve shipped uses tightly validated form fields, structured third-party data, and user supplied photos. No open chat boxes. I dislike chat as a UX anyway; it’s slow, opaque, and hard to test.</p>
+<p>Structured inputs dramatically shrink the attack surface, but they don’t eliminate it. While researching for this post, I found <a href="https://blog.roboflow.com/gpt-4-vision-prompt-injection/">visual prompt injection attacks are possible</a>, that hide instructions inside images or adversarial patches, successfully hijacking GPT‑4V, Gemini, and other vision/language models. These are still lab grade examples from researchers, but they prove the technique is possible today.</p>
+<p>The lesson for me is architectural: if prompt injection keeps you awake at night, redesign the interface so untrusted users can’t send arbitrary text (or images!) straight to the model. The best defence may be to give attackers nothing to inject in the first place.</p>
+
+</div>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/20250221-does-size-matter-ai-models/">Does Size Matter: The Rise of Smarter AI Models</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/2025/a-word-about-prompt-injection/">A word about preventing Prompt Injection in AI Apps</a></li>
+</ul>
+</article>
 
 		</main>
 
@@ -938,7 +1132,7 @@ h6:hover .heading-anchor {
 			<em><a href="/readme">README.md</a></em>
 		</footer>
 
-		<!-- This page `/readme/` was built on 2025-06-17T22:56:31.272Z -->
+		<!-- This page `/blog/2025/20250617-prompt-injection/` was built on 2025-06-17T22:56:31.273Z -->
 		<script type="module" src="/dist/4vWmuI0k9z.js"></script>
 		
 		
