@@ -8,9 +8,9 @@ tags: [AI, security, prompt injection]
 
 One of my favourite hobbies when evaluating third party AI apps is to try to break them. If an application can't survive my attempts, I know a curious teenager will find the same hole and ruin my day.
 
-My goto attack is prompt injection. Feeding carefully crafted input that persuades the model to ignore its instructions and do mine instead. Give a 5 year old a cleverly worded dare and they’ll try it. Many LLMs are just as trusting.
+My goto attack is prompt injection. Feeding carefully crafted input that persuades the model to ignore its instructions and do mine instead. It feels as easy as trying to hypnotise a 5 year old.
 
-Simon Willison recently argued that [we shouldn't settle for mitigations that work “99% of the time.”](https://simonwillison.net/2025/Jun/16/100-percent/) He draws an analogy with SQL injection: use parameterised queries correctly and you do get a 100% defence. Any remaining holes are bugs, not fundamental flaws.
+Simon Willison recently argued that [we shouldn't settle for mitigations that work “99% of the time.”](https://simonwillison.net/2025/Jun/16/100-percent/) He draws an analogy with SQL injection: use parameterised queries correctly and you do get a 100% defence. Any remaining holes should be treated as bugs.
 
 I agree with Simon. I believe the easiest way to fix those bugs may be to fix it at app design stage and avoid free text inputs altogether. Over the last 18 months every generative AI app I’ve shipped uses tightly validated form fields, structured third-party data, and user supplied photos. No open chat boxes. I dislike chat as a UX anyway; it’s slow, opaque, and hard to test.
 
