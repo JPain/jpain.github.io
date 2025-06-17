@@ -4,7 +4,7 @@ export default {
 	],
 	"layout": "layouts/post.njk",
 	// Default post type - can be overridden in individual posts
-	"type": "article",
+	"type": "quick",
 	// Define available post types for content creators
 	postTypes: {
 		article: {
