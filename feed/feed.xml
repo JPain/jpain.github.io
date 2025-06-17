@@ -5,7 +5,7 @@
   <subtitle>James Pain&#39;s Weblog</subtitle>
   <link href="https://jpain.io/feed/feed.xml" rel="self" />
   <link href="https://jpain.io/" />
-  <updated>2025-06-17T23:04:13Z</updated>
+  <updated>2025-06-17T23:04:37Z</updated>
   <id>https://jpain.io/</id>
   <author>
     <name>James Pain</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>Alt Cloud Railway is the new hotness</title>
     <link href="https://jpain.io/blog/2025/alt-cloud-railway-is-the-new-hotness/" />
-    <updated>2025-06-17T23:04:13Z</updated>
+    <updated>2025-06-17T23:04:37Z</updated>
     <id>https://jpain.io/blog/2025/alt-cloud-railway-is-the-new-hotness/</id>
     <content type="html">&lt;p&gt;I&#39;ve been a fan of Railway ever since they published their &lt;a href=&quot;https://blog.railway.com/p/data-center-build-part-one&quot;&gt;deep dive on building their own data centre&lt;/a&gt;, stepping away from Google Cloud. It’s everything I look for in a blog post: clear reasoning, gritty technical detail, honest mistakes, and real learnings. That post made me like and respect them a lot.&lt;/p&gt;
 &lt;p&gt;They remind me of how I felt about Cloudflare in the early days. There’s something special about small, innovative, dev-focused companies. They speak directly to my heart, before they go mainstream and I inevitably lose interest. I guess I’m just a big old hipster at heart.&lt;/p&gt;
@@ -25,7 +25,7 @@
   <entry>
     <title>A word about preventing Prompt Injection in AI Apps</title>
     <link href="https://jpain.io/blog/2025/a-word-about-prompt-injection/" />
-    <updated>2025-06-17T23:04:13Z</updated>
+    <updated>2025-06-17T23:04:37Z</updated>
     <id>https://jpain.io/blog/2025/a-word-about-prompt-injection/</id>
     <content type="html">&lt;p&gt;One of my favourite hobbies when evaluating third party AI apps is to try to break them. If an application can&#39;t survive my attempts, I know a curious teenager will find the same hole and ruin my day.&lt;/p&gt;
 &lt;p&gt;My goto attack is prompt injection. Feeding carefully crafted input that persuades the model to ignore its instructions and do mine instead. It feels as easy as trying to hypnotise a 5 year old.&lt;/p&gt;
@@ -38,7 +38,7 @@
   <entry>
     <title>Random post about random things</title>
     <link href="https://jpain.io/blog/2025/Random%20post%20about%20random%20things/" />
-    <updated>2025-06-17T23:04:13Z</updated>
+    <updated>2025-06-17T23:04:37Z</updated>
     <id>https://jpain.io/blog/2025/Random%20post%20about%20random%20things/</id>
     <content type="html">&lt;p&gt;Markdown blogs aren&#39;t the best. They sacrifice a lot of nice to have feathers. I&#39;m trying to claw back one, posting from mobile. As simple as a tweet. So I&#39;m using GitJournal to write posts. It&#39;s not a seamless experience.&lt;/p&gt;
 </content>
