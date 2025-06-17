@@ -2,7 +2,7 @@
 created: 2025-06-17
 modified: 2025-06-17
 title: A word about preventing Prompt Injection in AI Apps
-description: null
+description: Prompt injection attacks in AI apps are common. The safest design might be avoiding free text input altogether.
 ---
 
 One of my favourite pastimes when evaluating third party AI apps is to try to break them. If an application can't survive my attempts, I know a curious teenager will find the same hole and ruin my day.
