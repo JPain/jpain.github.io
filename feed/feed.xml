@@ -5,7 +5,7 @@
   <subtitle>James Pain&#39;s Weblog</subtitle>
   <link href="https://jpain.io/feed/feed.xml" rel="self" />
   <link href="https://jpain.io/" />
-  <updated>2025-06-17T00:56:45Z</updated>
+  <updated>2025-06-17T00:58:19Z</updated>
   <id>https://jpain.io/</id>
   <author>
     <name>James Pain</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>Alt Cloud Railway is the new hotness</title>
     <link href="https://jpain.io/blog/20250617-alt-cloud-railway-is-the-new-hotness/" />
-    <updated>2025-06-17T00:56:45Z</updated>
+    <updated>2025-06-17T00:58:19Z</updated>
     <id>https://jpain.io/blog/20250617-alt-cloud-railway-is-the-new-hotness/</id>
     <content type="html">&lt;p&gt;I&#39;ve been a fan of Railway ever since they published their &lt;a href=&quot;https://blog.railway.com/p/data-center-build-part-one&quot;&gt;deep dive on building their own data centre&lt;/a&gt;, stepping away from Google Cloud. It’s everything I look for in a blog post: clear reasoning, gritty technical detail, honest mistakes, and real learnings. That post made me like and respect them a lot.&lt;/p&gt;
 &lt;p&gt;They remind me of how I felt about Cloudflare in the early days. There’s something special about small, innovative, dev-focused companies. They speak directly to my heart, before they go mainstream and I inevitably lose interest. I guess I’m just a big old hipster at heart.&lt;/p&gt;
