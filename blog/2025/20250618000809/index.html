@@ -21,22 +21,22 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>James Pain&#39;s Weblog</title>
+		<title>Tufufufuf</title>
 		<meta name="description" content="I write, therefore I exist.">
 		<meta name="color-scheme" content="light dark">
 		<meta name="theme-color" content="#04143a" media="(prefers-color-scheme: light)">
 		<meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-		<meta property="og:title" content="James Pain&#39;s Weblog">
+		<meta property="og:title" content="Tufufufuf">
 		<meta property="og:description" content="I write, therefore I exist.">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://jpain.io/tags/">
+		<meta property="og:type" content="article">
+		<meta property="og:url" content="https://jpain.io/blog/2025/20250618000809/">
 		<meta property="og:site_name" content="James Pain&#39;s Weblog">
 		<meta name="twitter:card" content="summary">
-		<meta name="twitter:title" content="James Pain&#39;s Weblog">
+		<meta name="twitter:title" content="Tufufufuf">
 		<meta name="twitter:description" content="I write, therefore I exist.">
 		
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="James Pain&#39;s Weblog">
-		<link rel="canonical" href="https://jpain.io/tags/">
+		<link rel="canonical" href="https://jpain.io/blog/2025/20250618000809/">
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -876,6 +876,177 @@ h6:hover .heading-anchor {
   opacity: 1;
   outline: 2px solid var(--havelock-blue);
   outline-offset: 2px;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+.post-metadata a {
+	text-decoration: none;
 }</style>
 		
 
@@ -898,48 +1069,52 @@ h6:hover .heading-anchor {
 
 		<main id="main">
 			
-<h1 id="tags">Tags</h1>
 
-<ul>
 
+
+
+<article itemscope="" itemtype="https://schema.org/BlogPosting">
+<h1 itemprop="headline" id="tufufufuf">Tufufufuf</h1>
+
+<ul class="post-metadata">
+	<li><a href="/blog/2025/20250618000809/" itemprop="url"><time datetime="2025-06-17" itemprop="datePublished">17 June 2025</time></a></li>
 	
-	<li><a href="/tags/ai/" class="post-tag">AI</a></li>
-
 	
-	<li><a href="/tags/cloud/" class="post-tag">cloud</a></li>
-
+	<span itemprop="author" itemscope="" itemtype="https://schema.org/Person" style="display: none;">
+		<span itemprop="name">James Pain</span>
+		<span itemprop="url">https://jpain.io/</span>
+	</span>
 	
-	<li><a href="/tags/efficiency/" class="post-tag">efficiency</a></li>
-
 	
-	<li><a href="/tags/google-cloud/" class="post-tag">Google Cloud</a></li>
-
+	<span itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization" style="display: none;">
+		<span itemprop="name">James Pain&#39;s Weblog</span>
+		<span itemprop="url">https://jpain.io</span>
+	</span>
 	
-	<li><a href="/tags/machine-learning/" class="post-tag">machine learning</a></li>
-
 	
-	<li><a href="/tags/next-js/" class="post-tag">Next.js</a></li>
-
 	
-	<li><a href="/tags/projects/" class="post-tag">projects</a></li>
-
 	
-	<li><a href="/tags/prompt-injection/" class="post-tag">prompt injection</a></li>
-
 	
-	<li><a href="/tags/react/" class="post-tag">React</a></li>
-
+	<meta itemprop="dateModified" content="2025-06-17">
 	
-	<li><a href="/tags/research/" class="post-tag">research</a></li>
-
 	
-	<li><a href="/tags/security/" class="post-tag">security</a></li>
-
 	
-	<li><a href="/tags/web-development/" class="post-tag">web development</a></li>
-
+	
+		
+		<li class="post-type post-type-quick">
+			<span class="post-type-emoji">⚡</span>
+			<span class="post-type-label">Quick Post</span>
+		</li>
+	
 </ul>
 
+<div itemprop="articleBody">
+<p>Ufufufuf</p>
+
+</div>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/20250221-does-size-matter-ai-models/">Does Size Matter: The Rise of Smarter AI Models</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/2025/a-word-about-prompt-injection/">A word about preventing Prompt Injection in AI Apps</a></li>
+</ul>
+</article>
 
 		</main>
 
@@ -947,7 +1122,7 @@ h6:hover .heading-anchor {
 			<em><a href="/readme">README.md</a></em>
 		</footer>
 
-		<!-- This page `/tags/` was built on 2025-06-17T23:08:37.582Z -->
+		<!-- This page `/blog/2025/20250618000809/` was built on 2025-06-17T23:08:37.583Z -->
 		<script type="module" src="/dist/4vWmuI0k9z.js"></script>
 		
 		
