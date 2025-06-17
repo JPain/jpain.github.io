@@ -5,7 +5,7 @@
   <subtitle>James Pain&#39;s Weblog</subtitle>
   <link href="https://jpain.io/feed/feed.xml" rel="self" />
   <link href="https://jpain.io/" />
-  <updated>2025-06-17T00:54:49Z</updated>
+  <updated>2025-06-17T00:55:09Z</updated>
   <id>https://jpain.io/</id>
   <author>
     <name>James Pain</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>Alt Cloud Railway is the new hotness</title>
     <link href="https://jpain.io/blog/20250617-alt-cloud-railway-is-the-new-hotness/" />
-    <updated>2025-06-17T00:54:49Z</updated>
+    <updated>2025-06-17T00:55:09Z</updated>
     <id>https://jpain.io/blog/20250617-alt-cloud-railway-is-the-new-hotness/</id>
     <content type="html">&lt;p&gt;I&#39;ve been a fan of Railway ever since they published their &lt;a href=&quot;https://blog.railway.com/p/data-center-build-part-one&quot;&gt;deep dive on building their own data centre&lt;/a&gt;, stepping away from Google Cloud. It’s everything I look for in a blog post: clear reasoning, gritty technical detail, honest mistakes, and real learnings. That post made me like and respect them a lot.&lt;/p&gt;
 &lt;p&gt;They remind me of how I felt about Cloudflare in the early days. There’s something special about small, innovative, dev-focused companies. They speak directly to my heart, before they go mainstream and I inevitably lose interest. I guess I’m just a big old hipster at heart.&lt;/p&gt;
@@ -31,34 +31,6 @@
 &lt;p&gt;Every app seems to think they need a chatbot now, but most of them feel like they&#39;re just replacing perfectly good forms with a more annoying conversation.&lt;/p&gt;
 &lt;p&gt;The ones that work well understand the user&#39;s context and intent. The bad ones make you explain what you want in natural language when a button would have been clearer.&lt;/p&gt;
 &lt;p&gt;Maybe the real innovation isn&#39;t adding chat everywhere, but knowing when NOT to use it.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Cool CSS Grid trick I learned today</title>
-    <link href="https://jpain.io/blog/20250610-css-grid-trick/" />
-    <updated>2025-06-10T00:00:00Z</updated>
-    <id>https://jpain.io/blog/20250610-css-grid-trick/</id>
-    <content type="html">&lt;h2 id=&quot;css-grid-auto-responsive-layout&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jpain.io/blog/20250610-css-grid-trick/#css-grid-auto-responsive-layout&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; CSS Grid Auto-Responsive Layout&lt;/h2&gt;
-&lt;p&gt;Just discovered this neat trick:&lt;/p&gt;
-&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.grid&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; grid&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;grid-template-columns&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;auto-fit&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;minmax&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;250px&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 1fr&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;gap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This creates a responsive grid that:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Automatically fits as many columns as possible&lt;/li&gt;
-&lt;li&gt;Each column is minimum 250px wide&lt;/li&gt;
-&lt;li&gt;Remaining space is distributed equally&lt;/li&gt;
-&lt;li&gt;No media queries needed!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Perfect for card layouts, image galleries, or any repeated content.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;auto-fit&lt;/code&gt; vs &lt;code&gt;auto-fill&lt;/code&gt; difference:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;auto-fit&lt;/code&gt;: Collapses empty tracks&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;auto-fill&lt;/code&gt;: Keeps empty tracks, maintaining consistent sizing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Small thing, but it&#39;s these little discoveries that make CSS feel magical sometimes.&lt;/p&gt;
 </content>
   </entry>
   <entry>
