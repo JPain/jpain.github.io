@@ -5,11 +5,20 @@
   <subtitle>James Pain&#39;s Weblog</subtitle>
   <link href="https://jpain.io/feed/feed.xml" rel="self" />
   <link href="https://jpain.io/" />
-  <updated>2025-06-15T00:00:00Z</updated>
+  <updated>2025-06-17T00:01:11Z</updated>
   <id>https://jpain.io/</id>
   <author>
     <name>James Pain</name>
   </author>
+  <entry>
+    <title>Alt Cloud Railway is the new hotness</title>
+    <link href="https://jpain.io/blog/20250617005757/" />
+    <updated>2025-06-17T00:01:11Z</updated>
+    <id>https://jpain.io/blog/20250617005757/</id>
+    <content type="html">&lt;p&gt;I&#39;ve been a fan of Railway since they posted their &lt;a href=&quot;https://blog.railway.com/p/data-center-build-part-one&quot;&gt;detailed post on building their own data centre&lt;/a&gt;, moving out of Google Cloud.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.theregister.com/2025/06/16/railway_pauses_lowest_tiers/&quot;&gt;Alt cloud platform Railway forced to pause lowest tiers after onrush of GCP customers&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Quick thought on AI-driven UX patterns</title>
     <link href="https://jpain.io/blog/20250615-quick-thought-on-ai-ux/" />
