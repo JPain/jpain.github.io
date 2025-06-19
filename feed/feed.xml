@@ -5,11 +5,20 @@
   <subtitle>James Pain&#39;s Weblog</subtitle>
   <link href="https://jpain.io/feed/feed.xml" rel="self" />
   <link href="https://jpain.io/" />
-  <updated>2025-06-19T00:00:00Z</updated>
+  <updated>2025-06-20T00:00:00Z</updated>
   <id>https://jpain.io/</id>
   <author>
     <name>James Pain</name>
   </author>
+  <entry>
+    <title>Deepmind CEO talks AI at Cambridge</title>
+    <link href="https://jpain.io/blog/2025/deepmind-talk/" />
+    <updated>2025-06-20T00:00:00Z</updated>
+    <id>https://jpain.io/blog/2025/deepmind-talk/</id>
+    <content type="html">&lt;p&gt;A very enjoyable talk by the guy who, 5 minutes into the video, I pointed at through the TV and shouted &amp;quot;IT&#39;S THE ALPHA GO GUY!&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=hHooQmmzG4k&quot;&gt;Accelerating Scientific Discovery with AI - lecture by Sir Demis Hassabis&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>ChatGPT is getting Record Mode</title>
     <link href="https://jpain.io/blog/2025/ChatGPT-is-getting-record-mode/" />

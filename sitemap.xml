@@ -55,4 +55,9 @@
 		<loc>https://jpain.io/feed/feed.xml</loc>
 		<lastmod>2025-06-19</lastmod>
 	</url>
+	
+	<url>
+		<loc>https://jpain.io/blog/2025/deepmind-talk/</loc>
+		<lastmod>2025-06-20</lastmod>
+	</url>
 </urlset>
