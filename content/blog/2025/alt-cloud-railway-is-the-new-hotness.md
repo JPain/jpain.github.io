@@ -1,5 +1,5 @@
 ---
-created: 2025-06-17
+date: 2025-06-17
 modified: 2025-06-17
 title: Alt Cloud Railway is the new hotness
 description: Railway, an alternative cloud provider, has had an onrush of new customers after a recent Google Cloud outage.

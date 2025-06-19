@@ -1,5 +1,5 @@
 ---
-created: 2025-06-17
+date: 2025-06-17
 modified: 2025-06-17
 title: A word about preventing Prompt Injection in AI Apps
 description: Prompt injection attacks in AI apps are common. The safest design might be avoiding free text input altogether.
