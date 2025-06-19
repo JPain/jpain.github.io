@@ -5,7 +5,7 @@
   <subtitle>James Pain&#39;s Weblog</subtitle>
   <link href="https://jpain.io/feed/feed.xml" rel="self" />
   <link href="https://jpain.io/" />
-  <updated>2025-06-18T10:56:01Z</updated>
+  <updated>2025-06-19T02:05:52Z</updated>
   <id>https://jpain.io/</id>
   <author>
     <name>James Pain</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>Alt Cloud Railway is the new hotness</title>
     <link href="https://jpain.io/blog/2025/alt-cloud-railway-is-the-new-hotness/" />
-    <updated>2025-06-18T10:56:01Z</updated>
+    <updated>2025-06-19T02:05:52Z</updated>
     <id>https://jpain.io/blog/2025/alt-cloud-railway-is-the-new-hotness/</id>
     <content type="html">&lt;p&gt;I&#39;ve been a fan of Railway ever since they published their &lt;a href=&quot;https://blog.railway.com/p/data-center-build-part-one&quot;&gt;deep dive on building their own data centre&lt;/a&gt;, stepping away from Google Cloud. It’s everything I look for in a blog post: clear reasoning, gritty technical detail, honest mistakes, and real learnings. That post made me like and respect them a lot.&lt;/p&gt;
 &lt;p&gt;They remind me of how I felt about Cloudflare in the early days. There’s something special about small, innovative, dev-focused companies. They speak directly to my heart, before they go mainstream and I inevitably lose interest. I guess I’m just a big old hipster at heart.&lt;/p&gt;
@@ -25,7 +25,7 @@
   <entry>
     <title>A word about preventing Prompt Injection in AI Apps</title>
     <link href="https://jpain.io/blog/2025/a-word-about-prompt-injection/" />
-    <updated>2025-06-18T10:56:01Z</updated>
+    <updated>2025-06-19T02:05:52Z</updated>
     <id>https://jpain.io/blog/2025/a-word-about-prompt-injection/</id>
     <content type="html">&lt;p&gt;One of my favourite hobbies when evaluating third party AI apps is to try to break them. If an application can&#39;t survive my attempts, I know a curious teenager will find the same hole and ruin my day.&lt;/p&gt;
 &lt;p&gt;My goto attack is prompt injection. Feeding carefully crafted input that persuades the model to ignore its instructions and do mine instead. It feels as easy as trying to hypnotise a 5 year old.&lt;/p&gt;
@@ -33,6 +33,15 @@
 &lt;p&gt;I agree with Simon. I believe the easiest way to fix those bugs may be to fix it at app design stage and avoid free text inputs altogether. Over the last 18 months every generative AI app I’ve shipped uses tightly validated form fields, structured third-party data, and user supplied photos. No open chat boxes. I dislike chat as a UX anyway; it’s slow, opaque, and hard to test.&lt;/p&gt;
 &lt;p&gt;Structured inputs dramatically shrink the attack surface, but they don’t eliminate it. While researching for this post, I found &lt;a href=&quot;https://blog.roboflow.com/gpt-4-vision-prompt-injection/&quot;&gt;visual prompt injection attacks are possible&lt;/a&gt;, that hide instructions inside images or adversarial patches, successfully hijacking GPT‑4V, Gemini, and other vision/language models. These are still lab grade examples from researchers, but they prove the technique is possible today.&lt;/p&gt;
 &lt;p&gt;My take away here is architectural. If prompt injection poses a risk to you, redesign the interface so untrusted users can’t send arbitrary text (or images!) straight to the model. The best defence may be to give attackers nothing to inject in the first place.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>ChatGPT is getting Record Mode</title>
+    <link href="https://jpain.io/blog/2025/ChatGPT-is-getting-record-mode/" />
+    <updated>2025-06-19T00:00:00Z</updated>
+    <id>https://jpain.io/blog/2025/ChatGPT-is-getting-record-mode/</id>
+    <content type="html">&lt;p&gt;Have you ever imagined the sound of a hundred AI-Meeting-Note-Generator startups scream out in terror and were suddenly silenced?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://help.openai.com/en/articles/11487532-chatgpt-record&quot;&gt;ChatGPT is getting Record Mode for meeting notes and discussions&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
